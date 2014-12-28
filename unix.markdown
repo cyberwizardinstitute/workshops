@@ -1174,6 +1174,7 @@ Sometimes it's handy to break long lines into shorter lines.
 We can use the fold command to break some text at 30 characters:
 
 ```
+~ $ head -n250 mobydick.txt | tail -n3 | fold -w 30
 can see a whale, for the first
  discoverer has a ducat for hi
 s pains....
@@ -1591,10 +1592,6 @@ from the group:
 ```
 
 You can change the owner of a file with `chown` and the group with `chgrp`.
-
----
-
-# sudo
 
 ---
 
