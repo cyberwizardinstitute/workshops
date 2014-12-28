@@ -301,9 +301,9 @@ For example, to list the files in `/` (the root) we can do:
 
 ```
 ~ $ ls /
-bin/   etc/         lib/         media/  proc/  sbin/     sys/  var/
-boot/  home/        lib64/       mnt/    root/  selinux/  tmp/  vmlinuz@
-dev/   initrd.img@  lost+found/  opt/    run/   srv/      usr/
+bin   etc         lib         media  proc  sbin     sys  var
+boot  home        lib64       mnt    root  selinux  tmp  vmlinuz
+dev   initrd.img  lost+found  opt    run   srv      usr
 ```
 
 In this example, `ls` is the command and `/` is the argument.
@@ -487,7 +487,7 @@ subdirectories to a new location:
 ~/doc $ cp a.txt xyz/123/
 ~/doc $ cp -r xyz newxyz
 ~/doc $ ls newxyz/
-123/  a.txt  b.txt
+123  a.txt  b.txt
 ~/doc $ ls newxyz/123
 a.txt
 ```
@@ -498,7 +498,7 @@ subdirectories:
 ```
 ~/doc $ ls -R newxyz
 newxyz:
-123/  a.txt  b.txt
+123  a.txt  b.txt
 
 newxyz/123:
 a.txt
@@ -510,11 +510,158 @@ a.txt
 
 The `mv` command is used to rename and overwrite files and directories.
 
-To rename a file:
+To rename a file, set the first argument to the original file name and the
+second argument to the new file name or destination directory.
+
+We can rename `a.txt` to be `pigeon.txt`:
+
+```
+~/doc $ mv a.txt pigeon.txt
+~/doc $ ls
+b.txt  newxyz  pigeon.txt  xyz
+```
+
+Or we can move a file to a new directory:
+
+```
+~/doc $ mv pigeon.txt xyz
+~/doc $ ls xyz
+123  a.txt  b.txt  pigeon.txt
+```
+
+We can rename directories just the same as files:
+
+```
+~/doc $ mv xyz woo
+~/doc $ ls
+b.txt  newxyz  woo
+~/doc $ ls woo
+123  a.txt  b.txt  pigeon.txt
+```
 
 ---
 
 # mkdir
+
+To make a new directory, just execute the `mkdir` command with a list of new
+directory names to make as arguments:
+
+```
+$ mkdir hooray
+```
+
+and now a new directory called `hooray` exists.
+
+You can create multiple directories at once:
+
+```
+$ mkdir one two
+```
+
+and now two new directories, `one` and `two`, exist.
+
+---
+
+# mkdir -p
+
+Suppose we want to make the following nested directory structure:
+
+```
+foo/
+  bar/
+    baz/
+    qrs/
+```
+
+Instead of doing:
+
+```
+~ $ mkdir foo foo/bar foo/bar/baz foo/bar/qrs
+```
+
+We can just do:
+
+```
+~/doc $ mkdir -p foo/bar/baz foo/bar/qrs
+```
+
+and the necessary parent directories `foo/` and `foo/bar/` will be created
+automatically.
+
+---
+
+# brace expansion
+
+There is a handy syntax built into bash for expanding patterns that would be
+repetitive to type out by hand.
+
+Instead of doing something like:
+
+```
+~/doc $ mkdir -p foo/bar/baz foo/bar/qrs
+```
+
+we can use a list of items between curly braces:
+
+```
+~/doc $ mkdir -p foo/bar/{baz,qrs}
+```
+
+which expands to the same command as before.
+
+To prove this you can use `echo` to see what the expansion is:
+
+```
+~ $ echo mkdir -p foo/bar/{baz,qrs}
+mkdir -p foo/bar/baz foo/bar/qrs
+```
+The items that a brace expansion generates are separated by spaces as if you had
+typed out those words by hand.
+
+You can have as many items as you like in a list:
+
+```
+~ $ echo robot-{one,two,three,four}-x
+robot-one-x robot-two-x robot-three-x robot-four-x
+```
+
+---
+
+# brace expansion fancy
+
+With brace expansions, you can have multiple expansions:
+
+```
+~/doc $ echo robot/{c3po,r2d2}/{sound.mp3,info.txt}
+robot/c3po/sound.mp3 robot/c3po/info.txt robot/r2d2/sound.mp3 robot/r2d2/info.txt
+```
+
+You can even nest the expansions!
+
+```
+~/doc $ echo x-{wing,b{ee,oo}p}
+x-wing x-beep x-boop
+```
+
+---
+
+# brace expansion sequences
+
+It can be tedious to type out numerical lists by hand.
+
+Brace expansions can help with that:
+
+```
+~/doc $ echo wow{1..10}
+wow1 wow2 wow3 wow4 wow5 wow6 wow7 wow8 wow9 wow10
+```
+
+and you can even specify an amount to skip:
+
+```
+~/doc $ echo img{0..100..10}
+img0 img10 img20 img30 img40 img50 img60 img70 img80 img90 img100
+```
 
 ---
 
