@@ -667,9 +667,26 @@ img0 img10 img20 img30 img40 img50 img60 img70 img80 img90 img100
 
 # rm
 
----
+To remove a file, just do:
 
-# rmdir
+```
+~/doc $ rm b.txt
+```
+
+You can remove multiple files at once:
+
+```
+~/doc $ rm newxyz/a.txt newxyz/b.txt
+```
+
+and you can remove entire directories including subdirectories with:
+
+```
+~/doc $ rm -r newxyz
+```
+
+Be very careful with `-r`. You might accidentally delete much more than you
+meant to delete!
 
 ---
 
