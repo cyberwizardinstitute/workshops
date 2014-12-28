@@ -1504,6 +1504,94 @@ Now open a new terminal and you should see a friendly new message!
 
 # permissions
 
+Each file on a UNIX system belongs to a user and a group.
+
+users are accounts on the system, like the one you log in with.
+groups are collections of users.
+
+To see what groups you belong to, just type `groups`:
+
+```
+~ $ groups
+substack cdrom floppy audio dip video plugdev
+```
+
+To inspect the permissions on a file, use `ls -l`:
+
+```
+~/doc $ ls -l b.txt
+-rw-r--r-- 1 substack whatever 14 Dec 28 00:29 b.txt
+```
+
+Here we can see that the file `b.txt` is owned by the user `substack` and the
+group `whatever`. There's also this part on the left:
+
+```
+-rw-r--r--
+```
+
+This string describes the permissions of the file.
+
+The first character is reserved for some fancy uses, but after that there are 3
+groups of 3 characters:
+
+```
+rwxrwxrwx
+```
+
+Each character describes a permission: (r)ead, (w)rite, and e(x)ecute.
+A `-` in place of one of those letters means the permission is not available.
+
+If the e(x)ecute bit is enabled on a file for a user, it means the user can
+execute the file.
+
+If the e(x)ecute bit is enabled on a directory for a user, it means the user can
+list the files in that directory.
+
+* The first `rwx` group describes what the user of the file can do.
+* The second `rwx` group describes what users in the file's group can do.
+* The third `rwx` group describes what everyone else can do.
+
+These three categories are called user (u), group (g), and other (o).
+
+---
+
+# chmod
+
+To change the permissions on a file, first figure out which capabilities you
+want to grant or revoke (rwx) from which categories of users (ugo).
+
+To allow the owner of a file to execute a script you can do:
+
+```
+~ $ chmod u+x script.sh
+```
+
+which is the same as:
+
+```
+~ $ chmod +x script.sh
+```
+
+because the `u` is implied if not specified.
+
+You can also revoke permissions with a `-`. To make it so that other users can't
+write to a file:
+
+```
+~ $ chmod o-w wow.txt
+```
+
+You can grant and revoke permissions at the same time. Here we're adding read
+and execute permissions to the user while simultaneously revoking read and write
+from the group:
+
+```
+~ $ chmod u+rxg-rw status.sh
+```
+
+You can change the owner of a file with `chown` and the group with `chgrp`.
+
 ---
 
 # sudo
