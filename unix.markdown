@@ -404,6 +404,110 @@ BEEP
 
 ---
 
+# wc
+
+The `wc` command computes the number of lines, words, and bytes in a file:
+
+```
+~ $ wc notes.txt
+ 3  7 35 /home/substack/notes.txt
+```
+
+To see each field independently, you can use different options: arguments that
+start with a `-` or `--` followed by a letter or word.
+
+To get just the word counts, we can use `-w`:
+
+```
+~ $ wc -w notes.txt
+7 notes.txt
+```
+
+To get just the number of lines in a file, use `-l`:
+
+```
+~ $ wc -l notes.txt
+3 notes.txt
+```
+
+To get just the number of bytes in a file, use `-c`:
+
+```
+~ $ wc -c notes.txt
+35 notes.txt
+```
+
+If you don't specify a file, `wc` will read from stdin. Type Ctrl+D (^D) to end
+the input.
+
+```
+~ $ wc -l
+one
+two
+three
+four
+^D
+4
+```
+
+---
+
+# man
+
+All of these command options are a lot to remember!
+
+You can pull up documentation at any time in your shell by typing `man foo`
+for any command `foo`.
+
+For example to read up on all the options you can give to the `wc` command, do:
+
+```
+~ $ man wc
+```
+
+The help page will open up in your `$PAGER`. Type `q` to exit back to your
+shell.
+
+---
+
+# more on options
+
+Options (also called flags or switches) are special arguments that start with a
+`-` or `--` followed by a letter or word.
+
+Generally speaking, they are distinct from other arguments in that their order
+usually doesn't matter. For example:
+
+```
+grep -i wow
+```
+
+is the same as
+
+```
+grep wow -i
+```
+
+where `-i` just informs the `grep` command to perform a case-insensitive search.
+
+Sometimes options have a value that follows:
+
+```
+head -n 1
+```
+
+means that `-n` has the value `1`.
+
+Sometimes you can omit the space:
+
+```
+head -n1
+```
+
+but each program individually decides how to interpret its arguments.
+
+---
+
 # absolute and relative paths
 
 Paths that start with `.` or `..` are relative paths.
@@ -433,25 +537,557 @@ Debian GNU/Linux 7 \n \l
 
 # echo
 
+The echo command just prints text from its arguments:
+
+```
+~ $ echo wow cool
+wow cool
+```
+
+This is not very useful by itself, but becomes useful when combined with
+redirects and pipes.
+
 ---
 
-# pipes
+# write to a file
+
+Using the `>` character, you can write the output of a command to a file.
+
+For example, to make a new file `greetings.txt` with the contents "ahoy thar",
+we can do:
+
+```
+~ $ echo ahoy thar > greetings.txt
+```
+
+and to print the contents of greetings.txt, use `cat`:
+
+```
+~ $ cat greetings.txt
+ahoy thar
+```
+
+You can redirect the output of any program to a file:
+
+```
+~ $ ls / > list.txt
+```
+
+---
+
+# append to a file
+
+The `>` redirect operator will overwrite a file with new contents if it already
+exists.
+
+There is a `>>` operator that appends to the end of a file if it already exists:
+
+```
+~ $ echo wow > cool.txt
+~ $ ls >> cool.txt
+~ $ cat cool.txt
+wow
+cool.txt
+doc
+media
+notes.txt
+projects
+```
+
+---
+
+# read from a file
+
+You can read a file into the stdin of a program with `<`.
+
+Remember that if `wc` doesn't get a file as an argument, it will read from
+stdin. We can load a file in to `wc` with `<` instead:
+
+```
+~ $ wc -c < notes.txt
+35
+```
+
+---
+
+# pipes!
+
+The last but most important kind of redirect is the pipe operator `|`.
+
+With `|` you can feed the output of one program to the input of the next.
+
+For example, the `ls -1` command will list files, one per line, to stdout.
+The `wc -l` command, meanwhile, will count the number of lines.
+
+By piping these two programs together, we can count the number of files and
+subdirectories in a directory:
+
+```
+~ $ ls -1 | wc -l
+5
+```
+
+and indeed, there are five files and subdirectories in this directory:
+
+```
+~ $ ls -1
+cool.txt
+doc
+media
+notes.txt
+projects
+```
+
+You can chain together commands with `|` as much as you like.
+
+Here's an example using two new commands `curl` and `sed` that will fetch 
+Moby Dick from Project Gutenberg and count the number of occurences of "whale"
+in any case:
+
+```
+~ $ curl -s http://www.gutenberg.org/cache/epub/2701/pg2701.txt
+| sed -r 's/\s+/\n/g' | grep -i whale | wc -l
+1691
+```
+
+We can even save that number of a file. Just add `> whale_count.txt` to the end
+of the pipeline:
+
+```
+~ $ curl -s http://www.gutenberg.org/cache/epub/2701/pg2701.txt |
+sed -r 's/\s+/\n/g' | grep -i whale | wc -l > whalecount.txt
+```
+
+---
+
+# pipeline breakdown: curl
+
+Here's a breakdown of each part of the pipeline and what it does:
+
+```
+curl -s http://www.gutenberg.org/cache/epub/2701/pg2701.txt
+```
+
+fetches Moby Dick from Project Gutenberg and prints the results to stdout.
+
+---
+
+# pipeline breakdown: sed
+
+```
+sed -r 's/\s+/\n/g'
+```
+
+converts all whitespace (tabs, spaces, newlines) into newlines.
+
+This means that each word gets its own line:
+
+```
+~ $ echo one two three beep boop | sed -r 's/\s+/\n/g'
+one
+two
+three
+beep
+boop
+```
+
+---
+
+# pipeline breakdown: grep
+
+```
+grep -i whale
+```
+
+filters the output so that only lines that contain the word "whale" will be
+shown. `-i` makes the search case-insensitive.
+
+For example if we have a file `tale.txt`:
+
+```
+Wow
+such
+a
+whale.
+A
+whale
+of
+a
+WHALE!
+```
+
+then our grep command will show:
+
+```
+~ $ grep -i whale < tale.txt
+whale.
+whale
+WHALE!
+```
+
+---
+
+# pipeline breakdown: wc -l
+
+```
+wc -l
+```
+
+counts the number of lines from stdin and prints the result.
 
 ---
 
 # head
 
+The head command prints the first part of a file.
+
+If a file isn't given, `head` reads from stdin.
+
+Read the first 3 lines of a file with `head -n3`:
+
+```
+$ head -n3 mobydick.txt 
+The Project Gutenberg EBook of Moby Dick; or The Whale, by Herman Melville
+
+This eBook is for the use of anyone anywhere at no cost and with
+```
+
+Read the first 20 bytes of a file with `head -n3`:
+
+```
+~ $ head -c20 mobydick.txt 
+The Project Guten
+```
+
 ---
 
 # tail
+
+The tail command prints the last part of a file.
+
+If a file isn't given, `tail` reads from stdin.
+
+Read the last 4 lines of a file with `tail -n4`:
+
+```
+~ $ tail -n4 mobydick.txt 
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+```
+
+Read the last 9 bytes of a file with `tail -c9`:
+
+```
+~ $ tail -c9 mobydick.txt 
+eBooks.
+```
+
+---
+
+# cal
+
+If you need a handy text calendar, just type `cal`:
+
+```
+~ $ cal
+   December 2014      
+Su Mo Tu We Th Fr Sa  
+    1  2  3  4  5  6  
+ 7  8  9 10 11 12 13  
+14 15 16 17 18 19 20  
+21 22 23 24 25 26 27  
+28 29 30 31           
+```
+
+You can show the current, previous, and next month:
+
+```
+~ $ cal -3
+   November 2014         December 2014          January 2015      
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+                   1      1  2  3  4  5  6               1  2  3  
+ 2  3  4  5  6  7  8   7  8  9 10 11 12 13   4  5  6  7  8  9 10  
+ 9 10 11 12 13 14 15  14 15 16 17 18 19 20  11 12 13 14 15 16 17  
+16 17 18 19 20 21 22  21 22 23 24 25 26 27  18 19 20 21 22 23 24  
+23 24 25 26 27 28 29  28 29 30 31           25 26 27 28 29 30 31  
+30                                                                
+```
+
+Or you can show a whole year:
+
+```
+~ $ cal 2015
+                            2015
+      January               February               March          
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+             1  2  3   1  2  3  4  5  6  7   1  2  3  4  5  6  7  
+ 4  5  6  7  8  9 10   8  9 10 11 12 13 14   8  9 10 11 12 13 14  
+11 12 13 14 15 16 17  15 16 17 18 19 20 21  15 16 17 18 19 20 21  
+18 19 20 21 22 23 24  22 23 24 25 26 27 28  22 23 24 25 26 27 28  
+25 26 27 28 29 30 31                        29 30 31              
+                                                                  
+
+       April                  May                   June          
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+          1  2  3  4                  1  2      1  2  3  4  5  6  
+ 5  6  7  8  9 10 11   3  4  5  6  7  8  9   7  8  9 10 11 12 13  
+12 13 14 15 16 17 18  10 11 12 13 14 15 16  14 15 16 17 18 19 20  
+19 20 21 22 23 24 25  17 18 19 20 21 22 23  21 22 23 24 25 26 27  
+26 27 28 29 30        24 25 26 27 28 29 30  28 29 30              
+                      31                                          
+
+        July                 August              September        
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+          1  2  3  4                     1         1  2  3  4  5  
+ 5  6  7  8  9 10 11   2  3  4  5  6  7  8   6  7  8  9 10 11 12  
+12 13 14 15 16 17 18   9 10 11 12 13 14 15  13 14 15 16 17 18 19  
+19 20 21 22 23 24 25  16 17 18 19 20 21 22  20 21 22 23 24 25 26  
+26 27 28 29 30 31     23 24 25 26 27 28 29  27 28 29 30           
+                      30 31                                       
+
+      October               November              December        
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+             1  2  3   1  2  3  4  5  6  7         1  2  3  4  5  
+ 4  5  6  7  8  9 10   8  9 10 11 12 13 14   6  7  8  9 10 11 12  
+11 12 13 14 15 16 17  15 16 17 18 19 20 21  13 14 15 16 17 18 19  
+18 19 20 21 22 23 24  22 23 24 25 26 27 28  20 21 22 23 24 25 26  
+25 26 27 28 29 30 31  29 30                 27 28 29 30 31        
+                                                                  
+```
+
+---
+
+# date
+
+To print the date, just do:
+
+```
+~ $ date
+Sat Dec 27 20:43:13 PST 2014
+```
+
+You can format the date however you like:
+
+```
+~ $ date +'%Y-%m-%d %H:%M:%S'
+2014-12-27 20:45:07
+```
+
+Check out the manual page (`man date`) for more info about what options are
+available for date strings.
+
+---
+
+# fold
+
+Sometimes it's handy to break long lines into shorter lines.
+
+We can use the fold command to break some text at 30 characters:
+
+```
+can see a whale, for the first
+ discoverer has a ducat for hi
+s pains....
+I was told of a whale taken ne
+ar Shetland, that had above a 
+barrel of
+herrings in his belly.... One 
+of our harpooneers told me tha
+t he caught
+```
+
+or to break on spaces instead, use `-s`:
+
+```
+~ $ head -n250 mobydick.txt | tail -n3 | fold -sw 30
+can see a whale, for the 
+first discoverer has a ducat 
+for his pains....
+I was told of a whale taken 
+near Shetland, that had above 
+a barrel of
+herrings in his belly.... One 
+of our harpooneers told me 
+that he caught
+```
+
+---
+
+# curl
+
+curl is a handy little tool for making HTTP requests.
+
+Here's a simple snippet to fetch my most recent RSA public key from github,
+wrapping the output to 75 character lines:
+
+```
+~ $ curl -s https://github.com/substack.keys | tail -n1 | fold -w75
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAEAQC7wF3cwpH+NVG+qNz0PLjEg9IqaNyXeeITme9
+fksfJx/rTyoFAWW+JrJVKLPNBCe63JYvp3pTvPqJRg/8hEb/+uFlIIzUNhHAUSaS1mmKgnTHbb+
+1d8CkFAZiZnDhFOKRkEXh5R9F9htNQVIjyzD3XL/H69mb8YzICItq/9klVTZ66s1thp7r3V5+qE
+hbLB4yH6stXyuj2SZiMS+CJeVBJ8Pf/CCUH66NK2o7l1zliJwme+UJry1RtxWQBfEChj9qe36B/
+bR3HACtx6ANMdYJsOxZm0znUjn/XJ9jxy22nVJY5otwZNeIZSSyA1lZB2mZRzTTWzPPx62VWdgH
+eQdOmnqBP0YWpxPBSMJwn4kFt6aGImrm7WTU5sHwqqxRgNvcrecxPWgbdLcV+x/OWF5bug3s096
+AWcP4wQI101w7QtI3cc5+JKHSGssuY17jyyNaHttE7GafBu3pbK93YolgNAMyYUHVicgK+uY6o+
+sH4gcRx+RyQ4OkO7Js49wJi0AXPGhp5QRmIFpua/vVzhMTwMhqW+6luWgfPeAVqn95erc49cY+W
+2B83ZgaDVSuRfDafVCSjUl+oXG/1KxzP2F/ZhGmNGmBRnF5N4OLHW6/KtVgxCpf3+1bcgye+yiq
+NQuM5/NNWZRw3NJhk0XEppd5Ai4JpvguDLhWZ19/+XEvFj9kwKRMRbxf1M7hWDutAE46sQc9x4M
+135M/SyuHW9asHBDCJPgD3nBAjYpMV0fQxIbcNiYWF+JsH6NzhRpLnsTNUvsfUcC/FQqX3VD0Xu
+IEoYmKwDesv6PU60pQNEi6p4u+PnFHS/vvRASYLo/4s+99GQDWxqzi0jjYVWheQW9RLnTU+ghud
+A+xPp7CK/tH8/RAutDdk3k0HdsNTsjHFN/HvM23UIHOpuY07yohayQididHt023IAZdys6m2daQ
+RUKXM8cfaFdQqoj/vaby7pxBPWzO6tuXy1tI6gQ+nolZaXQfXUBHF1uBXo1UQI0dp8J5tCppty6
+NvXmvv90PBGVXOlplyhXB9q0JXBInidATeT8zlgM4Iq1X6ZVlXN2OIU5CiWVA1NYmf05709e6SK
+P0kK2oh19gA+qg1oPOw0WTpZGKz/9NCCw2ywK2/yNJRWuIbSE4RAv6N8v7qtPObwAU5Lohj8oQV
+yC/bbLF6VuVJo6V/nfvP+EJKtsXlBBPBzdsmV1hikkGLJx7Up1s7WTZCwSeSGFPXCe7RdElz2mQ
+YB6dwEbhaGl48MhuiIeER7KZqzQFOu74G0u5tyyCUeEc90BkeUcf/EhrxfS8R9ZRJ9ce7IpYQ4+
+9wTBKFzVc1HinCSUwJTu7m+UHLaaNbK+WCIF+2fFvM1IJmTh2pWSMb
+```
 
 ---
 
 # grep
 
+You can search for patterns in files or from stdin with the `grep` command.
+
+The first argument is the pattern to search for as a regular expression.
+
+Regular expressions are a language for pattern matching.
+
+Here we can search for all lines matching "whaling" or "fishing":
+
+```
+~ $ grep -iE '(whal|fish)ing' mobydick.txt | tail -n5
+Equatorial fishing-ground, and in the deep darkness that goes before the
+the whaling season? See, Flask, only see how pale he looks--pale in the
+preliminary cruise, Ahab,--all other whaling waters swept--seemed to
+fixed upon her broad beams, called shears, which, in some whaling-ships,
+years of continual whaling! forty years of privation, and peril, and
+```
+
+Check out the other workshop about regular expressions to learn more!
+
 ---
 
-# sort
+# backticks
+
+Sometimes it's useful to include the output of a program in the arguments list
+of another.
+
+For example with the date command we can print the current year:
+
+```
+date +%Y
+```
+
+and we can use this value in a message with echo:
+
+```
+~ $ Greetings from the year `date +%Y`.
+Greetings from the year 2014.
+```
+
+---
+
+# arithmetic
+
+With `$((...))` expressions, you can do simple arithmetic on the command line!
+
+```
+~ $ echo $((4*5+1))
+21
+```
+
+I wouldn't go overboard with this feature, but it's handy sometimes.
+
+---
+
+# environment variables
+
+Environment variables are defined by the shell and shell scripts.
+
+To list the current environment variables, type `export`:
+
+```
+~ $ export
+declare -x DISPLAY=":0"
+declare -x HOME="/home/substack"
+declare -x HUSHLOGIN="FALSE"
+declare -x LANG="en_US.UTF-8"
+declare -x LD_LIBRARY_PATH="/home/substack/prefix/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu:/usr/lib:/lib64:/lib"
+declare -x LIBGL_DRIVERS_PATH="/usr/lib/i386-linux-gnu/dri:/usr/lib/x86_64-linux-gnu/dri"
+declare -x LOGNAME="substack"
+declare -x MAIL="/var/mail/substack"
+declare -x OLDPWD="/home/substack/projects/workshops"
+declare -x PATH="/home/substack/prefix/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin:/usr/local/games:/usr/games"
+declare -x PREFIX="/home/substack/prefix"
+declare -x PWD="/home/substack"
+declare -x ROXTERM_ID="0x43962f0"
+declare -x ROXTERM_NUM="15"
+declare -x ROXTERM_PID="2521"
+declare -x SHELL="/bin/bash"
+declare -x SHLVL="3"
+declare -x TERM="xterm"
+declare -x USER="substack"
+declare -x WINDOWID="8684328"
+declare -x WINDOWPATH="7"
+declare -x XAUTHORITY="/home/substack/.Xauthority"
+```
+
+You can use any environment variable by refering to its `$NAME`.
+
+For example to print the value of `$HOME` do:
+
+```
+~ $ echo $HOME
+/home/substack
+```
+
+You can use environment variables in any command:
+
+```
+~ $ ls /home/$USER
+doc  media  notes.txt  projects
+```
+
+To define your own environment variable, just put its name followed by an equal
+sign (with no spaces) followed by its value:
+
+```
+~ $ ANIMAL=cats
+~ $ echo $ANIMAL
+cats
+```
+
+Environment variables are almost always capitalized to distinguish them from
+variables in shell scripts but lower-case variables work too.
+
+---
+
+# quotes
+
+If you want to use characters like `<` or `>` in the arguments to a program, you
+will need to use quotes so that the shell doesn't try to interpret them.
+
+For example, to echo the string `<b>wow</b>` we can use single quotes:
+
+```
+~ $ echo '<b>wow</b>'
+<b>wow</b>
+```
+
+Double quotes are similar but environment variables and backticks will be
+interpolated in-place (replaced with their value): 
+
+```
+~ $ echo "There's no place like $HOME."
+There's no place like /home/substack.
+~ $ echo "So long `date +%Y`..."
+So long 2014...
+~ $ echo "So long `date +%Y`... next stop $((`date +%Y`+1))"'!'
+So long 2014... next stop 2015!
+```
 
 ---
 
@@ -462,8 +1098,3 @@ Debian GNU/Linux 7 \n \l
 # screen
 
 ---
-
-# curl
-
----
-
