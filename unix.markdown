@@ -1599,5 +1599,29 @@ You can change the owner of a file with `chown` and the group with `chgrp`.
 
 ---
 
+# ctrl-c
+
+---
+
+# ctrl-z
+
+---
+
+# fg
+
+---
+
+# processes
+
+---
+
+# pgrep
+
+---
+
+# kill
+
+---
+
 # screen
 
