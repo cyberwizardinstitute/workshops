@@ -256,4 +256,214 @@ finished using them.
 
 ---
 
+# let's learn the command line!
+
+bash is a popular shell for UNIX-like systems.
+
+Open up a bash shell for the next sections to follow along.
+
+If you're not sure which shell you're in, type:
+
+```
+echo $SHELL
+```
+
+If you're in bash, you sould see something like:
+
+```
+/bin/bash
+```
+
+---
+
+# list files
+
+You can use the `ls` command to show all the files in the current directory.
+
+Type `ls` and you should see something like:
+
+```
+~ $ ls
+doc  media  notes.txt  projects
+```
+
+---
+
+# arguments
+
+By default, `ls` lists files from the current directory.
+
+You can list files from another directory by giving `ls` an argument.
+An argument is just another piece of text after the `ls`.
+
+For example, to list the files in `/` (the root) we can do:
+
+```
+~ $ ls /
+bin/   etc/         lib/         media/  proc/  sbin/     sys/  var/
+boot/  home/        lib64/       mnt/    root/  selinux/  tmp/  vmlinuz@
+dev/   initrd.img@  lost+found/  opt/    run/   srv/      usr/
+```
+
+In this example, `ls` is the command and `/` is the argument.
+
+Commands can have multiple arguments separated by spaces or no arguments.
+
+---
+
+# print the current directory
+
+To display the current directory, you can use the `pwd` command:
+
+```
+$ pwd
+/home/substack
+```
+
+pwd stands for print working directory.
+
+---
+
+# change directory
+
+To change the current working directory, use the `cd` command.
+The `cd` command takes a single argument: the directory to move to.
+
+After changing the current directory, list the files again with `ls`.
+
+```
+~ $ ls
+doc  media  notes.txt  projects
+~ $ cd media
+~/media $ ls
+3d  audio  avatars  vector  warp
+~/media $ cd warp
+~/media/warp $ ls
+mac.sh*                      mac_startup.mp3  mac_warped.mp3  watch.js
+Mac Startup-i9qOJqNjalE.mp4  mac_startup.wav  mac_warp.mp3
+```
+
+---
+
+# special directories
+
+There are two special directories: `..` and `.`:
+
+* `..` - the parent directory
+* `.` - the current directory
+
+To navigate back up to the parent directory, do `cd ..`.
+
+```
+~/media/warp $ cd ..
+~/media $ 
+```
+
+You can also list the parent directory without changing the current directory by
+doing `ls ..`:
+
+```
+~/media $ ls ..
+doc  notes.txt  media  projects
+```
+
+You can add paths after `..` too:
+
+```
+~/media $ ls ../projects/workshops
+computers.markdown  unix.markdown
+```
+
+Or `ls .` is the same as `ls`:
+
+```
+~/media $ ls .
+3d  audio  avatars  vector  warp
+```
+
+Jump back to your home directory at any time by typing `cd` with no arguments.
+
+---
+
+# cat
+
+cat was originally written to concatenate all the files from its arguments:
+
+```
+~/doc $ cat beep.txt boop.txt
+BEEP
+BOOP
+```
+
+but it also a handy way to display single text files on the command-line:
+
+```
+~/doc $ cat beep.txt
+BEEP
+```
+
+---
+
+# absolute and relative paths
+
+Paths that start with `.` or `..` are relative paths.
+Paths that start with `/` are absolute paths.
+
+Relative paths are resolved according to the current working directory:
+
+```
+~/doc $ cat ../media/warp/mac.sh
+#!/bin/bash
+youtube-dl 'https://www.youtube.com/watch?v=i9qOJqNjalE'
+ffmpeg -i *.mp4 -vn mac_startup.wav
+sox mac_startup.wav mac_warp.mp3 chorus 0.6 0.9 25 0.9 1 8 -s \
+  echos 0.8 0.7 40 0.25 63 0.3 phaser 1 0.7 3 0.7 0.5 -t
+  play mac_startup.wav
+```
+
+Absolute paths are the same no matter what the current working directory is:
+
+```
+~/projects/workshops $ cat /etc/issue
+Debian GNU/Linux 7 \n \l
+
+```
+
+---
+
+# echo
+
+---
+
+# pipes
+
+---
+
+# head
+
+---
+
+# tail
+
+---
+
+# grep
+
+---
+
+# sort
+
+---
+
+# job control
+
+---
+
+# screen
+
+---
+
+# curl
+
+---
 
