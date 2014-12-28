@@ -85,7 +85,7 @@ each with a special role:
 The kernel's job is to mediate access to the computer's
 resources among all the user programs that are running. 
 
-* I/O
+* I/O to computer hardware
 * CPU
 * memory
 
@@ -127,10 +127,16 @@ which user programs.
 If there isn't enough RAM, the kernel might be configured to
 use the hard disk instead (swap space).
 
+---
+
 # shell
 
 A shell is a computer program that can execute other
 programs from a text-based interface.
+
+In a text-based interface, you interact with a program
+completely from the command-line with text commands and text
+output.
 
 Most modern shells are strongly influenced by the first UNIX
 shells.
@@ -145,6 +151,9 @@ programs that perform narrow single-purpose tasks.
 The available utilities on a given system vary widely but
 some utilities are very common.
 
+For example, there is a command to make new directories and
+another to move files.
+
 ---
 
 # why UNIX still matters
@@ -153,6 +162,8 @@ some utilities are very common.
 * consistent conventions
 * vast software ecosystem
 * text!
+
+---
 
 # why UNIX still matters: portable
 
@@ -165,6 +176,8 @@ different kinds of hardware.
 That means you don't need to learn a whole new operating
 system and suite of tools for each new system.
 
+---
+
 # why UNIX still matters: conventions
 
 The conventions of command-line UNIX tools apply
@@ -173,6 +186,8 @@ consistently across many different tools.
 This means that once you learn some common conventions, you
 will be able to use those conventions across many different
 tools.
+
+---
 
 # why UNIX still matters: ecosystem
 
@@ -183,15 +198,17 @@ tasks.
 When these tools use simple text-based interfaces, they can
 be easily recombined with other tools in novel combinations.
 
+---
+
 # why UNIX still matters: text interface
 
 To remotely access a UNIX system, you can use the same
 command-line tools and interface that you use locally.
-You can remotely access devices without a display port.
+You can remotely access devices without a display.
 
 Text is easy to read so you can poke around more easily to
 figure out what's going on. Many aspects of computer
-programming surround shuffling text around. UNIX accels at
+programming involve shuffling text around. UNIX excels at
 these kinds of tasks.
 
 ---
