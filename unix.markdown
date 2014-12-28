@@ -1,3 +1,4 @@
+
 # unix
 
 UNIX was an operating system developed at AT&T Bell Labs
@@ -401,6 +402,127 @@ but it also a handy way to display single text files on the command-line:
 ~/doc $ cat beep.txt
 BEEP
 ```
+
+---
+
+# cp
+
+Copy a file to another directory or file name.
+
+You can copy a single file to make a new duplicate file:
+
+```
+~/doc $ ls
+a.txt
+```
+
+We can copy a.txt to b.txt:
+
+```
+~/doc $ cp a.txt b.txt
+```
+
+Now there are 2 identical files, `a.txt` and `b.txt`:
+
+```
+~/doc $ ls
+a.txt  b.txt
+```
+
+---
+
+# cp 
+
+You can copy a file or a directory too. Here we'll copy `a.txt` to the directory
+called `wow`:
+
+```
+~/doc $ mkdir wow
+~/doc $ ls
+a.txt  b.txt  wow
+~/doc $ cp a.txt wow
+```
+
+now `wow/` has an `a.txt` file in it:
+
+```
+~/doc $ ls wow
+a.txt
+```
+
+You can copy to a specific destination file:
+
+```
+~/doc $ cp a.txt wow/whatever.txt
+~/doc $ ls wow
+a.txt  whatever.txt
+```
+
+---
+
+# cp (multiple files)
+
+You can even copy multiple files at once to a new place:
+
+```
+~/doc $ mkdir xyz
+~/doc $ cp a.txt b.txt xyz/
+~/doc $ ls xyz
+a.txt  b.txt
+```
+
+The last argument is the destination file or directory and the other arguments
+are the source files.
+
+---
+
+# cp -r
+
+If you have a directory full of files and directories you want to copy to a new
+place, you can use `cp -r` to recursively copy a directory and all its
+subdirectories to a new location:
+
+```
+~/doc $ mkdir xyz/123
+~/doc $ cp a.txt xyz/123/
+~/doc $ cp -r xyz newxyz
+~/doc $ ls newxyz/
+123/  a.txt  b.txt
+~/doc $ ls newxyz/123
+a.txt
+```
+
+Likewise, there is a `-R` for the `ls` command that recursively lists
+subdirectories:
+
+```
+~/doc $ ls -R newxyz
+newxyz:
+123/  a.txt  b.txt
+
+newxyz/123:
+a.txt
+```
+
+---
+
+# mv
+
+The `mv` command is used to rename and overwrite files and directories.
+
+To rename a file:
+
+---
+
+# mkdir
+
+---
+
+# rm
+
+---
+
+# rmdir
 
 ---
 
