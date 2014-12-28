@@ -348,10 +348,11 @@ Mac Startup-i9qOJqNjalE.mp4  mac_startup.wav  mac_warp.mp3
 
 # special directories
 
-There are two special directories: `..` and `.`:
+There are some special directories:
 
 * `..` - the parent directory
 * `.` - the current directory
+* `~` - your home directory
 
 To navigate back up to the parent directory, do `cd ..`.
 
@@ -1375,14 +1376,137 @@ So long 2014...
 So long 2014... next stop 2015!
 ```
 
+You will also need to use quotes if one of the arguments you want to give has a
+whitespace character in it, because whitespace is otherwise used to split
+arguments.
+
 ---
 
 # scripts
 
+Whenever you find yourself typing the same sequence of commands several times,
+consider making a script!
+
+Just put the commands you would normally type into a file and add `#!/bin/bash`
+to the top of the file:
+
+``` sh
+#!/bin/bash
+mkdir wow
+cd wow
+echo "yay" > zing.txt
+```
+
+Now make your script file executable:
+
+```
+~ $ chmod +x yourscript.sh
+```
+
+And now you can do:
+
+```
+~ $ ./yourscript.sh
+```
+
+to run the commands from your file!
+
 ---
 
+# script arguments
+
+When you execute a script with arguments on the command-line, special
+environment variables `$1`, `$2`, `$3`... will be defined for each argument.
+
+For example, if our script is:
+
+``` sh
+#!/bin/bash
+echo first=$1
+echo second=$2
+```
+
+Then we print out the first and second arguments:
+
+```
+~ $ ./yourscript.sh beep boop
+first=beep
+second=boop
+```
+
+There is a special variable `$*` that contains all the arguments separated by
+spaces. For a script of:
+
+``` sh
+#!/bin/bash
+echo The arguments are: $*
+```
+
+And now we can get at all the arguments in one place:
+
+```
+~ $ ./args.sh cats dogs ducks lizards
+The arguments are: cats dogs ducks lizards
+```
+
+---
+
+# $PATH 
+
+There is a special environment variable called `$PATH`:
+
+```
+~ $ echo $PATH
+/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin:/usr/local/games:/usr/games
+```
+
+This variable contains a list of places separated by `:` that bash will look
+when you type a command.
+
+If you put an executable file in one of the directories in your `$PATH`, you can
+make your own commands without needing to specify a relative or absolute path!
+
+`/usr/local/bin` is the customary place to put system-specific scripts that are
+not managed by your system distribution. If you do:
+
+```
+~ $ sudo cp yourscript.sh /usr/local/bin
+```
+
+Then you'll be able to type `yourscript.sh` from any directory on the
+command-line!
+
+You can rename that command that you type by renaming the file:
+
+```
+~ $ sudo mv /usr/local/bin/{yourscript.sh,whatever}
+```
+
+and now the command is called `whatever`.
+
+---
+
+# ~/.bashrc
+
+There is a special bash script called `~/.bashrc` that runs whenever you start
+bash. You can edit this file to set up aliases, environment variables, and run
+commands when you start a new terminal session.
+
+At the bottom of your `~/.bashrc` file, try adding a command:
+
+```
+echo Greetings $USER. Nice to see you again.
+```
+
+Now open a new terminal and you should see a friendly new message!
+
+---
 
 # permissions
+
+---
+
+# sudo
 
 ---
 
