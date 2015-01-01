@@ -12,6 +12,10 @@ Keep this handy as you experiment with vim:
 
 http://www.fprintf.net/vimCheatSheet.html
 
+Here is another guide that covers the commands incrementally:
+
+http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/
+
 ---
 
 # why vim?
