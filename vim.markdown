@@ -55,7 +55,7 @@ graphics card?
 vim is very carefully tuned to be effective for programming.
 
 * easily change the indentation on blocks of text
-* syntax hilighting for many programming languages
+* syntax highlighting for many programming languages
 * fluid interface with the system shell
 
 ---
