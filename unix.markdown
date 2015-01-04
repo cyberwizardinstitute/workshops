@@ -1039,7 +1039,7 @@ The Project Gutenberg EBook of Moby Dick; or The Whale, by Herman Melville
 This eBook is for the use of anyone anywhere at no cost and with
 ```
 
-Read the first 20 bytes of a file with `head -n3`:
+Read the first 20 bytes of a file with `head -c20`:
 
 ```
 ~ $ head -c20 mobydick.txt 
