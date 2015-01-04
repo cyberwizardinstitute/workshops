@@ -195,17 +195,249 @@ Same as: `x += 1` or `x = x + 1`
 * `x--` - decrement x by 1 in place
 Same as: `x += 1` or `x = x + 1`
 
----
+You might also see `++x` and `--x` which are similar to
+`x++` and `x--` but have slightly different uses.
+More on them later.
 
 ---
+
+# booleans
+
+`true` or `false`
+
+---
+
+# comparison operators
+
+The comparison operators all return a boolean:
+
+* `===` - strict equality
+* `!==` - not strict equality
+* `<` - less than
+* `<=` - less than or equal to
+* `>` - greater than
+* `>=` - greater than or equal to
+
+You might also see coercive equality operators:
+
+* `==` - coercive equality
+* `!=` - not coercive equality
+
+but you should avoid these operators until learning about type
+coercion.
+
+---
+
+# comparison operators: example
+
+```
+var x = 5;
+console.log(x < 6);
+console.log(x === 2);
+console.log(x !== 5);
+console.log(x >= 5);
+```
+
+output:
+
+```
+$ node cmp.js
+true
+false
+false
+true
+```
+
+---
+
+# logical operators
+
+* `&&` - AND
+* `||` - OR
+* `!` - NOT (the opposite truth value)
+
+`!` is a "unary" operator like `++` and `--` because it binds to
+a single value.
+
+`&&` and `||` are "binary" operators because they bind to two
+values: one on the left and one on the right.
+
+---
+
+# logical operators: example
+
+``` js
+var x = true
+var y = false
+console.log(x && y) // false
+console.log(x || y) // true
+console.log(!(x || y)) // false
+console.log(!y) // true
+```
+
+outputs:
+
+```
+$ node bool.js
+false
+true
+false
+true
+```
+
+# comments
+
+By the way, `//` is the comment operator. Anything that follows
+`//` on a line is ignored by the computer.
+
+You can even have whole blocks of comments by putting text
+between `/*` and `*/`:
+
+``` js
+// this is a comment
+console.log('beep boop'); // wow
+/*
+  and this is a comment that
+  spans multiple
+  lines
+*/
+```
+
+---
+
+# if
+
+You can make a block of code execute when a conditional
+expression is true using an `if` statement.
+
+The conditional expression is the expression surrounded by
+parenethesis following the word `if`:
+
+``` js
+var x = 5;
+if (x < 10) {
+    console.log('wow');
+}
+```
+
+this program will print:
+
+```
+$ node if.js
+wow
+```
+
+but if we change the program to be:
+
+``` js
+var x = 11;
+if (x < 10) {
+    console.log('wow');
+}
+```
+
+then it won't print anything since the conditional expression
+evaluated to false:
+
+```
+$ node if.js
+```
+
+---
+
+# else
+
+You can put an `else` statement after an `if` statement to
+tell the computer what to do if the `if` conditional expression
+wasn't true:
+
+``` js
+var x = 11;
+if (x < 10) {
+    console.log('wow');
+}
+else {
+    console.log('cool');
+}
+```
+
+will print:
+
+```
+$ node else.js
+cool
+```
+
+---
+
+# else if
+
+---
+
+# nesting conditionals
+
+---
+
+# indentation
+
+Now is a good time to talk about indentation.
 
 ---
 
 # arrays
 
+Arrays are ordered lists of values.
+You can make an array with square brackets:
+
+``` js
+var arr = [ 3, 2, 5 ]
+console.log(arr)
+```
+
 ---
 
-# 
+# arrays: push
+
+To add an item to the end of an array, use `arr.push()`:
+
+``` js
+var arr = [ 8, 1 ];
+arr.push(5);
+console.log(arr);
+```
+
+prints:
+
+```
+[ 8, 1, 5 ]
+```
+
+`arr.push()` is an example of a builtin method, a function you
+can call that has been defined by the language itself.
+
+Later we'll see how to inspect what methods are available.
+
+---
+
+# arrays: pop
+
+You can also remove an element from the end of an array with
+`arr.pop()`:
+
+``` js
+```
+
+---
+
+# arrays: shift and unshift
+
+---
+
+# arrays: slice
+
+---
+
+# arrays: splice
 
 ---
 
@@ -227,6 +459,7 @@ We've already been using some objects:
 # builtins
 
 
+
 ---
 
 # while loop
@@ -234,6 +467,10 @@ We've already been using some objects:
 ---
 
 # for loop
+
+---
+
+# the REPL
 
 ---
 
