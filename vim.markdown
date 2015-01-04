@@ -417,3 +417,10 @@ log in.
 
 ---
 
+# built-in escape alternative
+
+```
+CTRL-C          Quit insert mode, go back to Normal mode.  Do not check for
+                abbreviations.  Does not trigger the |InsertLeave| autocommand
+                event.
+```
