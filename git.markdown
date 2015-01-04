@@ -186,3 +186,14 @@ many existing open source projects have code review before
 your pull request can be merged. this is why it's a
 good idea to fork and work on your own branch of an existing
 project.
+
+---
+
+# homework
+
+Your homework is to do the git-it workshop on nodeschool:
+
+http://nodeschool.io/#gitit
+
+and to submit a pull request to a project with a useful fix or
+addition.
