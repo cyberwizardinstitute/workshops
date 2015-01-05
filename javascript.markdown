@@ -1,3 +1,4 @@
+
 # javascript
 
 javascript is a programming language
@@ -8,7 +9,8 @@ and command-line tools and servers
 
 # install node
 
-We'll be using node on the command-line to learn javascript.
+We'll be using node on the command-line
+to learn javascript.
 
 Download and install node from:
 
@@ -18,7 +20,8 @@ https://nodejs.org
 
 # write a program
 
-Now let's make a program. Put this text into a file called robot.js:
+Now let's make a program. Put this text
+into a file called robot.js:
 
 ``` js
 console.log('BEEP BOOP')
@@ -39,15 +42,17 @@ BEEP BOOP
 
 # recap: console.log
 
-`console.log(...)` is a function that prints its arguments to
-stdout followed by a newline (`\n`) character
+`console.log(...)` is a function that
+prints its arguments to stdout followed
+by a newline (`\n`) character
 
 ---
 
 # recap: 'BEEP BOOP'
 
 * `'BEEP BOOP'` is a string.
-* `'BEEP BOOP'` is an argument to the `console.log()` function.
+* `'BEEP BOOP'` is an argument
+  to the `console.log()` function.
 
 Note the single quotes on each side.
 
@@ -59,15 +64,17 @@ Sometimes an "argument" is called a "parameter".
 
 # statements
 
-In the previous program, we had a single statement.
-You can have multiple statements, each on their own line:
+In the previous program, we had a single
+statement. You can have multiple statements,
+each on their own line:
 
 ``` js
 console.log('Such')
 console.log('wow.')
 ```
 
-Now save this code to a file `suchwow.js` and run it with `node`:
+Now save this code to a file `suchwow.js`
+and run it with `node`:
 
 ```
 $ node suchwow.js
@@ -79,24 +86,27 @@ wow.
 
 # statements
 
-You might also see programs that use semicolons to separate
-statements:
+You might also see programs that use
+semicolons to separate statements:
 
 ``` js
 console.log('Such');
 console.log('wow.');
 ```
 
-Semicolons are optional. There are some cases where they are
-necessary, but this is rare in practice.
+Semicolons are optional. There are some
+cases where they are necessary, but this
+is rare in practice. 
 
-Both including and omitting semicolons are popular code styles.
+Both including and omitting semicolons
+are popular code styles.
 
 ---
 
 # variables
 
-Another kind of statement is a variable declaration:
+Another kind of statement is a variable
+declaration:
 
 ``` js
 var x = 5
@@ -122,15 +132,18 @@ beepboop
 
 Variables are containers that can hold values.
 
-Strings like `'beep'` and numbers like `5` are values.
+Strings like `'beep'` and numbers like `5`
+are values.
 
 ---
 
 # operators
 
-We used the `*` operator to multiply two numbers.
+We used the `*` operator to multiply
+two numbers.
 
-Here are some other operators you can try with numbers:
+Here are some other operators you can try with
+numbers:
 
 * `+` - add
 * `-` - subtract
@@ -138,14 +151,15 @@ Here are some other operators you can try with numbers:
 * `/` - divide
 * `%` - modulo (the remainder after division)
 
-modulo is really handy when you need a value to "wrap around"
+modulo is really handy when you need a value
+to "wrap around"
 
 ---
 
 # assignment updates
 
-You can change the value stored in a variable at any time by
-assigning a new value.
+You can change the value stored in a variable
+at any time by assigning a new value.
 
 ``` js
 var x = 5;
@@ -164,8 +178,9 @@ $ node x.js
 
 # assignment operators
 
-There is a shorthand for running an operator and saving the
-result back to a variable. Instead of `x = x + 10` we can do
+There is a shorthand for running an operator
+and saving the result back to a variable.
+Instead of `x = x + 10` we can do
 `x += 10` instead:
 
 ``` js
@@ -174,8 +189,9 @@ x += 10
 console.log(x)
 ```
 
-Just take one of the arithmetic operators from earlier and add an
-`=` at the end to do an update "in place":
+Just take one of the arithmetic operators
+from earlier and add an `=` at the end to
+do an update "in place":
 
 * `+=` - add in place
 * `-=` - subtract in place
@@ -195,9 +211,9 @@ Same as: `x += 1` or `x = x + 1`
 * `x--` - decrement x by 1 in place
 Same as: `x += 1` or `x = x + 1`
 
-You might also see `++x` and `--x` which are similar to
-`x++` and `x--` but have slightly different uses.
-More on them later.
+You might also see `++x` and `--x` which
+are similar to `x++` and `x--` but have
+slightly different uses. More on them later.
 
 ---
 
@@ -223,8 +239,8 @@ You might also see coercive equality operators:
 * `==` - coercive equality
 * `!=` - not coercive equality
 
-but you should avoid these operators until learning about type
-coercion.
+but you should avoid these operators until
+learning about type coercion.
 
 ---
 
@@ -256,11 +272,12 @@ true
 * `||` - OR
 * `!` - NOT (the opposite truth value)
 
-`!` is a "unary" operator like `++` and `--` because it binds to
-a single value.
+`!` is a "unary" operator like `++` and `--`
+because it binds to a single value.
 
-`&&` and `||` are "binary" operators because they bind to two
-values: one on the left and one on the right.
+`&&` and `||` are "binary" operators
+because they bind to two values:
+one on the left and one on the right.
 
 ---
 
@@ -287,11 +304,12 @@ true
 
 # comments
 
-By the way, `//` is the comment operator. Anything that follows
-`//` on a line is ignored by the computer.
+By the way, `//` is the comment operator.
+Anything that follows `//` on a line is
+ignored by the computer.
 
-You can even have whole blocks of comments by putting text
-between `/*` and `*/`:
+You can even have whole blocks of comments
+by putting text between `/*` and `*/`:
 
 ``` js
 // this is a comment
@@ -307,11 +325,13 @@ console.log('beep boop'); // wow
 
 # if
 
-You can make a block of code execute when a conditional
-expression is true using an `if` statement.
+You can make a block of code execute when
+a conditional expression is true using an
+`if` statement.
 
-The conditional expression is the expression surrounded by
-parenethesis following the word `if`:
+The conditional expression is the expression
+surrounded by parenethesis following the word
+`if`:
 
 ``` js
 var x = 5;
@@ -336,8 +356,8 @@ if (x < 10) {
 }
 ```
 
-then it won't print anything since the conditional expression
-evaluated to false:
+then it won't print anything since the
+conditional expression evaluated to false:
 
 ```
 $ node if.js
@@ -347,8 +367,9 @@ $ node if.js
 
 # else
 
-You can put an `else` statement after an `if` statement to
-tell the computer what to do if the `if` conditional expression
+You can put an `else` statement after an
+`if` statement to tell the computer what
+to do if the `if` conditional expression
 wasn't true:
 
 ``` js
@@ -398,7 +419,8 @@ console.log(arr)
 
 # arrays: push
 
-To add an item to the end of an array, use `arr.push()`:
+To add an item to the end of an array,
+use `arr.push()`:
 
 ``` js
 var arr = [ 8, 1 ];
@@ -412,17 +434,19 @@ prints:
 [ 8, 1, 5 ]
 ```
 
-`arr.push()` is an example of a builtin method, a function you
-can call that has been defined by the language itself.
+`arr.push()` is an example of a builtin
+method, a function you can call that has
+been defined by the language itself.
 
-Later we'll see how to inspect what methods are available.
+Later we'll see how to inspect what
+methods are available.
 
 ---
 
 # arrays: pop
 
-You can also remove an element from the end of an array with
-`arr.pop()`:
+You can also remove an element from the
+end of an array with `arr.pop()`:
 
 ``` js
 ```
@@ -445,8 +469,10 @@ You can also remove an element from the end of an array with
 
 We've already been using some objects:
 
-* `process` is an object with a property `argv` that is an array.
-* `console` is an object with a property `log` that is a function.
+* `process` is an object with a property
+`argv` that is an array.
+* `console` is an object with a property
+`log` that is a function.
 
 ---
 
@@ -476,8 +502,8 @@ We've already been using some objects:
 
 # homework
 
-Your homework is to get through the `javascripting` lesson on
-nodeschool:
+Your homework is to get through the
+`javascripting` lesson on nodeschool:
 
 http://nodeschool.io/#javascripting
 
