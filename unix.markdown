@@ -1,303 +1,263 @@
-
 # unix
 
-UNIX was an operating system developed at AT&T Bell Labs
-in the 1960s through the 1980s. 
+UNIX was an operating system developed at AT&T
+Bell Labs in the 1960s through the 1980s.
 
 https://www.youtube.com/watch?v=tc4ROCJYbm0
 
-Linux, MacOSX, and Android are all based on ideas and
-specifications created by UNIX.
+Linux, MacOSX, and Android are all based on ideas
+and specifications created by UNIX.
 
 https://en.wikipedia.org/wiki/File:Unix_history-simple.svg
-
 ---
-
 # time-sharing
 
-UNIX was originally built for large mainframe computers
-that many people would use at the same time.
-
+UNIX was originally built for large mainframe
+computers that many people would use at the same
+time.
 ---
-
 # teleprinter
 
-The first interfaces for these mainframe computers were
-called teleprinters.
+The first interfaces for these mainframe computers
+were called teleprinters.
 
-These machines had a keyboard to send commands and data to
-the computer and a feed of paper to print the output of
-programs.
-
+These machines had a keyboard to send commands and
+data to the computer and a feed of paper to print
+the output of programs.
 ---
-
 # terminals
 
 Later, monochrome monitors replaced teleprinters.
-These machines were called dumb terminals because they
-didn't have any processing power of their own.
+These machines were called dumb terminals because
+they didn't have any processing power of their
+own.
 
-Terminals might be connected to a mainframe by dedicated
-cables or over the telephone network.
-
+Terminals might be connected to a mainframe by
+dedicated cables or over the telephone network.
 ---
-
 # micro-computers
 
 Later, micro-computers replaced dumb terminals.
-On a micro-computer, programs run on the micro-computer's
-central processor instead of running on a remote shared
-mainframe.
-
+On a micro-computer, programs run on the
+micro-computer's central processor instead of
+running on a remote shared mainframe.
 ---
-
 # teletype legacy
 
 Nowadays, we don't use teleprinters or mainframes.
 
-However, many of the ideas from this era are still relevant.
-
+However, many of the ideas from this era are still
+relevant.
 ---
-
 # teletype legacy: standard input and output
 
-Every program on a UNIX system can read input from the
-standard input device (stdin) and write to standard output
-(stdout).
+Every program on a UNIX system can read input from
+the standard input device (stdin) and write to
+standard output (stdout).
 
-By default, stdin comes from the keyboard and stdout gets
-"printed" to the graphical display.
-
+By default, stdin comes from the keyboard and
+stdout gets "printed" to the graphical display.
 ---
-
 # organization
 
-The UNIX operating system is just a collection of programs,
-each with a special role:
+The UNIX operating system is just a collection of
+programs, each with a special role:
 
 * kernel
 * shell
 * utilities
-
 ---
-
 # kernel
 
-The kernel's job is to mediate access to the computer's
-resources among all the user programs that are running. 
+The kernel's job is to mediate access to the
+computer's resources among all the user programs
+that are running.
 
 * I/O to computer hardware
 * CPU
 * memory
 
-User programs can request resources from the kernel by
-making a system call (syscall). Many syscalls are
-standardized across different UNIX implementations.
-This makes UNIX programs relatively portable.
-
+User programs can request resources from the
+kernel by making a system call (syscall). Many
+syscalls are standardized across different UNIX
+implementations. This makes UNIX programs
+relatively portable.
 ---
-
 # kernel: I/O access
 
 Computer hardware can be very different across
 manufacturers.
 
-The kernel can provide a simple, consistent interface to
-user programs for different hardware configurations.
-
+The kernel can provide a simple, consistent
+interface to user programs for different hardware
+configurations.
 ---
-
 # kernel: CPU scheduling
 
-Many computers only have a single CPU, but users might want
-to run many programs at once.
+Many computers only have a single CPU, but users
+might want to run many programs at once.
 
-The kernel must schedule processes so that each running
-program gets enough CPU time.
-
+The kernel must schedule processes so that each
+running program gets enough CPU time.
 ---
-
 # kernel: memory management
 
-A computer only has so much RAM to go around. User programs
-can request blocks of memory from the kernel.
+A computer only has so much RAM to go around. User
+programs can request blocks of memory from the
+kernel.
 
-The kernel maintains a table of which pages of memory map to
-which user programs.
+The kernel maintains a table of which pages of
+memory map to which user programs.
 
-If there isn't enough RAM, the kernel might be configured to
-use the hard disk instead (swap space).
-
+If there isn't enough RAM, the kernel might be
+configured to use the hard disk instead (swap
+space).
 ---
-
 # shell
 
-A shell is a computer program that can execute other
-programs from a text-based interface.
+A shell is a computer program that can execute
+other programs from a text-based interface.
 
-In a text-based interface, you interact with a program
-completely from the command-line with text commands and text
-output.
+In a text-based interface, you interact with a
+program completely from the command-line with text
+commands and text output.
 
-Most modern shells are strongly influenced by the first UNIX
-shells.
-
+Most modern shells are strongly influenced by the
+first UNIX shells.
 ---
-
 # utilities
 
-Any distribution of UNIX will come with dozens of other
-programs that perform narrow single-purpose tasks.
+Any distribution of UNIX will come with dozens of
+other programs that perform narrow single-purpose
+tasks.
 
-The available utilities on a given system vary widely but
-some utilities are very common.
+The available utilities on a given system vary
+widely but some utilities are very common.
 
-For example, there is a command to make new directories and
-another to move files.
-
+For example, there is a command to make new
+directories and another to move files.
 ---
-
 # why UNIX still matters
 
 * portable to many kinds of hardware
 * consistent conventions
 * vast software ecosystem
 * text!
-
 ---
-
 # why UNIX still matters: portable
 
 UNIX can be found in all kinds of places:
-a web server, a DSL modem, a laptop running Linux or MacOSX,
+a web server, a DSL modem, a laptop running Linux
+or MacOSX, a raspberry pi.
 
-This is because UNIX is designed to be portable to many
-different kinds of hardware.
+This is because UNIX is designed to be portable to
+many different kinds of hardware.
 
-That means you don't need to learn a whole new operating
-system and suite of tools for each new system.
-
+That means you don't need to learn a whole new
+operating system and suite of tools for each new
+system.
 ---
-
 # why UNIX still matters: conventions
 
 The conventions of command-line UNIX tools apply
 consistently across many different tools.
 
-This means that once you learn some common conventions, you
-will be able to use those conventions across many different
-tools.
-
+This means that once you learn some common
+conventions, you will be able to use those
+conventions across many different tools.
 ---
-
 # why UNIX still matters: ecosystem
 
-There is a very vast ecosystem of free and open source
-software available for UNIX systems to perform all kinds of
-tasks.
+There is a very vast ecosystem of free and open
+source software available for UNIX systems to
+perform all kinds of tasks.
 
-When these tools use simple text-based interfaces, they can
-be easily recombined with other tools in novel combinations.
-
+When these tools use simple text-based interfaces,
+they can be easily recombined with other tools in
+novel combinations. 
 ---
-
 # why UNIX still matters: text interface
 
-To remotely access a UNIX system, you can use the same
-command-line tools and interface that you use locally.
-You can remotely access devices without a display.
+To remotely access a UNIX system, you can use the
+same command-line tools and interface that you use
+locally. You can remotely access devices without a
+display.
 
-Text is easy to read so you can poke around more easily to
-figure out what's going on. Many aspects of computer
-programming involve shuffling text around. UNIX excels at
-these kinds of tasks.
-
+Text is easy to read so you can poke around more
+easily to figure out what's going on. Many aspects
+of computer programming involve shuffling text
+around. UNIX excels at these kinds of tasks.
 ---
-
 # unix philosophy
 
-Part of what made unix so successful is the consistent
-design principles.
+Part of what made unix so successful is the
+consistent design principles.
 
 http://www.faqs.org/docs/artu/ch01s06.html
-
 ---
-
 # unix philosophy (i)
 
-Make each program do one thing well. To do a new job, build
-afresh rather than complicate old programs by adding new
-features.
-
+Make each program do one thing well. To do a new
+job, build afresh rather than complicate old
+programs by adding new features.
 ---
-
 # unix philosophy (ii)
 
-Expect the output of every program to become the input to
-another, as yet unknown, program. Don't clutter output with
-extraneous information. Avoid stringently columnar or binary
-input formats. Don't insist on interactive input.
-
+Expect the output of every program to become the
+input to another, as yet unknown, program. Don't
+clutter output with extraneous information. Avoid
+stringently columnar or binary input formats.
+Don't insist on interactive input.
 ---
-
 # unix philosophy (iii)
 
-Design and build software, even operating systems, to be
-tried early, ideally within weeks. Don't hesitate to throw
-away the clumsy parts and rebuild them.
-
+Design and build software, even operating systems,
+to be tried early, ideally within weeks. Don't
+hesitate to throw away the clumsy parts and
+rebuild them.
 ---
-
 # unix philosophy (iv)
 
-Use tools in preference to unskilled help to lighten a
-programming task, even if you have to detour to build the
-tools and expect to throw some of them out after you've
-finished using them.
-
+Use tools in preference to unskilled help to
+lighten a programming task, even if you have to
+detour to build the tools and expect to throw some
+of them out after you've finished using them.
 ---
-
 # let's learn the command line!
 
 bash is a popular shell for UNIX-like systems.
 
-Open up a bash shell for the next sections to follow along.
+Open up a bash shell for the next sections to
+follow along.
 
 If you're not sure which shell you're in, type:
 
-```
-echo $SHELL
-```
+    echo $SHELL
 
 If you're in bash, you sould see something like:
 
-```
-/bin/bash
-```
-
+    /bin/bash
 ---
-
 # list files
 
-You can use the `ls` command to show all the files in the current directory.
+You can use the `ls` command to show all the files
+in the current directory.
 
 Type `ls` and you should see something like:
 
-```
-~ $ ls
-doc  media  notes.txt  projects
-```
-
+    ~ $ ls
+    doc  media  notes.txt  projects
 ---
-
 # arguments
 
 By default, `ls` lists files from the current directory.
 
-You can list files from another directory by giving `ls` an argument.
-An argument is just another piece of text after the `ls`.
-
-For example, to list the files in `/` (the root) we can do:
+You can list files from another directory by
+giving `ls` an argument. An argument is just
+another piece of text after the `ls`.
+---
+For example, to list the files in `/` (the root)
+we can do:
 
 ```
 ~ $ ls /
@@ -308,30 +268,29 @@ dev   initrd.img  lost+found  opt    run   srv      usr
 
 In this example, `ls` is the command and `/` is the argument.
 
-Commands can have multiple arguments separated by spaces or no arguments.
-
+Commands can have multiple arguments separated by
+spaces or no arguments.
 ---
-
 # print the current directory
 
-To display the current directory, you can use the `pwd` command:
+To display the current directory, you can use the
+`pwd` command:
 
-```
-$ pwd
-/home/substack
-```
+    $ pwd
+    /home/substack
 
 pwd stands for print working directory.
 
 ---
-
 # change directory
 
-To change the current working directory, use the `cd` command.
-The `cd` command takes a single argument: the directory to move to.
+To change the current working directory, use the
+`cd` command. The `cd` command takes a single
+argument: the directory to move to.
 
-After changing the current directory, list the files again with `ls`.
-
+After changing the current directory, list the
+files again with `ls`.
+---
 ```
 ~ $ ls
 doc  media  notes.txt  projects
@@ -343,9 +302,7 @@ doc  media  notes.txt  projects
 mac.sh*                      mac_startup.mp3  mac_warped.mp3  watch.js
 Mac Startup-i9qOJqNjalE.mp4  mac_startup.wav  mac_warp.mp3
 ```
-
 ---
-
 # special directories
 
 There are some special directories:
@@ -354,15 +311,16 @@ There are some special directories:
 * `.` - the current directory
 * `~` - your home directory
 
-To navigate back up to the parent directory, do `cd ..`.
+To navigate back up to the parent directory, do
+`cd ..`.
 
 ```
 ~/media/warp $ cd ..
 ~/media $ 
 ```
-
-You can also list the parent directory without changing the current directory by
-doing `ls ..`:
+---
+You can also list the parent directory without
+changing the current directory by doing `ls ..`:
 
 ```
 ~/media $ ls ..
@@ -375,7 +333,7 @@ You can add paths after `..` too:
 ~/media $ ls ../projects/workshops
 computers.markdown  unix.markdown
 ```
-
+---
 Or `ls .` is the same as `ls`:
 
 ```
@@ -383,74 +341,60 @@ Or `ls .` is the same as `ls`:
 3d  audio  avatars  vector  warp
 ```
 
-Jump back to your home directory at any time by typing `cd` with no arguments.
-
+Jump back to your home directory at any time by
+typing `cd` with no arguments.
 ---
-
 # cat
 
-cat was originally written to concatenate all the files from its arguments:
+cat was originally written to concatenate all the
+files from its arguments:
 
-```
-~/doc $ cat beep.txt boop.txt
-BEEP
-BOOP
-```
+    ~/doc $ cat beep.txt boop.txt
+    BEEP
+    BOOP
 
-but it also a handy way to display single text files on the command-line:
+but it also a handy way to display single text
+files on the command-line:
 
-```
-~/doc $ cat beep.txt
-BEEP
-```
-
+    ~/doc $ cat beep.txt
+    BEEP
 ---
-
 # cp
 
-Copy a file to another directory or file name.
+Copy a file to another directory or file name. You
+can copy a single file to make a new duplicate
+file:
 
-You can copy a single file to make a new duplicate file:
-
-```
-~/doc $ ls
-a.txt
-```
+    ~/doc $ ls
+    a.txt
 
 We can copy a.txt to b.txt:
 
-```
-~/doc $ cp a.txt b.txt
-```
+    ~/doc $ cp a.txt b.txt
 
+---
 Now there are 2 identical files, `a.txt` and `b.txt`:
 
 ```
 ~/doc $ ls
 a.txt  b.txt
 ```
-
 ---
-
 # cp 
 
-You can copy a file or a directory too. Here we'll copy `a.txt` to the directory
-called `wow`:
+You can copy a file or a directory too. Here we'll
+copy `a.txt` to the directory called `wow`:
 
-```
-~/doc $ mkdir wow
-~/doc $ ls
-a.txt  b.txt  wow
-~/doc $ cp a.txt wow
-```
+    ~/doc $ mkdir wow
+    ~/doc $ ls
+    a.txt  b.txt  wow
+    ~/doc $ cp a.txt wow
 
 now `wow/` has an `a.txt` file in it:
 
-```
-~/doc $ ls wow
-a.txt
-```
-
+    ~/doc $ ls wow
+    a.txt
+---
 You can copy to a specific destination file:
 
 ```
@@ -458,12 +402,11 @@ You can copy to a specific destination file:
 ~/doc $ ls wow
 a.txt  whatever.txt
 ```
-
 ---
-
 # cp (multiple files)
 
-You can even copy multiple files at once to a new place:
+You can even copy multiple files at once to a new
+place:
 
 ```
 ~/doc $ mkdir xyz
@@ -472,16 +415,17 @@ You can even copy multiple files at once to a new place:
 a.txt  b.txt
 ```
 
-The last argument is the destination file or directory and the other arguments
-are the source files.
-
+The last argument is the destination file or
+directory and the other arguments are the source
+files.
 ---
 
 # cp -r
 
-If you have a directory full of files and directories you want to copy to a new
-place, you can use `cp -r` to recursively copy a directory and all its
-subdirectories to a new location:
+If you have a directory full of files and
+directories you want to copy to a new place, you
+can use `cp -r` to recursively copy a directory
+and all its subdirectories to a new location:
 
 ```
 ~/doc $ mkdir xyz/123
@@ -492,7 +436,7 @@ subdirectories to a new location:
 ~/doc $ ls newxyz/123
 a.txt
 ```
-
+---
 Likewise, there is a `-R` for the `ls` command that recursively lists
 subdirectories:
 
@@ -504,16 +448,16 @@ newxyz:
 newxyz/123:
 a.txt
 ```
-
 ---
-
 # mv
 
-The `mv` command is used to rename and overwrite files and directories.
+The `mv` command is used to rename and overwrite
+files and directories.
 
-To rename a file, set the first argument to the original file name and the
-second argument to the new file name or destination directory.
-
+To rename a file, set the first argument to the
+original file name and the second argument to the
+new file name or destination directory.
+---
 We can rename `a.txt` to be `pigeon.txt`:
 
 ```
@@ -521,7 +465,7 @@ We can rename `a.txt` to be `pigeon.txt`:
 ~/doc $ ls
 b.txt  newxyz  pigeon.txt  xyz
 ```
-
+---
 Or we can move a file to a new directory:
 
 ```
@@ -529,7 +473,7 @@ Or we can move a file to a new directory:
 ~/doc $ ls xyz
 123  a.txt  b.txt  pigeon.txt
 ```
-
+---
 We can rename directories just the same as files:
 
 ```
@@ -539,41 +483,34 @@ b.txt  newxyz  woo
 ~/doc $ ls woo
 123  a.txt  b.txt  pigeon.txt
 ```
-
 ---
-
 # mkdir
 
-To make a new directory, just execute the `mkdir` command with a list of new
-directory names to make as arguments:
+To make a new directory, just execute the `mkdir`
+command with a list of new directory names to make
+as arguments:
 
-```
-$ mkdir hooray
-```
+    $ mkdir hooray
 
 and now a new directory called `hooray` exists.
-
+---
 You can create multiple directories at once:
 
-```
-$ mkdir one two
-```
+    $ mkdir one two
 
-and now two new directories, `one` and `two`, exist.
-
+and now two new directories, `one` and `two`,
+exist.
 ---
-
 # mkdir -p
 
-Suppose we want to make the following nested directory structure:
+Suppose we want to make the following nested
+directory structure:
 
-```
-foo/
-  bar/
-    baz/
-    qrs/
-```
-
+    foo/
+      bar/
+        baz/
+        qrs/
+---
 Instead of doing:
 
 ```
@@ -586,50 +523,42 @@ We can just do:
 ~/doc $ mkdir -p foo/bar/baz foo/bar/qrs
 ```
 
-and the necessary parent directories `foo/` and `foo/bar/` will be created
-automatically.
-
+and the necessary parent directories `foo/` and
+`foo/bar/` will be created automatically.
 ---
-
 # brace expansion
 
-There is a handy syntax built into bash for expanding patterns that would be
-repetitive to type out by hand.
+There is a handy syntax built into bash for
+expanding patterns that would be repetitive to
+type out by hand.
 
 Instead of doing something like:
 
-```
-~/doc $ mkdir -p foo/bar/baz foo/bar/qrs
-```
+    ~/doc $ mkdir -p foo/bar/baz foo/bar/qrs
 
 we can use a list of items between curly braces:
 
-```
-~/doc $ mkdir -p foo/bar/{baz,qrs}
-```
+    ~/doc $ mkdir -p foo/bar/{baz,qrs}
 
 which expands to the same command as before.
+---
+To prove this you can use `echo` to see what the
+expansion is:
 
-To prove this you can use `echo` to see what the expansion is:
+    ~ $ echo mkdir -p foo/bar/{baz,qrs}
+    mkdir -p foo/bar/baz foo/bar/qrs
 
-```
-~ $ echo mkdir -p foo/bar/{baz,qrs}
-mkdir -p foo/bar/baz foo/bar/qrs
-```
-The items that a brace expansion generates are separated by spaces as if you had
-typed out those words by hand.
-
+The items that a brace expansion generates are
+separated by spaces as if you had typed out those
+words by hand.
+---
 You can have as many items as you like in a list:
 
 ```
 ~ $ echo robot-{one,two,three,four}-x
 robot-one-x robot-two-x robot-three-x robot-four-x
 ```
-
 ---
-
-# brace expansion fancy
-
 With brace expansions, you can have multiple expansions:
 
 ```
@@ -643,9 +572,7 @@ You can even nest the expansions!
 ~/doc $ echo x-{wing,b{ee,oo}p}
 x-wing x-beep x-boop
 ```
-
 ---
-
 # brace expansion sequences
 
 It can be tedious to type out numerical lists by hand.
@@ -663,144 +590,116 @@ and you can even specify an amount to skip:
 ~/doc $ echo img{0..100..10}
 img0 img10 img20 img30 img40 img50 img60 img70 img80 img90 img100
 ```
-
 ---
-
 # rm
 
 To remove a file, just do:
 
-```
-~/doc $ rm b.txt
-```
+    ~/doc $ rm b.txt
 
 You can remove multiple files at once:
 
-```
-~/doc $ rm newxyz/a.txt newxyz/b.txt
-```
+    ~/doc $ rm newxyz/a.txt newxyz/b.txt
 
 and you can remove entire directories including subdirectories with:
 
-```
-~/doc $ rm -r newxyz
-```
+    ~/doc $ rm -r newxyz
 
-Be very careful with `-r`. You might accidentally delete much more than you
-meant to delete!
-
+Be very careful with `-r`. You might accidentally
+delete much more than you meant to delete!
 ---
-
 # wc
 
-The `wc` command computes the number of lines, words, and bytes in a file:
+The `wc` command computes the number of lines,
+words, and bytes in a file:
 
-```
-~ $ wc notes.txt
- 3  7 35 /home/substack/notes.txt
-```
+    ~ $ wc notes.txt
+     3  7 35 /home/substack/notes.txt
 
-To see each field independently, you can use different options: arguments that
-start with a `-` or `--` followed by a letter or word.
-
+To see each field independently, you can use
+different options: arguments that start with a `-`
+or `--` followed by a letter or word.
+---
 To get just the word counts, we can use `-w`:
 
-```
-~ $ wc -w notes.txt
-7 notes.txt
-```
-
+    ~ $ wc -w notes.txt
+    7 notes.txt
+---
 To get just the number of lines in a file, use `-l`:
 
-```
-~ $ wc -l notes.txt
-3 notes.txt
-```
-
+    ~ $ wc -l notes.txt
+    3 notes.txt
+---
 To get just the number of bytes in a file, use `-c`:
 
-```
-~ $ wc -c notes.txt
-35 notes.txt
-```
-
-If you don't specify a file, `wc` will read from stdin. Type Ctrl+D (^D) to end
-the input.
-
-```
-~ $ wc -l
-one
-two
-three
-four
-^D
-4
-```
-
+    ~ $ wc -c notes.txt
+    35 notes.txt
 ---
+If you don't specify a file, `wc` will read from
+stdin. Type Ctrl+D (^D) to end the input.
 
+    ~ $ wc -l
+    one
+    two
+    three
+    four
+    ^D
+    4
+---
 # man
 
 All of these command options are a lot to remember!
 
-You can pull up documentation at any time in your shell by typing `man foo`
-for any command `foo`.
+You can pull up documentation at any time in your
+shell by typing `man foo` for any command `foo`.
 
-For example to read up on all the options you can give to the `wc` command, do:
+For example to read up on all the options you can
+give to the `wc` command, do:
 
-```
-~ $ man wc
-```
+    ~ $ man wc
 
-The help page will open up in your `$PAGER`. Type `q` to exit back to your
-shell.
-
+The help page will open up in your `$PAGER`. Type
+`q` to exit back to your shell.
 ---
-
 # more on options
 
-Options (also called flags or switches) are special arguments that start with a
-`-` or `--` followed by a letter or word.
+Options (also called flags or switches) are
+special arguments that start with a `-` or `--`
+followed by a letter or word.
+---
+Generally speaking, they are distinct from other
+arguments in that their order usually doesn't
+matter. For example:
 
-Generally speaking, they are distinct from other arguments in that their order
-usually doesn't matter. For example:
-
-```
-grep -i wow
-```
+    grep -i wow
 
 is the same as
 
-```
-grep wow -i
-```
+    grep wow -i
 
-where `-i` just informs the `grep` command to perform a case-insensitive search.
-
+where `-i` just informs the `grep` command to
+perform a case-insensitive search.
+---
 Sometimes options have a value that follows:
 
-```
-head -n 1
-```
+    head -n 1
 
 means that `-n` has the value `1`.
 
 Sometimes you can omit the space:
 
-```
-head -n1
-```
+    head -n1
 
-but each program individually decides how to interpret its arguments.
-
+but each program individually decides how to
+interpret its arguments.
 ---
-
 # absolute and relative paths
 
 Paths that start with `.` or `..` are relative paths.
 Paths that start with `/` are absolute paths.
-
-Relative paths are resolved according to the current working directory:
+---
+Relative paths are resolved according to the
+current working directory:
 
 ```
 ~/doc $ cat ../media/warp/mac.sh
@@ -811,161 +710,141 @@ sox mac_startup.wav mac_warp.mp3 chorus 0.6 0.9 25 0.9 1 8 -s \
   echos 0.8 0.7 40 0.25 63 0.3 phaser 1 0.7 3 0.7 0.5 -t
   play mac_startup.wav
 ```
-
-Absolute paths are the same no matter what the current working directory is:
-
-```
-~/projects/workshops $ cat /etc/issue
-Debian GNU/Linux 7 \n \l
-
-```
-
 ---
+Absolute paths are the same no matter what the
+current working directory is:
 
+    ~/projects/workshops $ cat /etc/issue
+    Debian GNU/Linux 7 \n \l
+---
 # echo
 
 The echo command just prints text from its arguments:
 
-```
-~ $ echo wow cool
-wow cool
-```
+    ~ $ echo wow cool
+    wow cool
 
-This is not very useful by itself, but becomes useful when combined with
-redirects and pipes.
-
+This is not very useful by itself, but becomes
+useful when combined with redirects and pipes.
 ---
-
 # write to a file
 
-Using the `>` character, you can write the output of a command to a file.
+Using the `>` character, you can write the output
+of a command to a file.
 
-For example, to make a new file `greetings.txt` with the contents "ahoy thar",
-we can do:
+For example, to make a new file `greetings.txt`
+with the contents "ahoy thar", we can do:
 
-```
-~ $ echo ahoy thar > greetings.txt
-```
+    ~ $ echo ahoy thar > greetings.txt
 
 and to print the contents of greetings.txt, use `cat`:
 
-```
-~ $ cat greetings.txt
-ahoy thar
-```
-
+    ~ $ cat greetings.txt
+    ahoy thar
+---
 You can redirect the output of any program to a file:
 
-```
-~ $ ls / > list.txt
-```
-
+    ~ $ ls / > list.txt
 ---
-
 # append to a file
 
-The `>` redirect operator will overwrite a file with new contents if it already
-exists.
+The `>` redirect operator will overwrite a file
+with new contents if it already exists.
 
-There is a `>>` operator that appends to the end of a file if it already exists:
+There is a `>>` operator that appends to the end
+of a file if it already exists:
 
-```
-~ $ echo wow > cool.txt
-~ $ ls >> cool.txt
-~ $ cat cool.txt
-wow
-cool.txt
-doc
-media
-notes.txt
-projects
-```
-
+    ~ $ echo wow > cool.txt
+    ~ $ ls >> cool.txt
+    ~ $ cat cool.txt
+    wow
+    cool.txt
+    doc
+    media
+    notes.txt
+    projects
 ---
-
 # read from a file
 
-You can read a file into the stdin of a program with `<`.
+You can read a file into the stdin of a program
+with `<`.
 
-Remember that if `wc` doesn't get a file as an argument, it will read from
-stdin. We can load a file in to `wc` with `<` instead:
+Remember that if `wc` doesn't get a file as an
+argument, it will read from stdin. We can load a
+file in to `wc` with `<` instead:
 
-```
-~ $ wc -c < notes.txt
-35
-```
-
+    ~ $ wc -c < notes.txt
+    35
 ---
-
 # pipes!
 
-The last but most important kind of redirect is the pipe operator `|`.
+The last but most important kind of redirect is
+the pipe operator `|`.
 
-With `|` you can feed the output of one program to the input of the next.
+With `|` you can feed the output of one program to
+the input of the next.
 
-For example, the `ls -1` command will list files, one per line, to stdout.
-The `wc -l` command, meanwhile, will count the number of lines.
+For example, the `ls -1` command will list files,
+one per line, to stdout. The `wc -l` command,
+meanwhile, will count the number of lines.
+---
+By piping these two programs together, we can
+count the number of files and subdirectories in a
+directory:
 
-By piping these two programs together, we can count the number of files and
-subdirectories in a directory:
+    ~ $ ls -1 | wc -l
+    5
 
-```
-~ $ ls -1 | wc -l
-5
-```
+and indeed, there are five files and
+subdirectories in this directory:
 
-and indeed, there are five files and subdirectories in this directory:
+    ~ $ ls -1
+    cool.txt
+    doc
+    media
+    notes.txt
+    projects
 
-```
-~ $ ls -1
-cool.txt
-doc
-media
-notes.txt
-projects
-```
-
-You can chain together commands with `|` as much as you like.
-
-Here's an example using two new commands `curl` and `sed` that will fetch 
-Moby Dick from Project Gutenberg and count the number of occurences of "whale"
-in any case:
+You can chain together commands with `|` as much
+as you like.
+---
+Here's an example using two new commands `curl`
+and `sed` that will fetch Moby Dick from Project
+Gutenberg and count the number of occurences of
+"whale", case-insensitive:
 
 ```
 ~ $ curl -s http://www.gutenberg.org/cache/epub/2701/pg2701.txt
 | sed -r 's/\s+/\n/g' | grep -i whale | wc -l
 1691
 ```
-
-We can even save that number of a file. Just add `> whale_count.txt` to the end
-of the pipeline:
+---
+We can even save that number of a file. Just add
+`> whale_count.txt` to the end of the pipeline:
 
 ```
 ~ $ curl -s http://www.gutenberg.org/cache/epub/2701/pg2701.txt |
 sed -r 's/\s+/\n/g' | grep -i whale | wc -l > whalecount.txt
 ```
-
 ---
-
 # pipeline breakdown: curl
 
-Here's a breakdown of each part of the pipeline and what it does:
+Here's a breakdown of each part of the pipeline
+and what it does:
 
 ```
 curl -s http://www.gutenberg.org/cache/epub/2701/pg2701.txt
 ```
 
-fetches Moby Dick from Project Gutenberg and prints the results to stdout.
-
+fetches Moby Dick from Project Gutenberg and
+prints the results to stdout.
 ---
-
 # pipeline breakdown: sed
 
-```
-sed -r 's/\s+/\n/g'
-```
+    sed -r 's/\s+/\n/g'
 
-converts all whitespace (tabs, spaces, newlines) into newlines.
+converts all whitespace (tabs, spaces, newlines)
+into newlines.
 
 This means that each word gets its own line:
 
@@ -977,53 +856,40 @@ three
 beep
 boop
 ```
-
 ---
-
 # pipeline breakdown: grep
 
-```
-grep -i whale
-```
+    grep -i whale
 
-filters the output so that only lines that contain the word "whale" will be
-shown. `-i` makes the search case-insensitive.
-
+filters the output so that only lines that contain
+the word "whale" will be shown. `-i` makes the
+search case-insensitive.
+---
 For example if we have a file `tale.txt`:
 
-```
-Wow
-such
-a
-whale.
-A
-whale
-of
-a
-WHALE!
-```
-
+    Wow
+    such
+    a
+    whale.
+    A
+    whale
+    of
+    a
+    WHALE!
+---
 then our grep command will show:
 
-```
-~ $ grep -i whale < tale.txt
-whale.
-whale
-WHALE!
-```
-
+    ~ $ grep -i whale < tale.txt
+    whale.
+    whale
+    WHALE!
 ---
-
 # pipeline breakdown: wc -l
 
-```
-wc -l
-```
+    wc -l
 
 counts the number of lines from stdin and prints the result.
-
 ---
-
 # head
 
 The head command prints the first part of a file.
@@ -1038,14 +904,13 @@ The Project Gutenberg EBook of Moby Dick; or The Whale, by Herman Melville
 
 This eBook is for the use of anyone anywhere at no cost and with
 ```
-
+---
 Read the first 20 bytes of a file with `head -c20`:
 
 ```
 ~ $ head -c20 mobydick.txt 
 The Project Guten
 ```
-
 ---
 
 # tail
@@ -1063,16 +928,14 @@ including how to make donations to the Project Gutenberg Literary
 Archive Foundation, how to help produce our new eBooks, and how to
 subscribe to our email newsletter to hear about new eBooks.
 ```
-
+---
 Read the last 9 bytes of a file with `tail -c9`:
 
 ```
 ~ $ tail -c9 mobydick.txt 
 eBooks.
 ```
-
 ---
-
 # cal
 
 If you need a handy text calendar, just type `cal`:
@@ -1087,7 +950,7 @@ Su Mo Tu We Th Fr Sa
 21 22 23 24 25 26 27  
 28 29 30 31           
 ```
-
+---
 You can show the current, previous, and next month:
 
 ```
@@ -1101,7 +964,7 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
 23 24 25 26 27 28 29  28 29 30 31           25 26 27 28 29 30 31  
 30                                                                
 ```
-
+---
 Or you can show a whole year:
 
 ```
@@ -1143,9 +1006,7 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
 25 26 27 28 29 30 31  29 30                 27 28 29 30 31        
                                                                   
 ```
-
 ---
-
 # date
 
 To print the date, just do:
@@ -1154,7 +1015,7 @@ To print the date, just do:
 ~ $ date
 Sat Dec 27 20:43:13 PST 2014
 ```
-
+---
 You can format the date however you like:
 
 ```
@@ -1164,14 +1025,14 @@ You can format the date however you like:
 
 Check out the manual page (`man date`) for more info about what options are
 available for date strings.
-
 ---
-
 # fold
 
-Sometimes it's handy to break long lines into shorter lines.
-
-We can use the fold command to break some text at 30 characters:
+Sometimes it's handy to break long lines into
+shorter lines.
+---
+We can use the fold command to break some text at
+30 characters:
 
 ```
 ~ $ head -n250 mobydick.txt | tail -n3 | fold -w 30
@@ -1185,7 +1046,7 @@ herrings in his belly.... One
 of our harpooneers told me tha
 t he caught
 ```
-
+---
 or to break on spaces instead, use `-s`:
 
 ```
@@ -1200,16 +1061,16 @@ herrings in his belly.... One
 of our harpooneers told me 
 that he caught
 ```
-
 ---
-
 # curl
 
-curl is a handy little tool for making HTTP requests.
+curl is a handy little tool for making HTTP
+requests.
 
-Here's a simple snippet to fetch my most recent RSA public key from github,
-wrapping the output to 75 character lines:
-
+Here's a simple snippet to fetch my most recent
+RSA public key from github, wrapping the output to
+75 character lines:
+---
 ```
 ~ $ curl -s https://github.com/substack.keys | tail -n1 | fold -w75
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAEAQC7wF3cwpH+NVG+qNz0PLjEg9IqaNyXeeITme9
@@ -1232,18 +1093,20 @@ yC/bbLF6VuVJo6V/nfvP+EJKtsXlBBPBzdsmV1hikkGLJx7Up1s7WTZCwSeSGFPXCe7RdElz2mQ
 YB6dwEbhaGl48MhuiIeER7KZqzQFOu74G0u5tyyCUeEc90BkeUcf/EhrxfS8R9ZRJ9ce7IpYQ4+
 9wTBKFzVc1HinCSUwJTu7m+UHLaaNbK+WCIF+2fFvM1IJmTh2pWSMb
 ```
-
 ---
-
 # grep
 
-You can search for patterns in files or from stdin with the `grep` command.
+You can search for patterns in files or from stdin
+with the `grep` command.
 
-The first argument is the pattern to search for as a regular expression.
+The first argument is the pattern to search for as
+a regular expression.
 
-Regular expressions are a language for pattern matching.
-
-Here we can search for all lines matching "whaling" or "fishing":
+Regular expressions are a language for pattern
+matching.
+---
+Here we can search for all lines matching
+"whaling" or "fishing":
 
 ```
 ~ $ grep -iE '(whal|fish)ing' mobydick.txt | tail -n5
@@ -1254,49 +1117,50 @@ fixed upon her broad beams, called shears, which, in some whaling-ships,
 years of continual whaling! forty years of privation, and peril, and
 ```
 
-Check out the other workshop about regular expressions to learn more!
-
+Check out the other workshop about regular
+expressions to learn more!
 ---
-
 # backticks
 
-Sometimes it's useful to include the output of a program in the arguments list
-of another.
+Sometimes it's useful to include the output of a
+program in the arguments list of another.
 
-For example with the date command we can print the current year:
+For example with the date command we can print the
+current year:
 
 ```
 date +%Y
 ```
-
+---
 and we can use this value in a message with echo:
 
 ```
 ~ $ Greetings from the year `date +%Y`.
 Greetings from the year 2014.
 ```
-
 ---
-
 # arithmetic
 
-With `$((...))` expressions, you can do simple arithmetic on the command line!
+With `$((...))` expressions, you can do simple
+arithmetic on the command line!
 
 ```
 ~ $ echo $((4*5+1))
 21
 ```
 
-I wouldn't go overboard with this feature, but it's handy sometimes.
-
+I wouldn't go overboard with this feature, but
+it's handy sometimes.
 ---
 
 # environment variables
 
-Environment variables are defined by the shell and shell scripts.
+Environment variables are defined by the shell and
+shell scripts.
 
-To list the current environment variables, type `export`:
-
+To list the current environment variables, type
+`export`:
+---
 ```
 ~ $ export
 declare -x DISPLAY=":0"
@@ -1322,7 +1186,7 @@ declare -x WINDOWID="8684328"
 declare -x WINDOWPATH="7"
 declare -x XAUTHORITY="/home/substack/.Xauthority"
 ```
-
+---
 You can use any environment variable by refering to its `$NAME`.
 
 For example to print the value of `$HOME` do:
@@ -1331,40 +1195,43 @@ For example to print the value of `$HOME` do:
 ~ $ echo $HOME
 /home/substack
 ```
-
+---
 You can use environment variables in any command:
 
 ```
 ~ $ ls /home/$USER
 doc  media  notes.txt  projects
 ```
-
-To define your own environment variable, just put its name followed by an equal
-sign (with no spaces) followed by its value:
+---
+To define your own environment variable, just put
+its name followed by an equal sign (with no
+spaces) followed by its value:
 
 ```
 ~ $ ANIMAL=cats
 ~ $ echo $ANIMAL
 cats
 ```
-
-Environment variables are almost always capitalized to distinguish them from
-variables in shell scripts but lower-case variables work too.
-
 ---
-
+Environment variables are almost always
+capitalized to distinguish them from variables in
+shell scripts but lower-case variables work too.
+---
 # quotes
 
-If you want to use characters like `<` or `>` in the arguments to a program, you
-will need to use quotes so that the shell doesn't try to interpret them.
+If you want to use characters like `<` or `>` in
+the arguments to a program, you will need to use
+quotes so that the shell doesn't try to interpret
+them.
 
-For example, to echo the string `<b>wow</b>` we can use single quotes:
+For example, to echo the string `<b>wow</b>` we
+can use single quotes:
 
 ```
 ~ $ echo '<b>wow</b>'
 <b>wow</b>
 ```
-
+---
 Double quotes are similar but environment variables and backticks will be
 interpolated in-place (replaced with their value): 
 
@@ -1376,20 +1243,22 @@ So long 2014...
 ~ $ echo "So long `date +%Y`... next stop $((`date +%Y`+1))"'!'
 So long 2014... next stop 2015!
 ```
-
-You will also need to use quotes if one of the arguments you want to give has a
-whitespace character in it, because whitespace is otherwise used to split
-arguments.
-
+---
+You will also need to use quotes if one of the
+arguments you want to give has a whitespace
+character in it, because whitespace is otherwise
+used to split arguments.
 ---
 
 # scripts
 
-Whenever you find yourself typing the same sequence of commands several times,
-consider making a script!
+Whenever you find yourself typing the same
+sequence of commands several times, consider
+making a script!
 
-Just put the commands you would normally type into a file and add `#!/bin/bash`
-to the top of the file:
+Just put the commands you would normally type into
+a file and add `#!/bin/bash` to the top of the
+file:
 
 ``` sh
 #!/bin/bash
@@ -1397,27 +1266,22 @@ mkdir wow
 cd wow
 echo "yay" > zing.txt
 ```
-
+---
 Now make your script file executable:
 
-```
-~ $ chmod +x yourscript.sh
-```
+    ~ $ chmod +x yourscript.sh
 
 And now you can do:
 
-```
-~ $ ./yourscript.sh
-```
+    ~ $ ./yourscript.sh
 
 to run the commands from your file!
-
 ---
-
 # script arguments
 
-When you execute a script with arguments on the command-line, special
-environment variables `$1`, `$2`, `$3`... will be defined for each argument.
+When you execute a script with arguments on the
+command-line, special environment variables `$1`,
+`$2`, `$3`... will be defined for each argument.
 
 For example, if our script is:
 
@@ -1426,7 +1290,7 @@ For example, if our script is:
 echo first=$1
 echo second=$2
 ```
-
+---
 Then we print out the first and second arguments:
 
 ```
@@ -1434,24 +1298,23 @@ Then we print out the first and second arguments:
 first=beep
 second=boop
 ```
-
-There is a special variable `$*` that contains all the arguments separated by
-spaces. For a script of:
+---
+There is a special variable `$*` that contains all
+the arguments separated by spaces. For a script
+of:
 
 ``` sh
 #!/bin/bash
 echo The arguments are: $*
 ```
-
+---
 And now we can get at all the arguments in one place:
 
 ```
 ~ $ ./args.sh cats dogs ducks lizards
 The arguments are: cats dogs ducks lizards
 ```
-
 ---
-
 # $PATH 
 
 There is a special environment variable called `$PATH`:
@@ -1461,167 +1324,217 @@ There is a special environment variable called `$PATH`:
 /usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin:/usr/local/games:/usr/games
 ```
 
-This variable contains a list of places separated by `:` that bash will look
-when you type a command.
+This variable contains a list of places separated
+by `:` that bash will look when you type a
+command.
+---
+If you put an executable file in one of the
+directories in your `$PATH`, you can make your own
+commands without needing to specify a relative or
+absolute path!
 
-If you put an executable file in one of the directories in your `$PATH`, you can
-make your own commands without needing to specify a relative or absolute path!
-
-`/usr/local/bin` is the customary place to put system-specific scripts that are
-not managed by your system distribution. If you do:
+`/usr/local/bin` is the customary place to put
+system-specific scripts that are not managed by
+your system distribution. If you do:
 
 ```
 ~ $ sudo cp yourscript.sh /usr/local/bin
 ```
+---
+Then you'll be able to type `yourscript.sh` from
+any directory on the command-line!
 
-Then you'll be able to type `yourscript.sh` from any directory on the
-command-line!
-
-You can rename that command that you type by renaming the file:
+You can rename that command that you type by
+renaming the file:
 
 ```
 ~ $ sudo mv /usr/local/bin/{yourscript.sh,whatever}
 ```
 
 and now the command is called `whatever`.
-
 ---
-
 # ~/.bashrc
 
-There is a special bash script called `~/.bashrc` that runs whenever you start
-bash. You can edit this file to set up aliases, environment variables, and run
-commands when you start a new terminal session.
-
-At the bottom of your `~/.bashrc` file, try adding a command:
+There is a special bash script called `~/.bashrc`
+that runs whenever you start bash. You can edit
+this file to set up aliases, environment
+variables, and run commands when you start a new
+terminal session.
+---
+At the bottom of your `~/.bashrc` file, try adding
+a command:
 
 ```
 echo Greetings $USER. Nice to see you again.
 ```
 
 Now open a new terminal and you should see a friendly new message!
-
 ---
-
 # permissions
 
-Each file on a UNIX system belongs to a user and a group.
+Each file on a UNIX system belongs to a user and a
+group.
 
-users are accounts on the system, like the one you log in with.
-groups are collections of users.
-
-To see what groups you belong to, just type `groups`:
+users are accounts on the system, like the one you
+log in with. groups are collections of users.
+---
+To see what groups you belong to, just type
+`groups`:
 
 ```
 ~ $ groups
 substack cdrom floppy audio dip video plugdev
 ```
-
+---
 To inspect the permissions on a file, use `ls -l`:
 
 ```
 ~/doc $ ls -l b.txt
 -rw-r--r-- 1 substack whatever 14 Dec 28 00:29 b.txt
 ```
-
-Here we can see that the file `b.txt` is owned by the user `substack` and the
-group `whatever`. There's also this part on the left:
+---
+Here we can see that the file `b.txt` is owned by
+the user `substack` and the group `whatever`.
+There's also this part on the left:
 
 ```
 -rw-r--r--
 ```
 
 This string describes the permissions of the file.
-
-The first character is reserved for some fancy uses, but after that there are 3
-groups of 3 characters:
+---
+The first character is reserved for some fancy
+uses, but after that there are 3 groups of 3
+characters:
 
 ```
 rwxrwxrwx
 ```
-
-Each character describes a permission: (r)ead, (w)rite, and e(x)ecute.
-A `-` in place of one of those letters means the permission is not available.
-
-If the e(x)ecute bit is enabled on a file for a user, it means the user can
-execute the file.
-
-If the e(x)ecute bit is enabled on a directory for a user, it means the user can
-list the files in that directory.
-
-* The first `rwx` group describes what the user of the file can do.
-* The second `rwx` group describes what users in the file's group can do.
-* The third `rwx` group describes what everyone else can do.
-
-These three categories are called user (u), group (g), and other (o).
-
 ---
+Each character describes a permission: (r)ead,
+(w)rite, and e(x)ecute. A `-` in place of one of
+those letters means the permission is not
+available.
 
+If the e(x)ecute bit is enabled on a file for a
+user, it means the user can execute the file.
+
+If the e(x)ecute bit is enabled on a directory for
+a user, it means the user can list the files in
+that directory.
+---
+* The first `rwx` says what the owner can do.
+* The second `rwx` says what users in the group can do.
+* The third `rwx` says what everyone else can do.
+
+These three categories are called user (u),
+group (g), and other (o).
+---
 # chmod
 
-To change the permissions on a file, first figure out which capabilities you
-want to grant or revoke (rwx) from which categories of users (ugo).
-
+To change the permissions on a file, first figure
+out which capabilities you want to grant or revoke
+(rwx) from which categories of users (ugo).
+---
 To allow the owner of a file to execute a script you can do:
 
-```
-~ $ chmod u+x script.sh
-```
+    ~ $ chmod u+x script.sh
 
 which is the same as:
 
-```
-~ $ chmod +x script.sh
-```
+    ~ $ chmod +x script.sh
 
 because the `u` is implied if not specified.
-
-You can also revoke permissions with a `-`. To make it so that other users can't
-write to a file:
-
-```
-~ $ chmod o-w wow.txt
-```
-
-You can grant and revoke permissions at the same time. Here we're adding read
-and execute permissions to the user while simultaneously revoking read and write
-from the group:
-
-```
-~ $ chmod u+rxg-rw status.sh
-```
-
-You can change the owner of a file with `chown` and the group with `chgrp`.
-
 ---
+You can also revoke permissions with a `-`. To
+make it so that other users can't write to a
+file:
 
+    ~ $ chmod o-w wow.txt
+---
+You can grant and revoke permissions at the same
+time. Here we're adding read and execute
+permissions to the user while simultaneously
+revoking read and write from the group:
+
+    ~ $ chmod u+rxg-rw status.sh
+
+You can change the owner of a file with `chown`
+and the group with `chgrp`.
+---
 # job control
 
+Bash is built to handle multiple programs running
+in parallel.
 ---
+# time cat
 
+Type `time cat` and then hit ctrl-c before one
+second, as close as possible without going over:
+
+    $ time cat
+    ^C
+
+    real    0m0.920s
+    user    0m0.004s
+    sys 0m0.000s
+---
 # ctrl-c
 
+Terminate a process in the foreground.
 ---
-
 # ctrl-z
 
+Put a process in the background.
 ---
+# fg JOB
 
-# fg
+Move a process from the background to the
+foreground by its JOB.
 
+    ~ $ cat
+    ^Z
+    [1]+  Stopped                 cat
+    ~ $ echo wow
+    wow
+    ~ $ fg %1
+    cat
+    cool
+    cool
 ---
+# job syntax
 
-# processes
+When you background a process with ctrl-z, the
+shell prints a message with `[N]`. `N` is the job
+id. Use `%N` to refer to a particular job or:
 
+* `%%` - the most recent job
 ---
+# &
 
+Another way to background a process is to use `&`:
+
+    $ ~ node &
+    [1] 29877
+
+The job id of `node` is 1 and the process id is
+29877. Job ids are local to a shell session, but
+process ids are global across the entire system.
+---
+    ~ $ perl &
+    [1] 29870
+    ~ $ pgrep perl
+    29870
+    ~ $ kill %1
+    [1]+  Terminated              perl
+---
 # pgrep
 
+Search for a process by its name.
 ---
+# kill ID
 
-# kill
-
+Kill a process by its process or job id.
 ---
-
 # screen
 
