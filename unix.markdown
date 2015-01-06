@@ -9,12 +9,14 @@ Linux, MacOSX, and Android are all based on ideas
 and specifications created by UNIX.
 
 https://en.wikipedia.org/wiki/File:Unix_history-simple.svg
+
 ---
 # time-sharing
 
 UNIX was originally built for large mainframe
 computers that many people would use at the same
 time.
+
 ---
 # teleprinter
 
@@ -24,6 +26,7 @@ were called teleprinters.
 These machines had a keyboard to send commands and
 data to the computer and a feed of paper to print
 the output of programs.
+
 ---
 # terminals
 
@@ -34,6 +37,7 @@ own.
 
 Terminals might be connected to a mainframe by
 dedicated cables or over the telephone network.
+
 ---
 # micro-computers
 
@@ -41,6 +45,7 @@ Later, micro-computers replaced dumb terminals.
 On a micro-computer, programs run on the
 micro-computer's central processor instead of
 running on a remote shared mainframe.
+
 ---
 # teletype legacy
 
@@ -48,6 +53,7 @@ Nowadays, we don't use teleprinters or mainframes.
 
 However, many of the ideas from this era are still
 relevant.
+
 ---
 # teletype legacy: standard input and output
 
@@ -57,6 +63,7 @@ standard output (stdout).
 
 By default, stdin comes from the keyboard and
 stdout gets "printed" to the graphical display.
+
 ---
 # organization
 
@@ -66,6 +73,7 @@ programs, each with a special role:
 * kernel
 * shell
 * utilities
+
 ---
 # kernel
 
@@ -82,6 +90,7 @@ kernel by making a system call (syscall). Many
 syscalls are standardized across different UNIX
 implementations. This makes UNIX programs
 relatively portable.
+
 ---
 # kernel: I/O access
 
@@ -91,6 +100,7 @@ manufacturers.
 The kernel can provide a simple, consistent
 interface to user programs for different hardware
 configurations.
+
 ---
 # kernel: CPU scheduling
 
@@ -99,6 +109,7 @@ might want to run many programs at once.
 
 The kernel must schedule processes so that each
 running program gets enough CPU time.
+
 ---
 # kernel: memory management
 
@@ -112,6 +123,7 @@ memory map to which user programs.
 If there isn't enough RAM, the kernel might be
 configured to use the hard disk instead (swap
 space).
+
 ---
 # shell
 
@@ -124,6 +136,7 @@ commands and text output.
 
 Most modern shells are strongly influenced by the
 first UNIX shells.
+
 ---
 # utilities
 
@@ -136,6 +149,7 @@ widely but some utilities are very common.
 
 For example, there is a command to make new
 directories and another to move files.
+
 ---
 # why UNIX still matters
 
@@ -143,6 +157,7 @@ directories and another to move files.
 * consistent conventions
 * vast software ecosystem
 * text!
+
 ---
 # why UNIX still matters: portable
 
@@ -156,6 +171,7 @@ many different kinds of hardware.
 That means you don't need to learn a whole new
 operating system and suite of tools for each new
 system.
+
 ---
 # why UNIX still matters: conventions
 
@@ -165,6 +181,7 @@ consistently across many different tools.
 This means that once you learn some common
 conventions, you will be able to use those
 conventions across many different tools.
+
 ---
 # why UNIX still matters: ecosystem
 
@@ -175,6 +192,7 @@ perform all kinds of tasks.
 When these tools use simple text-based interfaces,
 they can be easily recombined with other tools in
 novel combinations. 
+
 ---
 # why UNIX still matters: text interface
 
@@ -187,6 +205,7 @@ Text is easy to read so you can poke around more
 easily to figure out what's going on. Many aspects
 of computer programming involve shuffling text
 around. UNIX excels at these kinds of tasks.
+
 ---
 # unix philosophy
 
@@ -194,12 +213,14 @@ Part of what made unix so successful is the
 consistent design principles.
 
 http://www.faqs.org/docs/artu/ch01s06.html
+
 ---
 # unix philosophy (i)
 
 Make each program do one thing well. To do a new
 job, build afresh rather than complicate old
 programs by adding new features.
+
 ---
 # unix philosophy (ii)
 
@@ -208,6 +229,7 @@ input to another, as yet unknown, program. Don't
 clutter output with extraneous information. Avoid
 stringently columnar or binary input formats.
 Don't insist on interactive input.
+
 ---
 # unix philosophy (iii)
 
@@ -215,6 +237,7 @@ Design and build software, even operating systems,
 to be tried early, ideally within weeks. Don't
 hesitate to throw away the clumsy parts and
 rebuild them.
+
 ---
 # unix philosophy (iv)
 
@@ -222,6 +245,7 @@ Use tools in preference to unskilled help to
 lighten a programming task, even if you have to
 detour to build the tools and expect to throw some
 of them out after you've finished using them.
+
 ---
 # let's learn the command line!
 
@@ -237,6 +261,7 @@ If you're not sure which shell you're in, type:
 If you're in bash, you sould see something like:
 
     /bin/bash
+
 ---
 # list files
 
@@ -247,6 +272,7 @@ Type `ls` and you should see something like:
 
     ~ $ ls
     doc  media  notes.txt  projects
+
 ---
 # arguments
 
@@ -255,6 +281,7 @@ By default, `ls` lists files from the current directory.
 You can list files from another directory by
 giving `ls` an argument. An argument is just
 another piece of text after the `ls`.
+
 ---
 For example, to list the files in `/` (the root)
 we can do:
@@ -270,6 +297,7 @@ In this example, `ls` is the command and `/` is the argument.
 
 Commands can have multiple arguments separated by
 spaces or no arguments.
+
 ---
 # print the current directory
 
@@ -281,6 +309,7 @@ To display the current directory, you can use the
 
 pwd stands for print working directory.
 
+
 ---
 # change directory
 
@@ -290,6 +319,7 @@ argument: the directory to move to.
 
 After changing the current directory, list the
 files again with `ls`.
+
 ---
 ```
 ~ $ ls
@@ -302,6 +332,7 @@ doc  media  notes.txt  projects
 mac.sh*                      mac_startup.mp3  mac_warped.mp3  watch.js
 Mac Startup-i9qOJqNjalE.mp4  mac_startup.wav  mac_warp.mp3
 ```
+
 ---
 # special directories
 
@@ -318,6 +349,7 @@ To navigate back up to the parent directory, do
 ~/media/warp $ cd ..
 ~/media $ 
 ```
+
 ---
 You can also list the parent directory without
 changing the current directory by doing `ls ..`:
@@ -333,6 +365,7 @@ You can add paths after `..` too:
 ~/media $ ls ../projects/workshops
 computers.markdown  unix.markdown
 ```
+
 ---
 Or `ls .` is the same as `ls`:
 
@@ -343,6 +376,7 @@ Or `ls .` is the same as `ls`:
 
 Jump back to your home directory at any time by
 typing `cd` with no arguments.
+
 ---
 # cat
 
@@ -358,6 +392,7 @@ files on the command-line:
 
     ~/doc $ cat beep.txt
     BEEP
+
 ---
 # cp
 
@@ -372,6 +407,7 @@ We can copy a.txt to b.txt:
 
     ~/doc $ cp a.txt b.txt
 
+
 ---
 Now there are 2 identical files, `a.txt` and `b.txt`:
 
@@ -379,6 +415,7 @@ Now there are 2 identical files, `a.txt` and `b.txt`:
 ~/doc $ ls
 a.txt  b.txt
 ```
+
 ---
 # cp 
 
@@ -394,6 +431,7 @@ now `wow/` has an `a.txt` file in it:
 
     ~/doc $ ls wow
     a.txt
+
 ---
 You can copy to a specific destination file:
 
@@ -402,6 +440,7 @@ You can copy to a specific destination file:
 ~/doc $ ls wow
 a.txt  whatever.txt
 ```
+
 ---
 # cp (multiple files)
 
@@ -418,6 +457,7 @@ a.txt  b.txt
 The last argument is the destination file or
 directory and the other arguments are the source
 files.
+
 ---
 
 # cp -r
@@ -436,6 +476,7 @@ and all its subdirectories to a new location:
 ~/doc $ ls newxyz/123
 a.txt
 ```
+
 ---
 Likewise, there is a `-R` for the `ls` command that recursively lists
 subdirectories:
@@ -448,6 +489,7 @@ newxyz:
 newxyz/123:
 a.txt
 ```
+
 ---
 # mv
 
@@ -457,6 +499,7 @@ files and directories.
 To rename a file, set the first argument to the
 original file name and the second argument to the
 new file name or destination directory.
+
 ---
 We can rename `a.txt` to be `pigeon.txt`:
 
@@ -465,6 +508,7 @@ We can rename `a.txt` to be `pigeon.txt`:
 ~/doc $ ls
 b.txt  newxyz  pigeon.txt  xyz
 ```
+
 ---
 Or we can move a file to a new directory:
 
@@ -473,6 +517,7 @@ Or we can move a file to a new directory:
 ~/doc $ ls xyz
 123  a.txt  b.txt  pigeon.txt
 ```
+
 ---
 We can rename directories just the same as files:
 
@@ -483,6 +528,7 @@ b.txt  newxyz  woo
 ~/doc $ ls woo
 123  a.txt  b.txt  pigeon.txt
 ```
+
 ---
 # mkdir
 
@@ -493,6 +539,7 @@ as arguments:
     $ mkdir hooray
 
 and now a new directory called `hooray` exists.
+
 ---
 You can create multiple directories at once:
 
@@ -500,6 +547,7 @@ You can create multiple directories at once:
 
 and now two new directories, `one` and `two`,
 exist.
+
 ---
 # mkdir -p
 
@@ -510,6 +558,7 @@ directory structure:
       bar/
         baz/
         qrs/
+
 ---
 Instead of doing:
 
@@ -525,6 +574,7 @@ We can just do:
 
 and the necessary parent directories `foo/` and
 `foo/bar/` will be created automatically.
+
 ---
 # brace expansion
 
@@ -541,6 +591,7 @@ we can use a list of items between curly braces:
     ~/doc $ mkdir -p foo/bar/{baz,qrs}
 
 which expands to the same command as before.
+
 ---
 To prove this you can use `echo` to see what the
 expansion is:
@@ -551,6 +602,7 @@ expansion is:
 The items that a brace expansion generates are
 separated by spaces as if you had typed out those
 words by hand.
+
 ---
 You can have as many items as you like in a list:
 
@@ -558,6 +610,7 @@ You can have as many items as you like in a list:
 ~ $ echo robot-{one,two,three,four}-x
 robot-one-x robot-two-x robot-three-x robot-four-x
 ```
+
 ---
 With brace expansions, you can have multiple expansions:
 
@@ -572,6 +625,7 @@ You can even nest the expansions!
 ~/doc $ echo x-{wing,b{ee,oo}p}
 x-wing x-beep x-boop
 ```
+
 ---
 # brace expansion sequences
 
@@ -590,6 +644,7 @@ and you can even specify an amount to skip:
 ~/doc $ echo img{0..100..10}
 img0 img10 img20 img30 img40 img50 img60 img70 img80 img90 img100
 ```
+
 ---
 # rm
 
@@ -607,6 +662,7 @@ and you can remove entire directories including subdirectories with:
 
 Be very careful with `-r`. You might accidentally
 delete much more than you meant to delete!
+
 ---
 # wc
 
@@ -619,21 +675,25 @@ words, and bytes in a file:
 To see each field independently, you can use
 different options: arguments that start with a `-`
 or `--` followed by a letter or word.
+
 ---
 To get just the word counts, we can use `-w`:
 
     ~ $ wc -w notes.txt
     7 notes.txt
+
 ---
 To get just the number of lines in a file, use `-l`:
 
     ~ $ wc -l notes.txt
     3 notes.txt
+
 ---
 To get just the number of bytes in a file, use `-c`:
 
     ~ $ wc -c notes.txt
     35 notes.txt
+
 ---
 If you don't specify a file, `wc` will read from
 stdin. Type Ctrl+D (^D) to end the input.
@@ -645,6 +705,7 @@ stdin. Type Ctrl+D (^D) to end the input.
     four
     ^D
     4
+
 ---
 # man
 
@@ -660,12 +721,14 @@ give to the `wc` command, do:
 
 The help page will open up in your `$PAGER`. Type
 `q` to exit back to your shell.
+
 ---
 # more on options
 
 Options (also called flags or switches) are
 special arguments that start with a `-` or `--`
 followed by a letter or word.
+
 ---
 Generally speaking, they are distinct from other
 arguments in that their order usually doesn't
@@ -679,6 +742,7 @@ is the same as
 
 where `-i` just informs the `grep` command to
 perform a case-insensitive search.
+
 ---
 Sometimes options have a value that follows:
 
@@ -692,11 +756,13 @@ Sometimes you can omit the space:
 
 but each program individually decides how to
 interpret its arguments.
+
 ---
 # absolute and relative paths
 
 Paths that start with `.` or `..` are relative paths.
 Paths that start with `/` are absolute paths.
+
 ---
 Relative paths are resolved according to the
 current working directory:
@@ -710,12 +776,14 @@ sox mac_startup.wav mac_warp.mp3 chorus 0.6 0.9 25 0.9 1 8 -s \
   echos 0.8 0.7 40 0.25 63 0.3 phaser 1 0.7 3 0.7 0.5 -t
   play mac_startup.wav
 ```
+
 ---
 Absolute paths are the same no matter what the
 current working directory is:
 
     ~/projects/workshops $ cat /etc/issue
     Debian GNU/Linux 7 \n \l
+
 ---
 # echo
 
@@ -726,6 +794,7 @@ The echo command just prints text from its arguments:
 
 This is not very useful by itself, but becomes
 useful when combined with redirects and pipes.
+
 ---
 # write to a file
 
@@ -741,10 +810,12 @@ and to print the contents of greetings.txt, use `cat`:
 
     ~ $ cat greetings.txt
     ahoy thar
+
 ---
 You can redirect the output of any program to a file:
 
     ~ $ ls / > list.txt
+
 ---
 # append to a file
 
@@ -763,6 +834,7 @@ of a file if it already exists:
     media
     notes.txt
     projects
+
 ---
 # read from a file
 
@@ -775,6 +847,7 @@ file in to `wc` with `<` instead:
 
     ~ $ wc -c < notes.txt
     35
+
 ---
 # pipes!
 
@@ -787,6 +860,7 @@ the input of the next.
 For example, the `ls -1` command will list files,
 one per line, to stdout. The `wc -l` command,
 meanwhile, will count the number of lines.
+
 ---
 By piping these two programs together, we can
 count the number of files and subdirectories in a
@@ -807,6 +881,7 @@ subdirectories in this directory:
 
 You can chain together commands with `|` as much
 as you like.
+
 ---
 Here's an example using two new commands `curl`
 and `sed` that will fetch Moby Dick from Project
@@ -818,6 +893,7 @@ Gutenberg and count the number of occurences of
 | sed -r 's/\s+/\n/g' | grep -i whale | wc -l
 1691
 ```
+
 ---
 We can even save that number of a file. Just add
 `> whale_count.txt` to the end of the pipeline:
@@ -826,6 +902,7 @@ We can even save that number of a file. Just add
 ~ $ curl -s http://www.gutenberg.org/cache/epub/2701/pg2701.txt |
 sed -r 's/\s+/\n/g' | grep -i whale | wc -l > whalecount.txt
 ```
+
 ---
 # pipeline breakdown: curl
 
@@ -838,6 +915,7 @@ curl -s http://www.gutenberg.org/cache/epub/2701/pg2701.txt
 
 fetches Moby Dick from Project Gutenberg and
 prints the results to stdout.
+
 ---
 # pipeline breakdown: sed
 
@@ -856,6 +934,7 @@ three
 beep
 boop
 ```
+
 ---
 # pipeline breakdown: grep
 
@@ -864,6 +943,7 @@ boop
 filters the output so that only lines that contain
 the word "whale" will be shown. `-i` makes the
 search case-insensitive.
+
 ---
 For example if we have a file `tale.txt`:
 
@@ -876,6 +956,7 @@ For example if we have a file `tale.txt`:
     of
     a
     WHALE!
+
 ---
 then our grep command will show:
 
@@ -883,12 +964,14 @@ then our grep command will show:
     whale.
     whale
     WHALE!
+
 ---
 # pipeline breakdown: wc -l
 
     wc -l
 
 counts the number of lines from stdin and prints the result.
+
 ---
 # head
 
@@ -904,6 +987,7 @@ The Project Gutenberg EBook of Moby Dick; or The Whale, by Herman Melville
 
 This eBook is for the use of anyone anywhere at no cost and with
 ```
+
 ---
 Read the first 20 bytes of a file with `head -c20`:
 
@@ -911,6 +995,7 @@ Read the first 20 bytes of a file with `head -c20`:
 ~ $ head -c20 mobydick.txt 
 The Project Guten
 ```
+
 ---
 
 # tail
@@ -928,6 +1013,7 @@ including how to make donations to the Project Gutenberg Literary
 Archive Foundation, how to help produce our new eBooks, and how to
 subscribe to our email newsletter to hear about new eBooks.
 ```
+
 ---
 Read the last 9 bytes of a file with `tail -c9`:
 
@@ -935,6 +1021,7 @@ Read the last 9 bytes of a file with `tail -c9`:
 ~ $ tail -c9 mobydick.txt 
 eBooks.
 ```
+
 ---
 # cal
 
@@ -950,6 +1037,7 @@ Su Mo Tu We Th Fr Sa
 21 22 23 24 25 26 27  
 28 29 30 31           
 ```
+
 ---
 You can show the current, previous, and next month:
 
@@ -964,6 +1052,7 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
 23 24 25 26 27 28 29  28 29 30 31           25 26 27 28 29 30 31  
 30                                                                
 ```
+
 ---
 Or you can show a whole year:
 
@@ -1006,6 +1095,7 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
 25 26 27 28 29 30 31  29 30                 27 28 29 30 31        
                                                                   
 ```
+
 ---
 # date
 
@@ -1015,6 +1105,7 @@ To print the date, just do:
 ~ $ date
 Sat Dec 27 20:43:13 PST 2014
 ```
+
 ---
 You can format the date however you like:
 
@@ -1025,11 +1116,13 @@ You can format the date however you like:
 
 Check out the manual page (`man date`) for more info about what options are
 available for date strings.
+
 ---
 # fold
 
 Sometimes it's handy to break long lines into
 shorter lines.
+
 ---
 We can use the fold command to break some text at
 30 characters:
@@ -1046,6 +1139,7 @@ herrings in his belly.... One
 of our harpooneers told me tha
 t he caught
 ```
+
 ---
 or to break on spaces instead, use `-s`:
 
@@ -1061,6 +1155,7 @@ herrings in his belly.... One
 of our harpooneers told me 
 that he caught
 ```
+
 ---
 # curl
 
@@ -1070,6 +1165,7 @@ requests.
 Here's a simple snippet to fetch my most recent
 RSA public key from github, wrapping the output to
 75 character lines:
+
 ---
 ```
 ~ $ curl -s https://github.com/substack.keys | tail -n1 | fold -w75
@@ -1093,6 +1189,7 @@ yC/bbLF6VuVJo6V/nfvP+EJKtsXlBBPBzdsmV1hikkGLJx7Up1s7WTZCwSeSGFPXCe7RdElz2mQ
 YB6dwEbhaGl48MhuiIeER7KZqzQFOu74G0u5tyyCUeEc90BkeUcf/EhrxfS8R9ZRJ9ce7IpYQ4+
 9wTBKFzVc1HinCSUwJTu7m+UHLaaNbK+WCIF+2fFvM1IJmTh2pWSMb
 ```
+
 ---
 # grep
 
@@ -1104,6 +1201,7 @@ a regular expression.
 
 Regular expressions are a language for pattern
 matching.
+
 ---
 Here we can search for all lines matching
 "whaling" or "fishing":
@@ -1119,6 +1217,7 @@ years of continual whaling! forty years of privation, and peril, and
 
 Check out the other workshop about regular
 expressions to learn more!
+
 ---
 # backticks
 
@@ -1131,6 +1230,7 @@ current year:
 ```
 date +%Y
 ```
+
 ---
 and we can use this value in a message with echo:
 
@@ -1138,6 +1238,7 @@ and we can use this value in a message with echo:
 ~ $ Greetings from the year `date +%Y`.
 Greetings from the year 2014.
 ```
+
 ---
 # arithmetic
 
@@ -1151,6 +1252,7 @@ arithmetic on the command line!
 
 I wouldn't go overboard with this feature, but
 it's handy sometimes.
+
 ---
 
 # environment variables
@@ -1160,6 +1262,7 @@ shell scripts.
 
 To list the current environment variables, type
 `export`:
+
 ---
 ```
 ~ $ export
@@ -1186,6 +1289,7 @@ declare -x WINDOWID="8684328"
 declare -x WINDOWPATH="7"
 declare -x XAUTHORITY="/home/substack/.Xauthority"
 ```
+
 ---
 You can use any environment variable by refering to its `$NAME`.
 
@@ -1195,6 +1299,7 @@ For example to print the value of `$HOME` do:
 ~ $ echo $HOME
 /home/substack
 ```
+
 ---
 You can use environment variables in any command:
 
@@ -1202,6 +1307,7 @@ You can use environment variables in any command:
 ~ $ ls /home/$USER
 doc  media  notes.txt  projects
 ```
+
 ---
 To define your own environment variable, just put
 its name followed by an equal sign (with no
@@ -1212,10 +1318,12 @@ spaces) followed by its value:
 ~ $ echo $ANIMAL
 cats
 ```
+
 ---
 Environment variables are almost always
 capitalized to distinguish them from variables in
 shell scripts but lower-case variables work too.
+
 ---
 # quotes
 
@@ -1231,6 +1339,7 @@ can use single quotes:
 ~ $ echo '<b>wow</b>'
 <b>wow</b>
 ```
+
 ---
 Double quotes are similar but environment variables and backticks will be
 interpolated in-place (replaced with their value): 
@@ -1243,11 +1352,13 @@ So long 2014...
 ~ $ echo "So long `date +%Y`... next stop $((`date +%Y`+1))"'!'
 So long 2014... next stop 2015!
 ```
+
 ---
 You will also need to use quotes if one of the
 arguments you want to give has a whitespace
 character in it, because whitespace is otherwise
 used to split arguments.
+
 ---
 
 # scripts
@@ -1266,6 +1377,7 @@ mkdir wow
 cd wow
 echo "yay" > zing.txt
 ```
+
 ---
 Now make your script file executable:
 
@@ -1276,6 +1388,7 @@ And now you can do:
     ~ $ ./yourscript.sh
 
 to run the commands from your file!
+
 ---
 # script arguments
 
@@ -1290,6 +1403,7 @@ For example, if our script is:
 echo first=$1
 echo second=$2
 ```
+
 ---
 Then we print out the first and second arguments:
 
@@ -1298,6 +1412,7 @@ Then we print out the first and second arguments:
 first=beep
 second=boop
 ```
+
 ---
 There is a special variable `$*` that contains all
 the arguments separated by spaces. For a script
@@ -1307,6 +1422,7 @@ of:
 #!/bin/bash
 echo The arguments are: $*
 ```
+
 ---
 And now we can get at all the arguments in one place:
 
@@ -1314,6 +1430,7 @@ And now we can get at all the arguments in one place:
 ~ $ ./args.sh cats dogs ducks lizards
 The arguments are: cats dogs ducks lizards
 ```
+
 ---
 # $PATH 
 
@@ -1327,6 +1444,7 @@ There is a special environment variable called `$PATH`:
 This variable contains a list of places separated
 by `:` that bash will look when you type a
 command.
+
 ---
 If you put an executable file in one of the
 directories in your `$PATH`, you can make your own
@@ -1340,6 +1458,7 @@ your system distribution. If you do:
 ```
 ~ $ sudo cp yourscript.sh /usr/local/bin
 ```
+
 ---
 Then you'll be able to type `yourscript.sh` from
 any directory on the command-line!
@@ -1352,6 +1471,7 @@ renaming the file:
 ```
 
 and now the command is called `whatever`.
+
 ---
 # ~/.bashrc
 
@@ -1360,6 +1480,7 @@ that runs whenever you start bash. You can edit
 this file to set up aliases, environment
 variables, and run commands when you start a new
 terminal session.
+
 ---
 At the bottom of your `~/.bashrc` file, try adding
 a command:
@@ -1369,6 +1490,7 @@ echo Greetings $USER. Nice to see you again.
 ```
 
 Now open a new terminal and you should see a friendly new message!
+
 ---
 # permissions
 
@@ -1377,6 +1499,7 @@ group.
 
 users are accounts on the system, like the one you
 log in with. groups are collections of users.
+
 ---
 To see what groups you belong to, just type
 `groups`:
@@ -1385,6 +1508,7 @@ To see what groups you belong to, just type
 ~ $ groups
 substack cdrom floppy audio dip video plugdev
 ```
+
 ---
 To inspect the permissions on a file, use `ls -l`:
 
@@ -1392,6 +1516,7 @@ To inspect the permissions on a file, use `ls -l`:
 ~/doc $ ls -l b.txt
 -rw-r--r-- 1 substack whatever 14 Dec 28 00:29 b.txt
 ```
+
 ---
 Here we can see that the file `b.txt` is owned by
 the user `substack` and the group `whatever`.
@@ -1402,6 +1527,7 @@ There's also this part on the left:
 ```
 
 This string describes the permissions of the file.
+
 ---
 The first character is reserved for some fancy
 uses, but after that there are 3 groups of 3
@@ -1410,6 +1536,7 @@ characters:
 ```
 rwxrwxrwx
 ```
+
 ---
 Each character describes a permission: (r)ead,
 (w)rite, and e(x)ecute. A `-` in place of one of
@@ -1422,6 +1549,7 @@ user, it means the user can execute the file.
 If the e(x)ecute bit is enabled on a directory for
 a user, it means the user can list the files in
 that directory.
+
 ---
 * The first `rwx` says what the owner can do.
 * The second `rwx` says what users in the group can do.
@@ -1429,12 +1557,14 @@ that directory.
 
 These three categories are called user (u),
 group (g), and other (o).
+
 ---
 # chmod
 
 To change the permissions on a file, first figure
 out which capabilities you want to grant or revoke
 (rwx) from which categories of users (ugo).
+
 ---
 To allow the owner of a file to execute a script you can do:
 
@@ -1445,12 +1575,14 @@ which is the same as:
     ~ $ chmod +x script.sh
 
 because the `u` is implied if not specified.
+
 ---
 You can also revoke permissions with a `-`. To
 make it so that other users can't write to a
 file:
 
     ~ $ chmod o-w wow.txt
+
 ---
 You can grant and revoke permissions at the same
 time. Here we're adding read and execute
@@ -1461,11 +1593,13 @@ revoking read and write from the group:
 
 You can change the owner of a file with `chown`
 and the group with `chgrp`.
+
 ---
 # job control
 
 Bash is built to handle multiple programs running
 in parallel.
+
 ---
 # time cat
 
@@ -1478,14 +1612,17 @@ second, as close as possible without going over:
     real    0m0.920s
     user    0m0.004s
     sys 0m0.000s
+
 ---
 # ctrl-c
 
 Terminate a process in the foreground.
+
 ---
 # ctrl-z
 
 Put a process in the background.
+
 ---
 # fg JOB
 
@@ -1501,6 +1638,7 @@ foreground by its JOB.
     cat
     cool
     cool
+
 ---
 # job syntax
 
@@ -1509,6 +1647,7 @@ shell prints a message with `[N]`. `N` is the job
 id. Use `%N` to refer to a particular job or:
 
 * `%%` - the most recent job
+
 ---
 # &
 
@@ -1520,6 +1659,7 @@ Another way to background a process is to use `&`:
 The job id of `node` is 1 and the process id is
 29877. Job ids are local to a shell session, but
 process ids are global across the entire system.
+
 ---
     ~ $ perl &
     [1] 29870
@@ -1527,14 +1667,17 @@ process ids are global across the entire system.
     29870
     ~ $ kill %1
     [1]+  Terminated              perl
+
 ---
 # pgrep
 
 Search for a process by its name.
+
 ---
 # kill ID
 
 Kill a process by its process or job id.
+
 ---
 # screen
 
