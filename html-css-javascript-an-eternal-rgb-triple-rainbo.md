@@ -104,18 +104,14 @@ For instance, the line number in your program where you made a typo.
 
 ### HTML
 
-HTML tags become ELEMENTS
+HTML gives you tags, which become ELEMENT OBJECTS
 
-a link 
-
+Each of which, supposedly, serve a pupose
 ```html 
 <a href="cyber.wizard.institute" style=background:green>radness</a>
 <video src=...></video>
 <img src=...></img>
 ```
-
-Each of which, supposedly, serve a pupose
-
 many will come with some basic styling
 
 which can be altered.
@@ -130,15 +126,15 @@ It began, humbly, as a "markup language".
 
 A language for marking up your data with meta-data.
 
-It performs this way still, 
+It performs this way still,
 
 most notably in the <head> of your HTML.
 
 Where is found meta-data, about the document.
 
-HTML also performs crucial markup for CSS and Javascripts,
+HTML performs crucial markup for CSS and Javascripts,
 
-such as for ways to easily identify particular element.
+for ways to easily identify particular elements.
 
 There are two basic ways to identify an element:
 * uniquely
@@ -160,9 +156,12 @@ SO much for HTML
 
 CSS allows you to identify individual and grouped elements
 
-and cascade styles upon styles upon them.
+and cascade styles upon styles over them.
 
 CSS is like, img #element-9: your background is green;
+```css
+div#element-9{background:green}
+```
 
 And it will be so.
 
