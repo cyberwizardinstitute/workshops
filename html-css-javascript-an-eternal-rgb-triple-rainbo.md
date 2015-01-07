@@ -136,7 +136,7 @@ These are done by adding id and class properties
 This is done looking like this:
 
 ```html
-<a id="ok202jiPXUj" class="rad edtech anotherClass" href="cyber.wizard.insitutue" style="background:green">radness</a>
+<a id="element-9" class="rad edtech anotherClass" href="cyber.wizard.insitutue" style="background:green">radness</a>
 ```
 
 SO much for HTML
