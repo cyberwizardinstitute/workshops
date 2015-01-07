@@ -74,10 +74,7 @@ If you ever hear of a Shadow DOM,
 
 Know that it is Javascript by another name.
 
-And do not speak again to the person who uttered that phrase
-
-until the passing of they current mental weather.
-
+And do not speak again to the person who uttered that phrase.
 
 Nevertheless, it is not always advisable to do everything with javascript.
 
@@ -85,15 +82,15 @@ Sometimes you have to write HTML and CSS.
 
 This is perfectly acceptable, because both are simple, and forgiving.
 
-CSS is powerful, and therefore a fount for creativity.
+CSS is powerful and mysterious, a fount for creativity.
 
-You can write very functional sites in HTML only.
+You can write perfectly functional sites in HTML only.
 
-As with all programming, HTML and CSS with riddle you with bugs.
+As with all programming, HTML and CSS will riddle you with bugs.
 
 And in this regard, they are the worst of all, 
 
-for they do not provide good clues, 
+for they do not provide good clues.
 
 For instance, the line number in your program where you made a typo.
 
