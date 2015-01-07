@@ -128,13 +128,9 @@ A language for marking up your data with meta-data.
 
 It performs this way still,
 
-most notably in the <head> of your HTML.
-
-Where is found meta-data, about the document.
-
 HTML performs crucial markup for CSS and Javascripts,
 
-for ways to easily identify particular elements.
+providing ways to easily identify particular elements.
 
 There are two basic ways to identify an element:
 * uniquely
