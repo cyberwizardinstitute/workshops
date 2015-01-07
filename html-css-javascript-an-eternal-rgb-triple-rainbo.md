@@ -1,12 +1,12 @@
-"He came in through the window."  - Michael Jackson
+## "He came in through the window."  - Michael Jackson
 
-The Front End
+### The Front End
 
-Full Frontal Endienness
+### Full Frontal Endienness
 
-The Complete Body.parentNode
+### The Complete document.body
 
-There are a million ways to do everything.
+Writing a program, there are a million ways to do everything. 
 
 Think about it.
 
@@ -14,7 +14,7 @@ And then pick the easiest.
 
 It won't be easy enough.
 
-The funny thing about programming the front end, 
+A funny thing about programming the front end, 
 
 is that you can do everything with a blank page, 
 
