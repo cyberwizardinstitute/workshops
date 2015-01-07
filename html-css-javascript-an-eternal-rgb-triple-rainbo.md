@@ -181,9 +181,10 @@ of the ELEMENT OBJECT.
 
 One such attribute of ELEMENT OBJECTS 
 
-is the style attribute
+is the style attribute, where all the CSS for that style lives
 
 ```js
 var element = document.getElementById('element-9')
 element.style.background = 'green'
 ```
+
