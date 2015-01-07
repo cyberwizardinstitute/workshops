@@ -1,10 +1,6 @@
-## "He came in through the window."  - Michael Jackson
+#### "He came in through the window."  - Michael Jackson
 
-### The Front End
-
-### Full Frontal Endienness
-
-### The Complete document.body
+The Front End, Full Frontal Endienness, The Complete document.body
 
 Writing a program, there are a million ways to do everything. 
 
