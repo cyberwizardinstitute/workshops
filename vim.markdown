@@ -240,8 +240,8 @@ Instead, in command mode:
 
 * j - moves down one line
 * k - moves up one line
-* l - moves left one character
-* k - moves right one character
+* h - moves left one character
+* l - moves right one character
 
 ---
 
