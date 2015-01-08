@@ -80,27 +80,33 @@ There are shorthands, and there are ways to be clever.
 
 Programming offers you endless ways to show that you are clever.
 
-It is easy to confuse the syntax of a programming language, with the data types they represent.
+__It is easy to confuse the syntax of a programming language, with the data that they represent.__
 
-This is a foolish, now that I have told it is foolish. 
+This is a foolish.
 
-For now you know, that it is is foolish to mistake syntax and code for the data itself.
+It is foolish because you know it is foolish, for now you have been told what it is.
 
-For instance, a string does not contain the quotes surrounded it.
+A string does not contain the quotes surrounding it.
 
-Javascripts makes somehwat heavy use of symbol in its syntax, especially the curly braces.
+Objects are an organization of data.  
+
+Yet the object and its properties can be expressed through several variations of syntax.
+
+Javascripts makes moderate use of symbol in its syntax.
+
+Notably, the curly braces: { } 
 
 As ever, curcly braces simply indicate that what happens between them is important and relative.
 
 Objects can be declared using curly braces.
 
-As you will see, the context of functions, loops, and iterators, all go between curly braces.
+As you will see, the contexts of functions, loops, and iterators, all go between curly braces.
 
 In all there are less than a dozen sytnaxes to understand.  
 
 So you see how foolish it would be to let computer code syntax separate from you understaning of data?
 
-Syntax is a formality, and computers are totally formal.
+Syntax is but a formality, and computers are totally formal.
 
 Now, consider the following script.
 
