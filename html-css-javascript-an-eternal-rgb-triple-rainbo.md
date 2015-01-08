@@ -1,4 +1,4 @@
-The Front End, Full Frontal Endienness, The Complete document.body
+The Front End
 
 Writing a program, there are a million ways to do everything. 
 
