@@ -183,7 +183,7 @@ h1 {
 
 use an id when there will only be a single element
 
-``` css
+``` html
 <html>
 <head>
 <style>
@@ -267,6 +267,21 @@ but we can do lots of other things with css:
   `foo` equal to "bar"
 
 and more! http://www.w3.org/TR/CSS2/selector.html#pattern-matching
+---
+# css selectors
+
+You can use css selectors directly from javascript:
+
+``` html
+<body>
+  <div id="neat">
+      <div class="msg">...</div>
+  </div>
+  <script>
+    document.querySelector('#neat .msg').textContent = 'cool!!!!'
+  </script>
+</body>
+```
 ---
 # neocities
 
