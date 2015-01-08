@@ -1,10 +1,12 @@
 ___Data and Data Types in Javascript___
 
-Writing programs is all manipulate of data.
+Writing programs is the manipulation of data.
 
 You receieve, save, change, and send, data.
 
 You post, get, set, and update, data.
+
+Your friend, pics, and posts are all data.
 
 You listen for events, which alert you of some data.
 
