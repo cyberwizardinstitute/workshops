@@ -1,5 +1,5 @@
 ___Data and Data Types in Javascript___
-
+______________
 Writing programs is the manipulation of data.
 
 You receieve, save, change, and send, data.
