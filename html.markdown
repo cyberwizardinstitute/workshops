@@ -73,7 +73,7 @@ div
 
 # table
 
-```
+``` html
 <table>
     <tr>
         <td>...</td>
@@ -84,27 +84,24 @@ div
         <td>...</td>
     </tr> 
 </table>
-
 ```
 ---
 
 # wow bullet points
 
-```
+``` html
 <ul>
     <li>...</li>
     <li>...</li>
     <li>...</li>
 </ul>
-
 ```
 
 ---
 
 # form
 
-```
-
+``` html
 <form method="post" action="/">
   <p>
     cats? 
@@ -114,7 +111,6 @@ div
     <input type="submit" value="submit!">
   </p>
 </form>
-
 ```
 
 ---
@@ -158,7 +154,7 @@ http://www.w3schools.com/html/html_css.asp)
 
 # styles per class
 
-```
+``` html
 <html>
 <head>
 <style>
@@ -177,7 +173,6 @@ h1 {
 <h1>...</h1>
 </body>
 </html>
-
 ```
 
 (from http://www.w3schools.com/tags/tag_hn.asp)
