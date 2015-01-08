@@ -74,17 +74,20 @@ data.push(data)
 // no big deal
 
 ```
+
+ENTER SYNTAX
+
 There are many ways to declare data.
 
 There are shorthands, and there are ways to be clever.
 
 Programming offers you endless ways to show that you are clever.
 
+Declarations and instrctions, the stuff of programs, are written with new syntaxes.
+
 __It is easy to confuse code syntax, with the data that the code represents.__
 
 This is foolish.
-
-It is foolish because you know it is foolish, for now you have been told what it is.
 
 For instance: A string does not contain the quotes surrounding it.
 
