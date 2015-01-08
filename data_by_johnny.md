@@ -20,7 +20,7 @@ Javascript, like most programming languages, offers many types of data for you t
 
 Surely you understand that the phrase "thx :)" is fundamentally different to the number 3.141.
 
-One is a number, the other is string of letters, or simply: strings.
+One is a number, the other is string of grafitti, or simply: strings.
 
 ```js
 var pieceOfPi = 3.141
