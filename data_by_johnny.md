@@ -59,7 +59,7 @@ Note:  Comments are not data.  Comments are meta data.  Forget about it.
 // This is a single line comment, indicated by the two slashes
 // The computer wouldn't understand this anyway
 
-var data = [1, "two", {'three': 3}, function(){return Math.sqrt(16)}]
+var data = [0, "one", {'two': 2}, function(){return Math.sqrt(9)}]
 
 // data is an array, which contains four items
 // the number 1
