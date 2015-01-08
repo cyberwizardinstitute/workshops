@@ -16,7 +16,7 @@ Therefor, an understanding of data is necessary.
 
 Proceed.
 
-Javascript, like most programming languages, offers many types of data, for you to use.
+Javascript, like most programming languages, offers many types of data for you to use.
 
 Surely you understand that the phrase "thx :)" is fundamentally different to the number 3.141.
 
