@@ -152,7 +152,7 @@ http://www.w3schools.com/html/html_css.asp)
 
 ---
 
-# styles per class
+# styles per element
 
 ``` html
 <html>
@@ -179,12 +179,48 @@ h1 {
 
 ---
 
-# styles for id's
+# styles for ids
 
+use an id when there will only be a single element
 
+``` css
+<html>
+<head>
+<style>
+#msg {
+    font-weight: bold;
+    font-size: 72px;
+    color: magenta;
+}
+</style>
+</head>
+<body>
+<div id="msg">wow!</div>
+</body>
+</html>
+```
+---
+# styles for class
 
+use a class when there could be many elements
 
-
+``` css
+<html><head>
+<style>
+.msg {
+    font-weight: bold;
+    font-size: 72px;
+    color: magenta;
+}
+</style>
+</head>
+<body>
+<div class="cool">wow!</div>
+<div class="cool">neat!</div>
+<div class="cool">super!</div>
+</body></html>
+```
+---
 # external style sheets
 
 `<link rel="stylesheet" href="style.css">`
