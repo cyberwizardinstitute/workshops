@@ -80,19 +80,19 @@ There are shorthands, and there are ways to be clever.
 
 Programming offers you endless ways to show that you are clever.
 
-__It is easy to confuse the syntax of a programming language, with the data that they represent.__
+__It is easy to confuse code syntax, with the data that the code represents.__
 
-This is a foolish.
+This is foolish.
 
 It is foolish because you know it is foolish, for now you have been told what it is.
 
-A string does not contain the quotes surrounding it.
+For instance: A string does not contain the quotes surrounding it.
 
-Objects are an organization of data.  
+Objects are an organization of data, yet the object and its properties can be expressed through several variations of syntax.
 
-Yet the object and its properties can be expressed through several variations of syntax.
+Supposedly, this is helpful.
 
-Javascripts makes moderate use of symbol in its syntax.
+Javascripts make moderate use of symbol in its syntax.
 
 Notably, the curly braces: { } 
 
