@@ -85,11 +85,15 @@ Programming offers you endless ways to be clever.
 
 Declarations and instrctions, the stuff of programs, are written with syntax.
 
-__When learning to code, it is easy to confuse code syntax with the data that the code represents.__
+When learning to code, it is easy to confuse code syntax with the data that the code represents.
 
-This is foolish.
+Or ismply to be confused by the syntax altogether.
 
-For instance: A string does not contain the quotes surrounding it.  The quotes declare the string.
+Syntax is essential, consists of strict rules, but is a cheap price to pay for unlimited power.
+
+This isn't poetry, there are rules.
+
+A string does not contain the quotes surrounding it.  The quotes declare the string.
 
 Objects are an organization of data, yet the object and its properties can be expressed through several variations of syntax.
 
