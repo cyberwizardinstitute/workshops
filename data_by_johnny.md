@@ -93,21 +93,29 @@ For instance: A string does not contain the quotes surrounding it.
 
 Objects are an organization of data, yet the object and its properties can be expressed through several variations of syntax.
 
+```js
+var data = {}
+data.type = 'I am an Object'
+data['gender'] = 'kewl'
+data['one'] = 1
+if(data.one == 1){
+  console.log(data.gender)
+}
+```
+
 Supposedly, this is helpful.
 
 Javascripts make moderate use of symbol in its syntax.
 
 Notably, the curly braces: { } 
 
-As ever, curcly braces simply indicate that what happens between them is important and relative.
+As ever, curly braces simply indicate that what happens between them is important and relative.
 
 Objects can be declared using curly braces.
 
 As you will see, the contexts of functions, loops, and iterators, all go between curly braces.
 
 In all there are less than a dozen sytnaxes to understand.  
-
-So you see how foolish it would be to let computer code syntax separate from you understaning of data?
 
 Syntax is but a formality, and computers are totally formal.
 
