@@ -27,7 +27,7 @@ The DOM controls every website, from within the browser.
 
 All that HTML you wrote, with its funny carets, 
 
-and all that CSS, with its not-funny functionality,
+and all that CSS, with it's mysteries,
 
 Those strings of goofy text get translated into OBJECTS
 
