@@ -4,9 +4,9 @@ Writing programs is the manipulation of data.
 
 You receieve, save, change, and send, data.
 
-You post, get, set, and update, data.
+You post, set, get, and update, data.
 
-Your friends, pics, and posts are all data.
+Your friends, pics, and vids are all data.
 
 You listen for events, which alert you of some data.
 
