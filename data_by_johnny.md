@@ -62,7 +62,7 @@ Note:  Comments are not data.  Comments are meta data.  Forget about it.
 var data = [0, "one", {'two': 2}, function(){return Math.sqrt(9)}]
 
 // data is an array, which contains four items
-// the number 1
+// a number
 // a string,
 // an object
 // and a function
