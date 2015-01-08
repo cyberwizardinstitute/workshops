@@ -49,10 +49,6 @@ The DOM can talk to the internet.
 
 The DOM can send messages to other people.
 
-The same properties that you gave them 
-
-when you wrote the HTML, and the CSS.
-
 The DOM is the browser's API.
 
 
