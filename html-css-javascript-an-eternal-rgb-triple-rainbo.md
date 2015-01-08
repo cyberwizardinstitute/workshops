@@ -143,7 +143,7 @@ and cascade styles upon styles over them.
 
 CSS is like, img #element-9: your background is green;
 ```css
-div#element-9{background:green}
+#element-9{background:green}
 ```
 
 And it will be so.
