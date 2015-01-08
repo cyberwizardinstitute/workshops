@@ -25,7 +25,7 @@ That is because the DOM is the master.
 
 The DOM controls every website, from within the browser.
 
-All that HTML you wrote, with its funny carrots, 
+All that HTML you wrote, with its funny carets, 
 
 and all that CSS, with its not-funny functionality,
 
