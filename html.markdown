@@ -227,10 +227,47 @@ use a class when there could be many elements
 
 view the source on http://cyber.wizard.institute & explore
 the stylesheet.
-
 ---
+# css selectors
 
+You can create blocks of css rules that apply to more than
+just individual classes and ids with css selectors.
 
+``` css
+#page .row .title {
+    color: cyan;
+}
+```
+
+will match `<div class="title"></div>` in:
+
+``` html
+<div id="page">
+  <div class="row">
+    <div class="header">
+      <div class="title"></div>
+      <div class="date"></div>
+      <div class="author"></div>
+    </div>
+  </div>
+</div>
+```
+---
+# css selectors
+
+We just used spaces between elements in `#page .row .title`,
+but we can do lots of other things with css:
+
+* `E` - match an element E by its tag name (example: `h1`)
+* `E F` - matches F, a descendant of E
+* `E > F` - matches F, a direct child of E
+* `E#abc` - matches an element E with an id of abc
+* `E.xyz` - matches an element E with a class of xyz
+* `E[foo="bar"]` - match an element E with an attribute
+  `foo` equal to "bar"
+
+and more! http://www.w3.org/TR/CSS2/selector.html#pattern-matching
+---
 # neocities
 
 You can host your html on neocities for free!
