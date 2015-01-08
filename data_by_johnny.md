@@ -35,15 +35,11 @@ You already know what strings are, and numbers.
 
 Later you will discover unique properties for each.
 
-Objects and Arrays are helpful containers for data.
+Objects and arrays are useful containers for data.
 
-They can contain any kind of data, including objects and arrays.
+They may contain any kind of data, including objects and arrays.
 
-Which are useful containers for data, including objects and arrays.
-
-:^)
-
-Objects, and arrays, store data differently, analogous to books and scrolls.
+Objects and arrays, they store data differently, analogous to books and scrolls.
 
 Or a million other analogies.  Ask around.
 
