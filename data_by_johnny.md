@@ -81,15 +81,15 @@ There are many ways to declare data.
 
 There are shorthands, and there are ways to be clever.
 
-Programming offers you endless ways to show that you are clever.
+Programming offers you endless ways to be clever.
 
-Declarations and instrctions, the stuff of programs, are written with new syntaxes.
+Declarations and instrctions, the stuff of programs, are written with syntax.
 
-__It is easy to confuse code syntax, with the data that the code represents.__
+__When learning to code, it is easy to confuse code syntax with the data that the code represents.__
 
 This is foolish.
 
-For instance: A string does not contain the quotes surrounding it.
+For instance: A string does not contain the quotes surrounding it.  The quotes declare the string.
 
 Objects are an organization of data, yet the object and its properties can be expressed through several variations of syntax.
 
@@ -105,7 +105,7 @@ if(data.one == 1){
 
 Supposedly, this is helpful.
 
-Javascripts make moderate use of symbol in its syntax.
+Javascripts make moderate use of symbols in its syntax.
 
 Notably, the curly braces: { } 
 
