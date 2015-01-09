@@ -3,6 +3,7 @@
 javascript is a programming language
 you can use to program web pages
 and command-line tools and servers
+
 ---
 # install node
 
@@ -12,6 +13,7 @@ to learn javascript.
 Download and install node from:
 
 https://nodejs.org
+
 ---
 # write a program
 
@@ -48,6 +50,7 @@ Note the single quotes on each side.
 You can use double quotes too: `"BEEP BOOP"`
 
 Sometimes an "argument" is called a "parameter".
+
 ---
 # statements
 
@@ -85,6 +88,7 @@ is rare in practice.
 
 Both including and omitting semicolons
 are popular code styles.
+
 ---
 # variables
 
@@ -115,6 +119,7 @@ Variables are containers that can hold values.
 
 Strings like `'beep'` and numbers like `5`
 are values.
+
 ---
 # operators
 
@@ -150,6 +155,7 @@ Then type an expression and you will see its result:
 ```
 
 Type ctrl+d to exit the REPL.
+
 ---
 # assignment updates
 
@@ -191,6 +197,7 @@ do an update "in place":
 * `*=` - multiply in place
 * `/=` - divide in place
 * `%=` - modulo in place
+
 ---
 # increment, decrement
 
@@ -205,6 +212,7 @@ Same as: `x += 1` or `x = x + 1`
 You might also see `++x` and `--x` which
 are similar to `x++` and `x--` but have
 slightly different uses. More on them later.
+
 ---
 # booleans
 
@@ -228,6 +236,7 @@ You might also see coercive equality operators:
 
 but you should avoid these operators until
 learning about type coercion.
+
 ---
 # comparison operators: example
 
@@ -437,14 +446,14 @@ if (true) {
 ---
 # first rule of indentation
 
-However you choose to indent,
-be consistent!
+However you choose to indent, be consistent!
 
 Your code will be much easier for others and yourself to
 read.
 
 Remember to line up closing braces at the same level as
 opening statements!
+
 ---
 # arrays
 
@@ -533,6 +542,7 @@ been defined by the language itself.
 
 Later we'll see how to inspect what
 methods are available.
+
 ---
 # arrays: pop
 
@@ -703,6 +713,7 @@ var obj = {
 
 This way of building objects is sometimes called
 "object literal" syntax.
+
 ---
 # objects: pick out a single record
 
@@ -815,6 +826,7 @@ prints:
 
 Everything we can do with dot (updates, assignment
 operators, etc) works with square bracket notation.
+
 ---
 # objects: delete
 
@@ -834,6 +846,7 @@ prints:
 
 If you try to delete a key that doesn't exist, nothing
 happens.
+
 ---
 # Object.keys
 
@@ -1295,6 +1308,7 @@ BEEP BOOP
 * number to hex string: `(123).toString(16) === '7b'
 * binary string to number: `parseInt('1111011',2) === 123`
 * hex string to number: `parseInt('7b',16) === 123`
+
 ---
 # JSON: stringify
 
@@ -1356,6 +1370,7 @@ prints:
 log base 2 of 255 = `Math.log(255) / Math.log(2)`
 
 [read more](http://mzl.la/148HnQj)
+
 ---
 # builtin: Date
 
@@ -1391,6 +1406,7 @@ console.log([ d.getFullYear(), d.getMonth(), d.getDay() ])
 
 console.log([ d.getHours(), d.getMinutes(), d.getSeconds() ])
 // [ 10, 18, 26 ]
+```
 ---
 # homework
 
