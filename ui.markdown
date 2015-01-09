@@ -3,18 +3,18 @@
 
 ### INTRODUCTION
 
-Likely most developers spend some amount of time concerning themselves with the time it takes a page or view to load in the browser. But what about the time it takes the the *interface* to "load" in the user's brain? It's apparent too long a delay for the necessary elements to load on the page results in a higher bail rate, however the task of delivering the contents is not complete until the user can make sense it.
+Likely most developers spend some amount of time concerning themselves with the time it takes a page or view to load in the browser. But what about the time it takes the the *interface* to "load" in the user's brain? It's apparent too long a delay for the necessary elements to load on the page results in a higher bail rate, however the task of delivering the content is not complete until the user can make sense of it.
 
-Touching on some big picture concerns
+Looking at the big picture
 - Site design
   - Page/View diagram
 - Getting from A to B
   - Load -> Present (Persuade or provide tools) -> Call to Action(s)
-  - Cognitive Load
+  - Cognitive Load <- main topic
 - Page/View Components
-  - Site ID
-  - Page Title
-  - Primary content/functions
+  - Site ID (wide angle)
+  - Page Title (medium)
+  - Primary content/functions (close-up)
   - Navigation
 
 ### PRINCIPLES to Reduce Cognitive Load:
@@ -26,9 +26,9 @@ Touching on some big picture concerns
 - Priority (left/right, top/bottom, emphasis)
 - Scan-ability (structured text, spacing, proximity)
 - Meaningful Icons (learning types, recollection on return)
-- Color Coding
+- Color Coding (distance grouping)
 
 ### BENEFITS of Cognitive Load Reduction
 - Pre-process information, my 1 hour can save others many hours scratching their heads
 - Increase persistence, retention 
-- Increase desired response
+- Increase # desired responses
