@@ -437,9 +437,42 @@ You can make an array with square brackets:
 var arr = [ 3, 2, 5 ]
 console.log(arr)
 ```
-
 ---
+# arrays: indexing
 
+To get at individual elements, use square brackets and an
+integer index starting from zero:
+
+``` js
+var arr = [ 1, 4, 9 ];
+console.log('first:', arr[0]);
+console.log('second:', arr[1]);
+console.log('third:', arr[2]);
+```
+
+outputs:
+
+```
+first: 1
+second: 4
+third: 9
+```
+---
+# arrays: length
+
+To get the length of an array, just use `.length`:
+
+``` js
+var arr = [ 1, 4, 9 ];
+console.log(arr.length);
+```
+
+which is the same as:
+
+``` js
+console.log([ 1, 4, 9 ].length);
+```
+---
 # arrays: push
 
 To add an item to the end of an array,
@@ -456,38 +489,129 @@ prints:
 ```
 [ 8, 1, 5 ]
 ```
-
+---
 `arr.push()` is an example of a builtin
 method, a function you can call that has
 been defined by the language itself.
 
 Later we'll see how to inspect what
 methods are available.
-
 ---
-
 # arrays: pop
 
 You can also remove an element from the
 end of an array with `arr.pop()`:
 
 ``` js
+var xs = [ 10, 6, 3 ];
+console.log('popped:', xs.pop());
+console.log('now xs=', xs);
 ```
 
+prints:
+
+```
+popped: 3
+now xs= [ 10, 6 ]
+```
 ---
+# arrays: shift
 
-# arrays: shift and unshift
+Remove an element from the beginning of an array with shift:
 
+``` js
+var xs = [ 1, 2, 3 ];
+console.log('shifted:', xs.shift());
+console.log('xs=', xs);
+```
 ---
-
 # arrays: slice
 
+Return a new array between a start index and an end index.
+If you don't provide an end index, the array length is used.
+
+``` js
+var xs = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i' ];
+console.log(xs.slice(2, 3));
+console.log(xs.slice(2));
+```
+
+prints:
+
+```
+[ 'c', 'd', 'e' ]
+[ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ]
+```
 ---
 
-# arrays: splice
+# arrays: more!
+
+To see everything you can do with arrays, visit:
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype
 
 ---
+# process.argv
 
+So far, all of our examples have used hard-coded variables
+defined in the source code itself.
+
+In node you can read arguments given from the command line
+using the `process.argv` array.
+---
+``` js
+console.log(process.argv);
+```
+
+will print:
+
+```
+$ node args.js one two three
+[ 'node',
+  '/home/substack/projects/workshops/args.js',
+  'one',
+  'two',
+  'three' ]
+```
+
+The first 2 arguments aren't too useful, just `node` and the
+full path to our script, but the remaining arguments are
+everything that follows `args.js` on the command-line.
+---
+To get only the useful arguments, we can use `.slice(2)`:
+
+``` js
+var args = process.argv.slice(2);
+console.log(args);
+```
+
+now we can do:
+
+```
+$ node args.js beep boop xyz
+[ 'beep', 'boop', 'xyz' ]
+```
+---
+or to get at a single argument, you could use square
+brackets:
+
+``` js
+var x = Number(process.argv[2]);
+var y = Number(process.argv[3]);
+console.log(x + y);
+```
+
+prints:
+
+```
+$ node add.js 3 5
+8
+```
+
+Note that every element in `process.argv` is a string, so we
+can use the built-in `Number` function to convert from a
+string to a number.
+---
 # objects
 
 We've already been using some objects:
@@ -498,43 +622,31 @@ We've already been using some objects:
 `log` that is a function.
 
 ---
-
 # functions
 
-
+You can think of functions as little factories.
 
 ---
-
 # builtins
 
 
-
 ---
-
 # while loop
 
 ---
-
 # for loop
 
 ---
-
 # the REPL
 
 ---
-
 # homework
 
-Your homework is to get through the
+Your entirely optional homework is to get through the
 `javascripting` lesson on nodeschool:
 
 http://nodeschool.io/#javascripting
-
 ---
-
 # links
 
 http://jsforcats.com/
-
----
-
