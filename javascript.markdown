@@ -1,12 +1,9 @@
-
 # javascript
 
 javascript is a programming language
 you can use to program web pages
 and command-line tools and servers
-
 ---
-
 # install node
 
 We'll be using node on the command-line
@@ -15,9 +12,7 @@ to learn javascript.
 Download and install node from:
 
 https://nodejs.org
-
 ---
-
 # write a program
 
 Now let's make a program. Put this text
@@ -26,9 +21,7 @@ into a file called robot.js:
 ``` js
 console.log('BEEP BOOP')
 ```
-
 ---
-
 # run a program
 
 Now use `node` to run your program:
@@ -37,17 +30,13 @@ Now use `node` to run your program:
 $ node robot.js
 BEEP BOOP
 ```
-
 ---
-
 # recap: console.log
 
 `console.log(...)` is a function that
 prints its arguments to stdout followed
 by a newline (`\n`) character
-
 ---
-
 # recap: 'BEEP BOOP'
 
 * `'BEEP BOOP'` is a string.
@@ -59,9 +48,7 @@ Note the single quotes on each side.
 You can use double quotes too: `"BEEP BOOP"`
 
 Sometimes an "argument" is called a "parameter".
-
 ---
-
 # statements
 
 In the previous program, we had a single
@@ -81,9 +68,7 @@ $ node suchwow.js
 Such
 wow.
 ```
-
 ---
-
 # statements
 
 You might also see programs that use
@@ -100,9 +85,7 @@ is rare in practice.
 
 Both including and omitting semicolons
 are popular code styles.
-
 ---
-
 # variables
 
 Another kind of statement is a variable
@@ -125,18 +108,14 @@ $ node vars.js
 555
 beepboop
 ```
-
 ---
-
 # variables
 
 Variables are containers that can hold values.
 
 Strings like `'beep'` and numbers like `5`
 are values.
-
 ---
-
 # operators
 
 We used the `*` operator to multiply
@@ -153,9 +132,7 @@ numbers:
 
 modulo is really handy when you need a value
 to "wrap around"
-
 ---
-
 # assignment updates
 
 You can change the value stored in a variable
@@ -173,9 +150,7 @@ which prints `15`:
 $ node x.js
 15
 ```
-
 ---
-
 # assignment operators
 
 There is a shorthand for running an operator
@@ -198,9 +173,7 @@ do an update "in place":
 * `*=` - multiply in place
 * `/=` - divide in place
 * `%=` - modulo in place
-
 ---
-
 # increment, decrement
 
 There are two other operators for convenience:
@@ -214,15 +187,11 @@ Same as: `x += 1` or `x = x + 1`
 You might also see `++x` and `--x` which
 are similar to `x++` and `x--` but have
 slightly different uses. More on them later.
-
 ---
-
 # booleans
 
 `true` or `false`
-
 ---
-
 # comparison operators
 
 The comparison operators all return a boolean:
@@ -241,9 +210,7 @@ You might also see coercive equality operators:
 
 but you should avoid these operators until
 learning about type coercion.
-
 ---
-
 # comparison operators: example
 
 ```
@@ -263,9 +230,7 @@ false
 false
 true
 ```
-
 ---
-
 # logical operators
 
 * `&&` - AND
@@ -278,9 +243,7 @@ because it binds to a single value.
 `&&` and `||` are "binary" operators
 because they bind to two values:
 one on the left and one on the right.
-
 ---
-
 # logical operators: example
 
 ``` js
@@ -320,9 +283,7 @@ console.log('beep boop'); // wow
   lines
 */
 ```
-
 ---
-
 # if
 
 You can make a block of code execute when
@@ -346,7 +307,7 @@ this program will print:
 $ node if.js
 wow
 ```
-
+---
 but if we change the program to be:
 
 ``` js
@@ -362,9 +323,7 @@ conditional expression evaluated to false:
 ```
 $ node if.js
 ```
-
 ---
-
 # else
 
 You can put an `else` statement after an
@@ -388,23 +347,87 @@ will print:
 $ node else.js
 cool
 ```
-
 ---
-
 # else if
 
----
+Use `else if` to chain together fall-through cases:
 
+``` js
+var x = 22;
+if (x < 10) {
+    console.log('wow');
+}
+else if (x === 22) {
+    console.log('twotwo');
+}
+else {
+    console.log('cool');
+}
+```
+---
 # nesting conditionals
 
+``` js
+var x = 5;
+if (x < 5) {
+    console.log('lt');
+}
+else {
+    var y = x * 333 + 22;
+    if (y > 1000) {
+        console.log('y > 1000!!!');
+    }
+    else {
+        console.log('y otherwise...');
+    }
+}
+```
 ---
-
 # indentation
 
 Now is a good time to talk about indentation.
 
----
+First, you'll need to pick an amount of indentation to use
+for each level.
 
+4 spaces, 2 spaces, and tabs are all common amounts of
+indentation.
+---
+# 4 spaces
+
+```
+if (true) {
+    if (true) {
+        if (true) {
+            // ...
+        }
+    }
+}
+```
+---
+# 2 spaces
+
+```
+if (true) {
+  if (true) {
+    if (true) {
+      // ...
+    }
+  }
+}
+```
+---
+# first rule of indentation
+
+However you choose to indent,
+be consistent!
+
+Your code will be much easier for others and yourself to
+read.
+
+Remember to line up closing braces at the same level as
+opening statements!
+---
 # arrays
 
 Arrays are ordered lists of values.
