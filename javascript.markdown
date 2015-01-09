@@ -833,9 +833,261 @@ prints:
 [ 'x', 'y', 'abc' ]
 ```
 ---
+# nested data structures
+
+Now that we've seen objects and arrays, it's worth noting
+that you can nest these data structures as much as you
+like.
+
+To reference the nested properties, you can stack dot and
+square bracket notation to read keys and array indexes:
+
+``` js
+var root = {
+    a: 3,
+    b: [ { x: 4, y: 6 }, { d: 1, e: 2 } ],
+    c: { q: [ 7, 8, 9 ], r: [ 1, 2, 3 ]
+};
+console.log(root.a); // 3
+console.log(root.b[1].e); // 2
+console.log(root.c.q); // [ 7, 8, 9 ]
+console.log(root.c.r[2]); // 3
+```
+---
+# while loop
+
+Use a while loop to repeat a command while a conditional is
+true:
+
+``` js
+var x = 4;
+while (x > 0) {
+    console.log(x);
+    x --;
+}
+```
+
+prints:
+
+```
+4
+3
+2
+1
+```
+---
+# while loop: break
+
+This program will never stop!
+
+``` js
+while (true) {
+    console.log('wow');
+}
+```
+
+But inside the loop we can use `break` to quit the loop:
+
+```
+var x = 4;
+while (true) {
+    console.log(x);
+    if (x <= 0) break;
+}
+```
+
+prints:
+
+```
+4
+3
+2
+1
+```
+---
+# for loop
+
+For loops are like while loops but provide a place for
+initialization and an expression to advance the loop.
+
+```
+for (var i = 0; i < 4; i++) {
+    console.log(i);
+}
+```
+
+prints:
+
+```
+0
+1
+2
+3
+```
+---
+Or you can jump by tens starting from 50:
+
+``` js
+for (var i = 50; i < 100; i += 10) {
+    console.log(i);
+}
+```
+
+prints:
+
+```
+50
+60
+70
+80
+90
+```
+---
+# looping over an array
+
+A very common use-case for `for` loops is to loop over each
+element in an array:
+
+``` js
+var xs = [ 'a', 'b', 'c', 'd' ];
+for (var i = 0; i < xs.length; i++) {
+    console.log(xs[i]);
+}
+```
+
+prints:
+
+```
+a
+b
+c
+d
+```
+---
 # functions
 
-You can think of functions as little factories.
+You can think of functions as little factories that take
+input as arguments and return output.
+
+``` js
+function add (x, y) {
+    return x + y;
+}
+console.log(add(3, 4));
+```
+
+prints:
+
+```
+7
+```
+---
+# function hoisting
+
+You can define a function lower down in a file than where
+you use it too:
+
+``` js
+console.log(add(3, 4));
+
+function add (x, y) {
+    return x + y;
+}
+```
+---
+# function scope
+
+Any variables declared inside a function are only accessible
+inside of that function.
+
+``` js
+function fff (a, b) {
+    var c = 500;
+    return a + b + c;
+}
+
+console.log(fff(3,4));
+console.log(c); // will raise an error
+```
+---
+# functions as values
+
+Functions can appear in any expression. You can assign them
+to variables:
+
+``` js
+var add = function (a, b) {
+    return a + b;
+};
+console.log(add(5, 2)); // 7
+```
+
+When you declare functions in expressions you don't need to
+give them a name.
+---
+# immediately executing function
+
+Because functions can appear in expressions, you can
+immediately execute a function by defining the function
+immediately followed by `(...)` to call the function with
+arguments. 
+
+``` js
+var sum = function (a, b, c) {
+    return a + b + c;
+}(3, 4, 5);
+console.log(sum); // 12
+```
+
+Variables declared inside functions are only visible in that
+function, so immediately executing functions are sometimes
+used to create an isolated scope.
+---
+You could even do:
+
+``` js
+console.log(100 + function (a, b, c) {
+    return a + b + c;
+}(3, 4, 5) * 2);
+```
+
+which is the same as `100 + 12 * 2`, so the program prints:
+
+```
+124
+```
+---
+# higher-order functions
+
+Because functions are ordinary values that can appear in
+expressions, you can pass a function as an argument to
+another function.
+
+``` js
+function binary (a, b, operator) {
+    return operator(a, b);
+}
+function add (a, b) {
+    return a + b;
+}
+console.log(binary(3, 4, add));
+```
+
+---
+# return values
+
+Functions can return any javascript value: numbers, strings,
+arrays, objects, even other functions!
+
+---
+# inline functions
+
+You can define a function 
+---
+# constructors
+
+Constructors are functions for pumping out instances.
+
 
 ---
 # builtins
@@ -974,18 +1226,9 @@ console.log([ d.getFullYear(), d.getMonth(), d.getDay() ])
 console.log([ d.getHours(), d.getMinutes(), d.getSeconds() ])
 // [ 10, 18, 26 ]
 ---
-# while loop
-
----
-# for loop
-
----
 # the REPL
 
 ---
-# constructors
-
-Constructors are functions for pumping out instances.
 
 ---
 # homework
