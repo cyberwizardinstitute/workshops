@@ -548,7 +548,7 @@ prints:
 
 To see everything you can do with arrays, visit:
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype
+http://mzl.la/14BlbiN
 
 ---
 # process.argv
@@ -620,7 +620,22 @@ We've already been using some objects:
 `argv` that is an array.
 * `console` is an object with a property
 `log` that is a function.
+---
+# Object.keys
 
+Use `Object.keys()` to get an array of all the keys that an
+object has:
+
+``` js
+var obj = { x: 5, y: 6, abc: 3 };
+console.log(Object.keys(obj));
+```
+
+prints:
+
+```
+[ 'x', 'y', 'abc' ]
+```
 ---
 # functions
 
@@ -629,7 +644,139 @@ You can think of functions as little factories.
 ---
 # builtins
 
+The javascript language has many features built into the
+basic types.
 
+For example, did you know that for any string you can do:
+
+``` js
+console.log('beep boop'.toUpperCase());
+```
+
+which prints:
+
+```
+BEEP BOOP
+```
+---
+# builtin prototype methods
+
+* [strings](http://mzl.la/1xOnD0H)
+* [arrays](http://mzl.la/14BlbiN)
+* [numbers](http://mzl.la/1Ds51Xe)
+* [functions](http://mzl.la/1w5e33P)
+* [dates](http://mzl.la/1APfcTB)
+
+---
+# builtin global objects
+
+[complete list](http://mzl.la/1APf72e)
+
+---
+# builtin type conversions
+
+* string to number: `Number('123') === 123`
+* number to string: `(123).toString() === '123'`
+* number to binary string: `(123).toString(2) === '1111011'
+* number to hex string: `(123).toString(16) === '7b'
+* binary string to number: `parseInt('1111011',2) === 123`
+* hex string to number: `parseInt('7b',16) === 123`
+---
+# JSON: stringify
+
+turn (most) any object into a string:
+
+``` js
+var obj = [ 1, 2, 'xy', { z: 3 } ];
+var str = JSON.stringify(obj);
+console.log(str);
+```
+
+prints:
+
+```
+[1,2,"xy",{"z":3}]
+```
+---
+# JSON: parse
+
+turn stringified json back into an object:
+
+``` js
+var obj = JSON.parse('[1,2,"xy",{"z":3}]');
+console.log(obj);
+```
+
+prints:
+
+```
+[ 1, 2, 'xy', { z: 3 } ]
+```
+---
+# String: split
+
+Split a string into an array of strings at a delimiter with
+`.split()`:
+
+``` js
+var str = 'abc:def:h:ij:klmnop'
+console.log(str.split(':'));
+```
+
+prints:
+
+```
+[ 'abc', 'def', 'h', 'ij', 'klmnop' ]
+```
+---
+# builtin: Math
+
+* `Math.pow(base, exp)` - exponentiation
+* `Math.log(n)` - natural log (base e)
+* `Math.exp(n)` - e raised to the power n
+* `Math.PI`
+* `Math.E`
+* `Math.sin(x)` - sine of x in radians
+* `Math.cos(x)` - cosine of x in radians
+
+log base 2 of 255 = `Math.log(255) / Math.log(2)`
+
+[read more](http://mzl.la/148HnQj)
+---
+# builtin: Date
+
+``` js
+// create a new date instance (now)
+var d1 = new Date
+
+// date from milliseconds
+var d2 = new Date(1420821045321)
+
+// date from a string
+var d3 = new Date('2015-01-04 15:00')
+
+// number of milliseconds since 1970-01-01:
+var now = Date.now()
+```
+---
+# builtin: Date methods
+
+``` js
+var d = new Date
+console.log(d.toString())
+// 'Fri Jan 09 2015 10:18:26 GMT-0800 (PST)'
+
+console.log(d.toISOString())
+// '2015-01-09T18:18:26.194Z'
+
+console.log(d.valueOf())
+// 1420827506194
+
+console.log([ d.getFullYear(), d.getMonth(), d.getDay() ])
+// [ 2015, 0, 5 ]
+
+console.log([ d.getHours(), d.getMinutes(), d.getSeconds() ])
+// [ 10, 18, 26 ]
 ---
 # while loop
 
@@ -638,6 +785,11 @@ You can think of functions as little factories.
 
 ---
 # the REPL
+
+---
+# constructors
+
+Constructors are functions for pumping out instances.
 
 ---
 # homework
