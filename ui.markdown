@@ -32,3 +32,5 @@ Looking at the big picture
 - Pre-process information, my 1 hour can save others many hours scratching their heads
 - Increase persistence, retention 
 - Increase # desired responses
+
+* Offered by bloodyKnuckles (Jay.) *
