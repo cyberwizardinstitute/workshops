@@ -1,3 +1,13 @@
+## Web Page UI: Don't Make Me Think 
+(much about your interface)
+
+### INTRODUCTION
+
+Likely most developers spend some amount of time concerning themselves with the time it takes a page or view to load in the browser. But what about the time it takes the the *interface* to "load" in the user's brain? It's apparent too long a delay for the necessary elements to load on the page results in a higher bail rate, however the task of delivering the contents is not complete until the user can make sense it.
+
+Touching on some big picture concerns
+- Site design
+  - Page/View diagram
 # Web Page UI: Don't Make Me Think 
 (much about your interface)
 
@@ -33,4 +43,5 @@ Looking at the big picture
 - Increase persistence, retention 
 - Increase # desired responses
 
-* Offered by bloodyKnuckles (Jay.) *
+
+*Offered by bloodyKnuckles (Jay.)*
