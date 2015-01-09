@@ -414,6 +414,7 @@ keyboards.
 One common thing to do is swap the caps lock key
 with the escape key because escape is such a
 common key in vim.
+
 ---
 # xmodmap for escape
 
@@ -434,6 +435,7 @@ swapped keys.
 Add this command to your login scripts so that
 each time you log in you won't need to remember to
 run the command every time you log in.
+
 ---
 # built-in escape alternative
 
