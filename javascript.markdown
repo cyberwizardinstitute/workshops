@@ -133,6 +133,24 @@ numbers:
 modulo is really handy when you need a value
 to "wrap around"
 ---
+# the REPL
+
+There is another way of evaluating expressions as you type
+them in: the REPL.
+
+The REPL is like calculator mode.
+
+Just type `node` to get into a REPL.
+
+Then type an expression and you will see its result:
+
+```
+> 1+2
+3
+```
+
+Type ctrl+d to exit the REPL.
+---
 # assignment updates
 
 You can change the value stored in a variable
@@ -1072,23 +1090,171 @@ function add (a, b) {
 }
 console.log(binary(3, 4, add));
 ```
-
 ---
-# return values
+# higher-order functions: inline version
+
+We could write the previous example with the `add` function
+declared inline:
+
+``` js
+function binary (a, b, operator) {
+    return operator(a, b);
+}
+console.log(binary(3, 4, function (a, b) {
+    return a + b;
+}));
+```
+---
+# higher-order functions: everything inline why not
+
+We could even define the binary function inline, although
+this is not very readable:
+
+``` js
+console.log(
+    function (a, b, operator) {
+        return operator(a, b);
+    }(3, 4, function (a, b) {
+        return a + b;
+    })
+);
+```
+---
+# higher-order functions: Array.prototype.map
+
+There are some built-in functions that accept functions as
+arguments. `.map()` takes a function that transforms the
+contents of an array, creating a new array:
+
+``` js
+var first = [ 3, 4, 5 ];
+var second = first.map(plusFifty);
+console.log(second);
+
+function plusFifty (x) { return x + 50 }
+```
+
+prints:
+
+```
+[ 53, 54, 55 ]
+```
+---
+# higher-order functions: Array.prototype.forEach
+
+You can also use `forEach` to loop over items in an array
+without having to whip up a `for` loop:
+
+``` js
+[ 7, 8, 9 ].forEach(function (x) {
+    console.log(x);
+});
+```
+---
+# returning a function
 
 Functions can return any javascript value: numbers, strings,
 arrays, objects, even other functions!
 
----
-# inline functions
+When you return a function from another function, the
+variables you declare persist in the inner function.
 
-You can define a function 
+``` js
+function counter () {
+    var times = 0;
+    return function () {
+        times ++;
+        return times;
+    };
+}
+
+var c = counter(); // c is a function
+console.log(c()); // 1
+console.log(c()); // 2
+console.log(c()); // 3
+```
+---
+# returning an object with functions
+
+Another common pattern is to return an object with functions
+as values:
+
+```
+function Num (value) {
+    return {
+        add: function (x) {
+            value += x;
+            return x;
+        },
+        multiply: function (x) {
+            value *= x;
+            return x;
+        };
+    };
+}
+
+var n = Num(100);
+console.log(n.add(5)); // 105
+console.log(n.multiply(3)); // 315
+```
+
 ---
 # constructors
 
-Constructors are functions for pumping out instances.
+Another way to create objects with properties is to use a
+constructor. The previous example is pretty much the same
+as: 
 
+``` js
+function Num (value) {
+    this.value = value;
+}
 
+Num.prototype.add = function (x) {
+    this.value += x;
+    return this.value;
+}
+
+Num.prototype.multiply = function (x) {
+    this.value *= x;
+    return this.value;
+}
+
+var n = new Num(100);
+console.log(n.add(5)); // 105
+console.log(n.multiply(3)); // 315
+```
+
+`n` is an "instance" of Num. You can make as many instances
+as you like and they will all have separate values.
+---
+# constructors: new trick
+
+If you use a constructor, don't forget to use `new`!
+
+Here is one weird trick discovered by a bus driver for
+making constructor instances without `new`:
+
+``` js
+function Num (value) {
+    if (!(this instanceof Num)) return new Num(value);
+    this.value = value;
+}
+
+Num.prototype.add = function (x) {
+    this.value += x;
+    return this.value;
+}
+
+Num.prototype.multiply = function (x) {
+    this.value *= x;
+    return this.value;
+}
+
+var n = Num(100); // you don't need to remember `new` now
+console.log(n.add(5)); // 105
+console.log(n.multiply(3)); // 315
+```
 ---
 # builtins
 
@@ -1225,11 +1391,6 @@ console.log([ d.getFullYear(), d.getMonth(), d.getDay() ])
 
 console.log([ d.getHours(), d.getMinutes(), d.getSeconds() ])
 // [ 10, 18, 26 ]
----
-# the REPL
-
----
-
 ---
 # homework
 
