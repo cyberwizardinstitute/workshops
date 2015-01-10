@@ -12,3 +12,6 @@ the javascript language
 * [UI](ui.markdown) - Consider for a moment what goes on in the mind of the people visiting your web site or app. How much effort are they willing to exert to: 1) know they're in the right place, 2) find what they're looking for, 3) know how to respond?
 
 * [vim](vim.markdown) - learn how to use the vim command-line text editor
+
+....and so much more! Check the list of files above for
+notes on other topics covered.
