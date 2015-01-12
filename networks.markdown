@@ -67,6 +67,7 @@ Each computer can have many services.
 
 A port is a number between 1 and 65535 that 
 differentiates among the services on a system.
+
 ---
 # customary ports
 
@@ -331,9 +332,107 @@ $ curl -X POST http://localhost:5000 -d title=whatever \
 ---
 # smtp
 
+smtp is the protocol used to deliver email messages.
+
+Here we can send an email from `barak@whitehouse.gov` to
+`substack@localhost`.
+
+The lines that start with a number are messages from the
+server:
+
+```
+$ nc localhost 25
+220 1x1px ESMTP Exim 4.80 Sun, 11 Jan 2015 22:46:30 -0800
+helo localhost
+250 1x1px Hello localhost [127.0.0.1]
+mail from: barak@whitehouse.gov
+250 OK
+rcpt to: substack@localhost
+250 Accepted
+data
+354 Enter message, ending with "." on a line by itself
+Subject: HELLO THIS IS THE PRESIDENT
+
+Greetings citizen. I am the president. For real. Keep on keeping on.
+.
+250 OK id=1YAYmI-0008H2-LC
+quit
+221 1x1px closing connection
+```
+
+---
+Since this email was sent locally, I can read the message
+with the `mail` command:
+
+```
+$ mail
+Heirloom mailx version 12.5 6/20/10.  Type ? for help.
+"/var/mail/substack": 1 message 1 new
+>N  1 barak@whitehouse.g Sun Jan 11 22:47   16/566   HELLO THIS IS THE PRESIDENT
+```
+---
+Seems legit:
+
+```
+? n
+Message  1:
+From barak@whitehouse.gov Sun Jan 11 22:47:36 2015
+Return-path: <barak@whitehouse.gov>
+Envelope-to: substack@localhost
+Delivery-date: Sun, 11 Jan 2015 22:47:36 -0800
+Subject: HELLO THIS IS THE PRESIDENT
+From: barak@whitehouse.gov
+Date: Sun, 11 Jan 2015 22:47:22 -0800
+Status: R
+
+Greetings citizen. I am the president. For real. Keep on keeping on.
+
+```
 ---
 # irc
 
 ---
+# text protocols
+
+So far, we've seen a number of text protocols:
+
+* http
+* smtp
+* irc
+
+These are nice protocols to implement because you can
+inspect the data going over the wire visually and type
+requests using the keyboard.
+
+---
+# binary protocols
+
+In binary protocols, you can't just type messages with the
+keyboard like we've been doing. You've got to write programs
+that unpack the incoming bytes and pack outgoing bytes
+according to the specification.
+
+---
 # ssh
 
+```
+$ nc substack.net 22
+SSH-2.0-OpenSSH_6.0p1 Debian-4+deb7u2
+help
+Protocol mismatch.
+```
+
+Aside from the initial greeting, the rest of the ssh
+protocol expects binary.
+
+---
+Luckily, the ssh command does the work of speaking the
+protocol for us:
+
+```
+$ ssh substack.net
+substack@origin : ~ $ 
+```
+
+---
+EOF
