@@ -127,19 +127,21 @@ Events and callbacks are a paradigm for handling asyncronous behaviours.
 
 One asyncronous behaviour is your very own:  you write the code before it runs.
 
-The other async behaviour occurs naturally as a result of time and space.
+The other async behaviour occurs naturally as a result of space, with its dimensions, which allows time to spread out over distance.
 
-Asyncronous is the word.
+Asyncronous is the word, and it means "out of time", relative to other events a happening.  
 
-This guide did nothing say of how to deal with asyncronous behaviours.
+Yet a program may need to coordinate results from many asynconous events.
 
-Async behaviours did not come natural to most early programmers of other languages, but that doesn't have to be the case with you.
+This is an apsect of your program's design; most programs can be written without knots of asyncronous events.
 
-There are many styles to try writing javascript, to wend your way about intersecting streams of data and outer userspace.
+This guide does nothing say of how to write for asyncronous behaviours.
 
-Thread the needle.
+Async behaviours did not come natural to many programmers of other languages, and they could not handle it; but that doesn't have to be the case with you.
 
-or, try the [sweet bun style](https://www.youtube.com/watch?v=HtBebT-rKeM&list=PLYgHYEWMPzcrzcbGGqJyTKE9FK6DLTCiw)
+There are many styles to try writing javascript, to wend intersecting streams of data in outer userspace.
+
+Thread the needle, or, try the [sweet bun style](https://www.youtube.com/watch?v=HtBebT-rKeM&list=PLYgHYEWMPzcrzcbGGqJyTKE9FK6DLTCiw)
 
 
 
