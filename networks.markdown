@@ -339,8 +339,9 @@ Here we can send an email from `barak@whitehouse.gov` to
 `substack@localhost`.
 
 The lines that start with a number are messages from the
-server:
+server.
 
+---
 ```
 $ nc localhost 25
 220 1x1px ESMTP Exim 4.80 Sun, 11 Jan 2015 22:46:30 -0800
@@ -360,7 +361,6 @@ Greetings citizen. I am the president. For real. Keep on keeping on.
 quit
 221 1x1px closing connection
 ```
-
 ---
 Since this email was sent locally, I can read the message
 with the `mail` command:
@@ -542,6 +542,13 @@ Please respect their privacy!
 
 But also note that anyone could be sniffing in on your
 unencrypted traffic, and not just at the level of wifi.
+
+---
+# protocol links
+
+* [smtp rfc](http://www.faqs.org/rfcs/rfc821.html)
+* [irc rfc](http://www.faqs.org/rfcs/rfc2812.html)
+* [http rfc](http://www.faqs.org/rfcs/rfc2616.html)
 
 ---
 EOF
