@@ -1,2 +1,2 @@
-# the dom (and svg!)
+# the dom, svg, and browserify
 
