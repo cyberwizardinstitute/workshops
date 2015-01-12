@@ -78,13 +78,41 @@ The second is a CALLBACK.
 
 # Callbacks
 
-A CALLBACK is simply a function, no different than any other function.  
+A CALLBACK is simply a function, no different than any other function, which is called upon an event.
 
-All confusion about calbacks stem from confusion, or laziness, about javascipt functional syntax.
+Most confusion about calbacks stems from confusion, or laziness, about javascipt functional syntax.
 
+Consider the following:
 
+```js
+event.on('update', function(data){
+  console.log(data)
+})
+```
+To the uninitiated, this may look like a pinata of inscruotable syntax.  
 
+A function is being called, which takes two arguments.  One argument is the string 'update', the next argument is a function.  This is confusing because that function is written out within the parenthesis of the function being called.
 
+Another way looks like this:
+```js
+var callback_Function = function(data){
+  console.log(data)
+}
+
+event.on('update', callback_Function)
+```
+
+Now you can see that the callback is a generic function, and event.on is a function being called() with two arguments, one of them a function.
+
+When an event fires that is an 'update',  call the supplied function, in this case 'callback_Function'.
+
+It is very common in javascript to supply a function as an argument, like in real life you might give directions "in the event" something occurs.
+
+Node.js is build around events.  This is because there is often some time between the initiation of a sequence, and it the events which are produced.
+
+Direct your program to open a file, and when the file is open, do something.
+
+so much for events and callbacks.
 
 
 
