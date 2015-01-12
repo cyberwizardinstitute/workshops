@@ -392,7 +392,27 @@ Greetings citizen. I am the president. For real. Keep on keeping on.
 ---
 # irc
 
+irc is an ancient text-based chat protocol that is still
+very popular among programmers.
 
+To play around, pick a nick (like whatevz) and hop on a
+server (such as irc.freenode.net):
+
+```
+$ nc irc.freenode.net 6667
+nick whatevz
+user whatevz whatevz irc.freenode.net :whatevz
+join #cyberwizard
+privmsg #cyberwizard :hack the planet!
+```
+
+---
+# irc commands
+
+* nick - identify as a user
+* user - also identify as a user
+* join - join a channel
+* privmsg - send a message to a channel
 
 ---
 # text protocols
@@ -467,7 +487,7 @@ To filter the output so that we only see HTTP traffic, we
 can filter the output to only show traffic on port 80:
 
 ```
-$ tcpdump 'tcp port 80' -X
+$ sudo tcpdump 'tcp port 80' -X
 ```
 ---
 If you look carefully, there are HTTP requests:
@@ -509,13 +529,19 @@ and HTML:
 0x0210:  2062 726f 7773 6572 3c2f 6831 3e0a 3c70  .browser</h1>.<p
 ```
 ---
+also try:
+
+```
+$ sudo tcpdump 'tcp port 80' -A
+```
+---
 If you run `tcpdump` on a wifi connection,
 you will also see unencrypted traffic from other users.
 
 Please respect their privacy!
 
 But also note that anyone could be sniffing in on your
-unencrypted traffic too.
+unencrypted traffic, and not just at the level of wifi.
 
 ---
 EOF
