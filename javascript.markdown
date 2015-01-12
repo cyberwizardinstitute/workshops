@@ -624,6 +624,7 @@ $ node args.js one two three
 The first 2 arguments aren't too useful, just `node` and the
 full path to our script, but the remaining arguments are
 everything that follows `args.js` on the command-line.
+
 ---
 To get only the useful arguments, we can use `.slice(2)`:
 
@@ -658,6 +659,7 @@ $ node add.js 3 5
 Note that every element in `process.argv` is a string, so we
 can use the built-in `Number` function to convert from a
 string to a number.
+
 ---
 # objects
 
@@ -667,6 +669,7 @@ We've already been using some objects:
 `argv` that is an array.
 * `console` is an object with a property
 `log` that is a function.
+
 ---
 # objects
 
@@ -1055,6 +1058,7 @@ console.log(add(5, 2)); // 7
 
 When you declare functions in expressions you don't need to
 give them a name.
+
 ---
 # immediately executing function
 
@@ -1073,6 +1077,7 @@ console.log(sum); // 12
 Variables declared inside functions are only visible in that
 function, so immediately executing functions are sometimes
 used to create an isolated scope.
+
 ---
 You could even do:
 
@@ -1240,6 +1245,7 @@ console.log(n.multiply(3)); // 315
 
 `n` is an "instance" of Num. You can make as many instances
 as you like and they will all have separate values.
+
 ---
 # constructors: new trick
 
@@ -1414,6 +1420,7 @@ Your entirely optional homework is to get through the
 `javascripting` lesson on nodeschool:
 
 http://nodeschool.io/#javascripting
+
 ---
 # links
 
