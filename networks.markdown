@@ -151,6 +151,12 @@ With netcat you can speak tcp directly.
 $ nc -lp 5000
 ```
 
+or if that doesn't work try:
+
+```
+$ nc -l 5000
+```
+
 then connect to your server in another terminal:
 
 ```
