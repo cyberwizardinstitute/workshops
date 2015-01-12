@@ -1,16 +1,20 @@
 # Node.js
 
-A computer program can run in many hosts.
+A computer program can run in many host environments.
 
-Javascript programs run inside every browser tab.
+Programs run on desktops, tablets, small devices, smart devices.
 
-Programs run on small devices, smart devices, across various operating systems.
+Some programs run across various operating systems; this is useful.
 
 This is possible because the language of your program has interpretters and compilers that work in a particular host environment.
 
 It's very environmental.
 
-Node.js creates an environment for running javascript.  
+Javascript programs run inside every browser tab.
+
+On billions of devices, across all operating systems.
+
+Node.js created an environment for running javascript outside of the browser as well.
 
 This allowed for many new kinds of applications to be written in Javascript, which previously worked only in the browser.
 
