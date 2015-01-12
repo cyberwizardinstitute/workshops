@@ -1,5 +1,6 @@
 # networking
 
+servers, clients, and protocols!
 
 ---
 # servers and clients
@@ -391,6 +392,8 @@ Greetings citizen. I am the president. For real. Keep on keeping on.
 ---
 # irc
 
+
+
 ---
 # text protocols
 
@@ -433,6 +436,86 @@ protocol for us:
 $ ssh substack.net
 substack@origin : ~ $ 
 ```
+
+---
+# inspecting protocols
+
+To inspect protocols, you can capture everything coming out
+of and into your wireless or ethernet card using:
+
+* wireshark for a graphical tool
+* tcpdump for a command-line tool
+
+---
+# tcpdump
+
+First install tcpdump:
+
+    sudo apt-get install tcpdump
+
+then do:
+
+```
+$ sudo tcpdump -X
+```
+
+to see each packet with a hexadecimal representation in the
+middle and ascii on the right.
+
+---
+To filter the output so that we only see HTTP traffic, we
+can filter the output to only show traffic on port 80:
+
+```
+$ tcpdump 'tcp port 80' -X
+```
+---
+If you look carefully, there are HTTP requests:
+
+```
+23:07:37.655461 IP 10.0.0.2.40646 > 104.131.0.235.http: Flags [P.], seq 1:77, ack 1, win 115, options [nop,nop,TS val 62572874 ecr 2756441271], length 76
+0x0000:  4500 0080 0231 4000 4006 c4d7 0a00 0002  E....1@.@.......
+0x0010:  6883 00eb 9ec6 0050 ece3 cb1c 857a efc5  h......P.....z..
+0x0020:  8018 0073 15ec 0000 0101 080a 03ba c94a  ...s...........J
+0x0030:  a44b f4b7 4745 5420 2f20 4854 5450 2f31  .K..GET./.HTTP/1
+0x0040:  2e31 0d0a 5573 6572 2d41 6765 6e74 3a20  .1..User-Agent:.
+0x0050:  6375 726c 2f37 2e32 362e 300d 0a48 6f73  curl/7.26.0..Hos
+0x0060:  743a 2073 7562 7374 6163 6b2e 6e65 740d  t:.substack.net.
+0x0070:  0a41 6363 6570 743a 202a 2f2a 0d0a 0d0a  .Accept:.*/*....
+```
+---
+and HTTP responses:
+
+```
+0x0030:  03bb 7d44 4854 5450 2f31 2e31 2032 3030  ..}DHTTP/1.1.200
+0x0040:  204f 4b0d 0a63 6f6e 7465 6e74 2d74 7970  .OK..content-typ
+0x0050:  653a 2074 6578 742f 6874 6d6c 0d0a 4461  e:.text/html..Da
+0x0060:  7465 3a20 4d6f 6e2c 2031 3220 4a61 6e20  te:.Mon,.12.Jan.
+0x0070:  3230 3135 2030 373a 3130 3a32 3420 474d  2015.07:10:24.GM
+0x0080:  540d 0a43 6f6e 6e65 6374 696f 6e3a 206b  T..Connection:.k
+0x0090:  6565 702d 616c 6976 650d 0a54 7261 6e73  eep-alive..Trans
+```
+---
+and HTML:
+
+```
+0x01a0:  0d0a 3137 3136 0d0a 3c68 3120 6964 3d22  ..1716..<h1.id="
+0x01b0:  6f66 666c 696e 652d 6465 6365 6e74 7261  offline-decentra
+0x01c0:  6c69 7a65 642d 7369 6e67 6c65 2d73 6967  lized-single-sig
+0x01d0:  6e2d 6f6e 2d69 6e2d 7468 652d 6272 6f77  n-on-in-the-brow
+0x01e0:  7365 7222 3e6f 6666 6c69 6e65 2064 6563  ser">offline.dec
+0x01f0:  656e 7472 616c 697a 6564 2073 696e 676c  entralized.singl
+0x0200:  6520 7369 676e 2d6f 6e20 696e 2074 6865  e.sign-on.in.the
+0x0210:  2062 726f 7773 6572 3c2f 6831 3e0a 3c70  .browser</h1>.<p
+```
+---
+If you run `tcpdump` on a wifi connection,
+you will also see unencrypted traffic from other users.
+
+Please respect their privacy!
+
+But also note that anyone could be sniffing in on your
+unencrypted traffic too.
 
 ---
 EOF
