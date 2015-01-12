@@ -1417,4 +1417,5 @@ http://nodeschool.io/#javascripting
 ---
 # links
 
-http://jsforcats.com/
+- [jsforcats.com](http://jsforcats.com/)
+- [learn more about function hoisting here](https://gist.github.com/maxogden/4bed247d9852de93c94c)
