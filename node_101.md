@@ -97,7 +97,7 @@ There, a function is being called, which takes two arguments.  One argument is t
 
 Look at another way to write the same thing:
 ```js
-// I literally cut and copied everything after the = from the previous example
+// I literally copied everything after the = from the previous example
 var callback_Function = function(data){
   console.log(data)
 }
