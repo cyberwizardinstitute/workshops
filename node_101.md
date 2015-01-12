@@ -91,11 +91,15 @@ event.on('update', function(data){
   console.log(data)
 })
 ```
-To the uninitiated, this may look like a pinata of inscruotable syntax; and hlaf of it comprises the callback.
+To the uninitiated, this may look like a pinata of inscruotable syntax.
 
-There, a function is being called, which takes two arguments.  One argument is the string, 'update'.  The next argument is a function.  This is confusing because that function is written out within the parenthesis of the function being called.
+One reason is because that code has nested syntax, which is totally legal.
 
-Look at another way to write the same thing:
+Half of that code is a callback.
+
+On the outside, a function is being called, which takes two arguments between its parenthesis.  One argument is a string, 'update'.  The next argument is a function, written out.  This is confusing because that function is written out within the parenthesis of the function being called.
+
+However, look at another way to write the same thing:
 ```js
 // I literally copied everything after the = from the previous example
 var callback_Function = function(data){
@@ -105,15 +109,39 @@ var callback_Function = function(data){
 event.on('update', callback_Function)
 ```
 
-Here, you can see that the callback is a basic function, and event.on is a function being called with two arguments, one of them a function.
+Here, you can see that the callback is a basic function, and event.on is a function being called with two arguments, one of them the function referenced aboove.
 
-When an 'update' event happens, call the supplied function, in this case 'callback_Function', which was reference above.
+When an 'update' event happens, call the supplied function.
 
 It is very common in javascript to supply a function as an argument to another function, like in real life you might give directions "in the event" something occurs.
+
+As with all writing, code can get sloppy; we often forgetting, or ignoring, the fact that other humans will actually try to read and understand this.
 
 Node.js is built on top of events.  This is because there is often some time between the initiation of a sequence, and it the events which are produced; for instance when you fetch data from a far away server, and wait for the response.
 
 so much for events and callbacks.
+
+#  psyche!
+
+Events and callbacks are a paradigm for handling asyncronous behaviours.  
+
+One asyncronous behaviour is your very own:  you write the code before it runs.
+
+The other async behaviour occurs naturally as a result of time and space.
+
+Asyncronous is the word.
+
+This guide did nothing say of how to deal with asyncronous behaviours.
+
+Async behaviours did not come natural to most early programmers of other languages, but that doesn't have to be the case with you.
+
+There are many styles to try writing javascript, to wend your way about intersecting streams of data and outer userspace.
+
+Thread the needle.
+
+or, try the [sweet bun style](https://www.youtube.com/watch?v=HtBebT-rKeM&list=PLYgHYEWMPzcrzcbGGqJyTKE9FK6DLTCiw)
+
+
 
 
 
