@@ -1,4 +1,3 @@
-
 # git 
 
 a way to keep track of changes you make to files. a very
@@ -46,10 +45,11 @@ https://www.youtube.com/watch?v=u2rZLVWOWvs
 - `git init`
 - `git status` (should be empty)
 - `git add doge.png wow.html`
-- `git status` (now git is watching these files for changes!)
-- `git commit -am "first commit"` (now you've saved a snapshot
-  of the directory. note: it will only commit changes in the files
-  you're watching.)
+- `git status` (now git is watching these files for
+  changes!)
+- `git commit -am "first commit"` (now you've saved a
+  snapshot of the directory. note: it will only commit
+  changes in the files you're watching.)
 - `git status` (should be clean)
 
 ---
@@ -58,9 +58,9 @@ https://www.youtube.com/watch?v=u2rZLVWOWvs
 
 make a commit for each bit of progress you make. 
 
-commit messages help track progress - make nice ones!
-it sucks to break something and then have a hard time
-finding the last working version!
+commit messages help track progress - make nice ones!  it
+sucks to break something and then have a hard time finding
+the last working version!
 
 don't do `git add .` or `git add *` - you will add files
 that you didn't mean to add!
@@ -71,21 +71,18 @@ that you didn't mean to add!
 
 `git log`
 
-each commit has a unique identifier called a hash. it'll look
-something like this in the log: a5815fb05810bc0ebf53faaa4aba370055bf70d5
+each commit has a unique identifier called a hash. it'll
+look something like this:
+a5815fb05810bc0ebf53faaa4aba370055bf70d5
 
-for a more compact log, do `git log --oneline`. you can also use
-the short hashes in that list to look at & revert to
-previous versions.
+for a more compact log, do `git log --oneline`.
 
-`git show 8d9c7f45ca1f1af59061fa64608666abef6cafd6` shows what changed
+`git show 8d9c7f45ca1f1af59061fa64608666abef6cafd6` shows
+what changed
 
-to see what the entirety of a file looked like at a
-particular commit, do:
+to see what one file looked like at a particular commit, do:
 
-```
-git show 8d9c7f45ca1f1af59061fa64608666abef6cafd6:file.js
-```
+`git show 8d9c7f45ca1f1af59061fa64608666abef6cafd6:file.js`
 
 ---
 
@@ -108,22 +105,18 @@ https://www.youtube.com/watch?v=3cMP4oBKO34
 
 # starting a new github repo
 
-github repos live online, on github.com. you can have a
-million projects in local git repos and zero activity on
-github. to take your local repo and put it online (where it
-will live on forever regardless of what happens to your
-computer and where others can see your work & possibly even
-help you with it!), you first have to go to github.com.
+github repos live on github.com. you can have a million
+projects in local git repos and zero activity on github. to
+put your local repo online, first go to github.com.
 
-- on github: click the big green "new repository" button and
-  follow the steps. NOTE: do not make a README.
-- on github: once your new github repository is ready, the
-  site will show your new repo & display its git url. it
-  will look something like this:
+- on github: click the "new repository" button NOTE: do not
+  make a README.
+- on github: once your new repo is ready, the site will show
+  its git url. it will look like:
   `git@github.com:cyberwizardinstitute/course-map.git`
-- in terminal do: `git remote add origin
+- in terminal: `git remote add origin
   git@github.com:cyberwizardinstitute/course-map.git`
-- in terminal do: `git push origin master`
+- in terminal: `git push origin master`
 
 now, when you go to your repo on github, it should have the
 contents of your last commit.
@@ -143,14 +136,15 @@ directly to them.
 - check that everything has copied with `ls`
 - make whatever changes you want
 - `git status`
-- `git commit -am "adding xyz"` (this makes a commit on your
-  local machine)
-- `git push origin master` (this pushes your changes back up
-  to github)
+- `git commit -am "adding xyz"` (make a commit on your local
+  machine)
+- `git push origin master` (push your changes back up to
+  github)
 
 ---
 
-# collaborating on existing github projects (w/o push access)
+# collaborating on existing github projects (w/o push
+# access)
 
 for existing github projects that you'd like to work on but
 that you don't have push access to, or where you'd like your
@@ -160,7 +154,8 @@ branch.
 - on github, fork the repo you want to work with. (this will
   give you your own copy of the repo on github, but not on
   your local machine).
-- on github, go to your own fork of the repo and find the git url to clone the repo.
+- on github, go to your own fork of the repo and find the
+  git url to clone the repo.
 - in terminal: `git clone xyz.git` (this pulls your forked
   copy to your local machine)
 - check that everything has copied with `ls`
@@ -183,8 +178,8 @@ shared github repo, do `git pull origin master` to make sure
 that you have the most up to date version of the repo.
 
 many existing open source projects have code review before
-your pull request can be merged. this is why it's a
-good idea to fork and work on your own branch of an existing
+your pull request can be merged. this is why it's a good
+idea to fork and work on your own branch of an existing
 project.
 
 ---
@@ -195,5 +190,5 @@ Your homework is to do the git-it workshop on nodeschool:
 
 http://nodeschool.io/#gitit
 
-and to submit a pull request to a project with a useful fix or
-addition.
+and to submit a pull request to a project with a useful fix
+or addition.
