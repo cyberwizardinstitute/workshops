@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "body": "^4.5.0",
+    "ecstatic": "~0.5.8"
+  }
+}
