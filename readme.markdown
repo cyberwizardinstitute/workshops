@@ -13,5 +13,7 @@ the javascript language
 
 * [vim](vim.markdown) - learn how to use the vim command-line text editor
 
+* [streams](streams.markdown) - learn how to using streaming I/O in node.js
+
 ....and so much more! Check the list of files above for
 notes on other topics covered.
