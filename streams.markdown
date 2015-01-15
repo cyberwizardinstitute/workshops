@@ -6,8 +6,8 @@ called streams
 ---
 # reference materials!
 
-https://github.com/substack/stream-handbook
-http://nodeschool.io/#stream-adventure
+* https://github.com/substack/stream-handbook
+* http://nodeschool.io/#stream-adventure
 
 ---
 # stream origins
