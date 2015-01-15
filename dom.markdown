@@ -80,6 +80,33 @@ Select an element by its `id`:
 
 * `#top` -> `<h1 id="top">very tree</h1>`
 
+Select an element by attribute:
+
+* `[id="top"]` -> `<h1 id="top">very tree</h1>`
+
+---
+# css selector combinations
+
+You can combine id, class, attribute, and element selectors.
+
+All of the constraints must match:
+
+``` js
+document.querySelector('h1#cool.row[x="5"]')
+```
+
+will match:
+
+``` html
+<h1 id="cool" class="row" x="5">whatever</h1>
+```
+
+but not:
+
+``` html
+<h1 id="sweet" class="row" x="5">hey</h1>
+```
+
 ---
 # nested css selectors
 
@@ -234,19 +261,196 @@ and now the body will have an `input` element with
 ---
 # `.insertBefore()`
 
+We can also insert elements before another element.
+Given this html:
 
+``` html
+<html>
+  <body>
+    <ul>
+      <li class="zero">zero</li>
+      <li class="one">one</li>
+      <li class="three">three</li>
+    </ul>
+  </body>
+</html>
+```
+
+---
+# `.insertBefore()`
+
+We can insert an element before `<li>three</li>`:
+
+``` js
+var ul = document.querySelector('ul');
+var three = ul.querySelector('.three');
+
+var two = document.createElement('li');
+two.textContent = 'two';
+two.setAttribute('class', 'two');
+
+ul.insertBefore(two, three);
+```
+---
+# `.insertBefore()`
+
+and now the html will be:
+
+``` html
+<html>
+  <body>
+    <ul>
+      <li class="zero">zero</li>
+      <li class="one">one</li>
+      <li class="two">two</li>
+      <li class="three">three</li>
+    </ul>
+  </body>
+</html>
+```
 
 ---
 # `.style`
 
----
-# .classList
+We can adjust css on the fly with `.style`.
+Using the html from the previous example, we can do:
+
+``` js
+var zero = document.querySelector('.zero');
+zero.style.color = 'purple';
+```
+
+and now the first element in the list will have purple text.
+
 ---
 # events
+
+We can respond to page actions by using
+`.addEventListener()`. With this html:
+
+``` html
+<body>
+  <button>wow</button>
+</body>
+```
+
+---
+# events
+
+we can insert an element when somebody clicks the button:
+
+``` js
+var button = document.querySelector('button');
+button.addEventListener('click', function (ev) {
+    var msg = document.createElement('div');
+    msg.textContent = new Date().toISOString();
+    document.body.appendChild(msg);
+});
+```
+
+---
+# forms and preventDefault
+
+Sometimes events have default actions, like forms will send
+a GET or POST request when the submit button is clicked. You
+can override these actions by calling `preventDefault()` on
+the event object.
+
+Given this html:
+
+``` html
+<form>
+  <input type="text" name="cool">
+  <input type="submit">
+</form>
+```
+
+---
+# forms and preventDefault
+
+We can capture the submit event and prevent the default
+action:
+
+``` js
+var form = document.querySelector('form');
+form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    form.querySelector('[name=cool]')
+});
+```
 
 ---
 # xhr
 
+We can make http requests with the DOM too!
+
+It's really awkward to do this with raw javascript:
+
+``` js
+var xhr = new XMLHttpRequest;
+xhr.addEventListener('readystatechange', function (ev) {
+    if (xhr.readyState === 4) {
+        console.log('body=', xhr.responseText);
+    }
+});
+xhr.open('POST', '/', true);
+xhr.send('foo=bar&x=5');
+```
+
 ---
-# 
+# xhr
+
+Luckily, there is a package on npm we can use. First do:
+
+```
+npm install xhr
+```
+
+then in your browser code you can do:
+
+``` js
+var xhr = require('xhr');
+var opts = {
+    method: 'POST',
+    uri: '/',
+    body: 'foo=bar&x=5'
+};
+xhr(opts, function (err, res, body) {
+    console.log('body=', body);
+});
+```
+
+---
+# xhr
+
+or with the help of the built-in querystring module:
+
+``` js
+var xhr = require('xhr');
+var qs = require('querystring');
+var opts = {
+    method: 'POST',
+    uri: '/',
+    body: qs.stringify({ foo: 'bar', x: 5 })
+};
+xhr(opts, function (err, res, body) {
+    console.log('body=', body);
+});
+```
+
+---
+
+If you want to use `require()` to load modules from npm,
+you'll need to use a tool like
+[browserify](http://browserify.org):
+
+```
+$ browserify browser.js > bundle.js
+```
+
+then in your html:
+
+``` html
+<script src="bundle.js"></script>
+```
 
