@@ -207,7 +207,7 @@ There are two other operators for convenience:
 Same as: `x += 1` or `x = x + 1`
 
 * `x--` - decrement x by 1 in place
-Same as: `x += 1` or `x = x + 1`
+Same as: `x -= 1` or `x = x - 1`
 
 You might also see `++x` and `--x` which
 are similar to `x++` and `x--` but have
