@@ -7,7 +7,10 @@ Likely most developers spend some amount of time concerning themselves with the 
 
 Looking at the big picture
 - Site design
-  - Page/View diagram
+  - UX superset (use of car), UI subset (steering wheel, pedals, shifter)
+    http://www.kickerstudio.com/wp-content/uploads/2013/03/ux.jpg
+    (UI == Human Computer Interaction)
+  - Pages/Views relationship diagram
 - Getting from A to B
   - Load -> Present (Persuade or provide tools) -> Call to Action(s)
   - Cognitive Load <- main topic
