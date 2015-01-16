@@ -57,7 +57,7 @@ With streams, we can operate on data chunk by chunk, without
 buffering everything into memory.
 
 This means we can write programs that operate on very large
-files!
+files or lazily evaluate network data as it arrives!
 
 It also means we can have hundreds or thousands of
 concurrent streams without using much memory.
