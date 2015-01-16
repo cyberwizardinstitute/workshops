@@ -1,0 +1,191 @@
+[
+  {
+    "key": [
+      "hackerspace",
+      "sudoroom"
+    ],
+    "value": {
+      "name": "sudoroom"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "hackerspace",
+      "noisebridge"
+    ],
+    "value": {
+      "name": "noisebridge"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "hacker",
+      "substack"
+    ],
+    "value": {
+      "name": "substack",
+      "hackerspace": "sudoroom"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "hacker",
+      "maxogden"
+    ],
+    "value": {
+      "name": "maxogden",
+      "hackerspace": "sudoroom"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "hacker",
+      "ioerror"
+    ],
+    "value": {
+      "name": "ioerror",
+      "hackerspace": "noisebridge"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "hacker",
+      "mitch"
+    ],
+    "value": {
+      "name": "mitch",
+      "hackerspace": "noisebridge"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "hacker",
+      "wrought"
+    ],
+    "value": {
+      "name": "wrought",
+      "hackerspace": "sudoroom"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "hacker",
+      "mk30"
+    ],
+    "value": {
+      "name": "mk30",
+      "hackerspace": "sudoroom"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "tool",
+      "8d9a83"
+    ],
+    "value": {
+      "name": "3d printer",
+      "hackerspace": "sudoroom"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "tool",
+      "ea7e66"
+    ],
+    "value": {
+      "name": "piano",
+      "hackerspace": "sudoroom"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "tool",
+      "025452"
+    ],
+    "value": {
+      "name": "laser cutter",
+      "hackerspace": "noisebridge"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "hacker",
+      "yardena"
+    ],
+    "value": {
+      "name": "yardena",
+      "hackerspace": "sudoroom"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "tool",
+      "5cc709"
+    ],
+    "value": {
+      "name": "3d printer",
+      "hackerspace": "noisebridge"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "usage",
+      "d06ab1"
+    ],
+    "value": {
+      "tool": "8d9a83",
+      "minutes": "45",
+      "user": "maxogden"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "usage",
+      "2454c1"
+    ],
+    "value": {
+      "tool": "8d9a83",
+      "minutes": "20",
+      "user": "yardena"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "usage",
+      "ec08ed"
+    ],
+    "value": {
+      "tool": "ea7e66",
+      "minutes": "14",
+      "user": "substack"
+    },
+    "type": "put"
+  },
+  {
+    "key": [
+      "usage",
+      "61baab"
+    ],
+    "value": {
+      "tool": "025452",
+      "minutes": "8",
+      "user": "mitch"
+    },
+    "type": "put"
+  }
+]
