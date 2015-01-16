@@ -102,13 +102,27 @@ We might need to create:
 ---
 # batch
 
-perform multiple 
+insert multiple records at a time, atomically
 
 ``` js
+db.batch([
+    {"key":"foo","value":"123"},
+    {"key":"bar","value":"456"}
+])
 ```
 
 ---
 # createReadStream
+
+```
+db.createReadStream({
+    gt: "a",
+    lt: "m"
+})
+```
+
+* gt - greater than
+* lt - less than
 
 ---
 # thinking lexicographically
