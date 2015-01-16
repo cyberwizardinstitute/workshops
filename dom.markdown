@@ -380,6 +380,54 @@ form.addEventListener('submit', function (ev) {
 ```
 
 ---
+# registering events for multiple elements
+
+Suppose we have some html:
+
+``` html
+<ul>
+  <li>one</li>
+  <li>two</li>
+  <li>three</li>
+</ul>
+```
+
+There are two ways we can register a "click" event for each
+`li` element.
+
+---
+# register a listener on each element
+
+We can register a "click" listener on each element:
+
+``` js
+var items = document.querySelectorAll('ul li');
+for (var i = 0; i < items.length; i++) (function (elem) {
+    elem.addEventListener('click', function (ev) {
+        ev.target.style.fontWeight = 'bold';
+    });
+})(items[i]);
+```
+
+This is kind of messy. We need to use a closure because the
+for loop modifies the `i` index before the events fire so it
+is always the last index.
+
+---
+# ev.target
+
+A simpler way to register a listener for many elements is to
+register a listener on the parent `ul` and check the
+`ev.target`:
+
+``` js
+var ul = document.querySelector('ul');
+ul.addEventListener('click', function (ev) {
+    ev.target.style.fontWeight = 'bold';
+});
+```
+
+---
 # xhr
 
 We can make http requests with the DOM too!
