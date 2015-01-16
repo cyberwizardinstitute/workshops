@@ -207,8 +207,8 @@ This will let us efficiently query for a user's posts:
 
 ``` js
 db.createReadStream({
-    gt: "user!substack",
-    lt: "user!substack!~"
+    gt: "post!substack",
+    lt: "post!substack!~"
 })
 ```
 
@@ -229,8 +229,8 @@ or with bytewise:
 
 ``` js
 db.createReadStream({
-    gt: ["user","substack",null],
-    lt: ["user","substack",undefined]
+    gt: ["post","substack",null],
+    lt: ["post","substack",undefined]
 })
 ```
 
