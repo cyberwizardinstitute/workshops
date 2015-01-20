@@ -1,0 +1,17 @@
+<html>
+  <head><title>wow</title></head>
+  <body>
+    <form method="POST" action="/submit">
+      <input type="text" name="cool">
+      <input type="submit" value="submit this form!">
+    </form>
+    <script>
+      var form = document.querySelector('form');
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var cool = form.querySelector('[name="cool"]');
+        console.log(cool.value);
+      });
+    </script>
+  </body>
+</html>

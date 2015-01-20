@@ -1,4 +1,10 @@
-The Front End, Full Frontal Endienness, The Complete document.body
+__The Front End__
+
+or
+
+__Who Put The End In The Front__?
+
+___________
 
 Writing a program, there are a million ways to do everything. 
 
@@ -25,9 +31,9 @@ That is because the DOM is the master.
 
 The DOM controls every website, from within the browser.
 
-All that HTML you wrote, with its funny carrots, 
+All that HTML you wrote, with its funny carets, 
 
-and all that CSS, with its not-funny functionality,
+and all that CSS, with its mysteries,
 
 Those strings of goofy text get translated into OBJECTS
 
@@ -48,10 +54,6 @@ The DOM can create new OBJECTS.
 The DOM can talk to the internet.
 
 The DOM can send messages to other people.
-
-The same properties that you gave them 
-
-when you wrote the HTML, and the CSS.
 
 The DOM is the browser's API.
 
@@ -147,7 +149,7 @@ and cascade styles upon styles over them.
 
 CSS is like, img #element-9: your background is green;
 ```css
-div#element-9{background:green}
+#element-9{background:green}
 ```
 
 And it will be so.
