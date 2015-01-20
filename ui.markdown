@@ -36,5 +36,9 @@ Looking at the big picture
 - Increase persistence, retention 
 - Increase # desired responses
 
+### Further Study
+http://www.nngroup.com/articles/usability-101-introduction-to-usability/
+http://www.nngroup.com/articles/ten-usability-heuristics/
+
 
 *Offered by bloodyKnuckles (Jay.)*
