@@ -21,7 +21,7 @@
 * Add the tools to your path. Instructions at [https://help.ubuntu.com/community/AndroidSDK#Modifying_the_PATH_Environment_Variable](https://help.ubuntu.com/community/AndroidSDK#Modifying_the_PATH_Environment_Variable)
 * Reset your bash source with `source ~/.bashrc`. Type `echo $PATH` to confirm that the tools and platform tools for Android are included in your path.
 * Enter the command `android` in your terminal to open the android sdk manager. If this command fails due to missing java on your linux machine, install the openJDK with `sudo apt-get install openjdk-7-jdk`. Run the command `android` in your terminal once done. Mac OSX had the JDK installed by default.
-* In the Android SDK Manager, scroll down to Android 4.4.2 (API 19) and check the SDK Platform. Install All the packages.
+* In the Android SDK Manager, scroll down to Android 4.4.2 (API 19) and check the SDK Platform. Install the packages that are checked (including the default ones).
 * Install ant via `sudo apt-get install ant` (linux). For Mac OSX, follow the instuctions at http://stackoverflow.com/questions/3222804/how-can-i-install-apache-ant-on-mac-os-x
 
 
