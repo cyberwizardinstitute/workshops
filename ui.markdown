@@ -25,7 +25,7 @@ Looking at the big picture
 - Grouping
 - Consistency
   - Grammatical type (nouns, verbs, phrases)
-  - Person (first person, second person)
+  - Narrative (first person, second person)
 - Priority (left/right, top/bottom, emphasis)
 - Scan-ability (structured text, spacing, proximity)
 - Meaningful Icons (learning types, recollection on return)
