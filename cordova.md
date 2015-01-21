@@ -84,6 +84,7 @@ Run `cordova emulate android` from within your cordova project to launch your ap
 ### Install iOS Sim
 
 `npm install -g ios-deploy`
+`npm install -g ios-sim`
 
 ### Simulator
 
