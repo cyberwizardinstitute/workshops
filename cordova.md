@@ -26,7 +26,7 @@
     `export PATH=${PATH}:~/android-sdk-linux/tools`
     `export PATH=${PATH}:~/android-sdk-linux/platform-tools`
     If you didn't move your android sdk files to your home directory before, update the lines above to point to where you stored your android-sdk. 
-* Reset your bash source with `source ~/.bashrc` (or source ~./bash_profile). Type `echo $PATH` to confirm that the tools and platform tools for Android are included in your path.
+* Reset your bash source with `source ~/.bashrc` (or source ~/.bash_profile). Type `echo $PATH` to confirm that the tools and platform tools for Android are included in your path.
 * Enter the command `android` in your terminal to open the android sdk manager. If this command fails due to missing java on your linux machine, install the openJDK with `sudo apt-get install openjdk-7-jdk`. For Mac OS, if it isn't installed by default, you will get a prompt to click more info to install java. Follow the instructions that open in your browser to install the JDK. Run the command `android` in your terminal once done. 
 * In the Android SDK Manager, scroll down to Android 4.4.2 (API 19) and check the SDK Platform. Install the packages that are checked (including the default ones).
 * Install ant via `sudo apt-get install ant` (linux). For Mac OSX, follow the instuctions at http://stackoverflow.com/questions/3222804/how-can-i-install-apache-ant-on-mac-os-x (probably install homebrew followed by brew install ant)
