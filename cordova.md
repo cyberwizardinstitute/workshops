@@ -55,7 +55,7 @@ In the root of your project,  you should see the following directories.
 
 Lets try building the app
 
-`cordova platform build android`
+`cordova build android`
 
 Once that is successful, lets move on to deploying!
 
@@ -83,7 +83,7 @@ Run `cordova emulate android` from within your cordova project to launch your ap
 
 ### Install iOS Sim
 
-`npm install -g ios-sim`
+`npm install -g ios-deploy`
 
 ### Simulator
 
