@@ -319,8 +319,47 @@ engine.run();
 These timers can be paused with `engine.pause()`.
 
 ---
+# 2d physics
+
+``` js
+position.x += velocity.x * dt;
+position.y += velocity.y * dt;
+
+velocity.x += acceleration.x * dt;
+velocity.y += acceleration.y * dt;
+```
+
+---
 # box-sprite-svg
+
+Wrap an svg element with physics!
+
+``` js
+var sprite = require('box-sprite-svg');
+var player = sprite(document.querySelector('svg #player'));
+
+var loop = require('frame-loop');
+var engine = loop(function (dt) {
+    player.tick(dt);
+});
+engine.run();
+
+window.addEventListener('keydown', function (ev) {
+    if (ev.keyCode === 37) {
+        player.velocity.x = -400;
+    }
+    else if (ev.keyCode === 39) {
+        player.velocity.x = 400;
+    }
+});
+window.addEventListener('keyup', function (ev) {
+    if (ev.keyCode === 37 || ev.keyCode === 39) {
+        player.velocity.x = 0;
+    }
+});
+```
 
 ---
 # box-collide
+
 
