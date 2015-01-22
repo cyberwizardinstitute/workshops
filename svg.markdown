@@ -54,7 +54,7 @@ Most visible elements have these attributes:
 
 ``` html
 <rect x="1" y="1" width="998" height="298"
-  fill="none" stroke-width="2">
+  fill="orange" stroke-width="2">
 ```
 
 ---
@@ -69,9 +69,44 @@ Most visible elements have these attributes:
 ---
 # transforms
 
+Set the "transform" attribute to any of these:
+
 * transform
 * scale
+* rotate
+* scaleX
+* scaleY
 * matrix
+
+---
+# translate
+
+``` html
+<circle transform="translate(30,20)" cx="100" cy="200" r="20">
+```
+
+shifts the y down 30 units and the x right 20 units 
+
+# scale
+
+``` html
+<svg viewbox="0 0 1000 1000" width="100%" height="100%">
+  <circle transform="scale(0.5,2)" cx="100" cy="200" r="100">
+</svg>
+```
+
+halves the radius along the x and doubles the radius along
+the y
+
+---
+# rotate
+
+``` html
+<svg width="100%" height="100%" viewbox="0 0 1000 1000">
+<rect x="1" y="1" width="998" height="298"
+  fill="orange" stroke-width="2" transform="rotate(30)">
+</svg>
+```
 
 ---
 # `<g>`
@@ -87,6 +122,8 @@ transform on a `<g>` element.
 create a shape from a path string
 
 ``` html
+<path d="M 100 100 L 300 100 L 200 300 z"
+  fill="orange" stroke="black" stroke-width="3">
 ```
 
 ---
@@ -115,6 +152,7 @@ Some others:
 create a closed shape from line segments
 
 ``` html
+<polygon points="60,20 100,40 100,80 60,100 20,80 20,40">
 ```
 
 ---
@@ -123,7 +161,7 @@ create a closed shape from line segments
 create an open shape from line segments
 
 ``` html
-<polygon points="60,20 100,40 100,80 60,100 20,80 20,40">
+<polyline points="60,20 100,40 100,80 60,100 20,80 20,40">
 ```
 
 ---
@@ -190,9 +228,6 @@ var circle = createElement('circle', {
 svg.appendChild(circle);
 document.body.appendChild(svg);
 ```
-
----
-# 
 
 ---
 # inserting svgs into the page
@@ -360,6 +395,58 @@ window.addEventListener('keyup', function (ev) {
 ```
 
 ---
+# .getBoundingClientRect()
+
+You can get a bounding box on any svg element:
+
+``` js
+document.querySelector('#player').getBoundingClientRect()
+```
+
+prints:
+
+```
+ClientRect {height: 100, width: 100, left: 250, bottom: 350, right: 350…}
+```
+
+---
+# box-sprite-svg bbox()
+
+Handily, box-sprite-svg exposes a `.bbox()` method that
+calls `.getBoundingClientRect()`:
+
+``` js
+var sprite = require('box-sprite-svg');
+var player = sprite(document.querySelector('svg #player'));
+console.log(player.bbox());
+```
+
+prints:
+
+```
+{ bottom: 350, height: 100, left: 250, right: 350, top: 250, width: 100 }
+```
+
+---
 # box-collide
+
+Given two bounding boxes, the box-collide module will tell
+you if they collide:
+
+``` js
+var collide = require('box-collide');
+var a = document.querySelector('#a');
+var b = document.querySelector('#b');
+console.log(collide(a, b));
+```
+
+---
+# a simple game!
+
+Now that we've seen basic physics and collision detection,
+we can build a simple game!
+
+``` js
+```
 
 

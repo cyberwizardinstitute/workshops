@@ -1,5 +1,6 @@
 var sprite = require('box-sprite-svg');
 var player = sprite(document.querySelector('svg #player'));
+console.log(player.bbox());
 
 var loop = require('frame-loop');
 var engine = loop(function (dt) {

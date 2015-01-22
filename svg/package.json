@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "build": "browserify sprite.js > static/bundle/sprite.js",
+    "watch": "watchify sprite.js -o static/bundle/sprite.js -dv"
+  }
+}
