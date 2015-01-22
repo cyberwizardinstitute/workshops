@@ -284,8 +284,39 @@ function loop () {
 ---
 # frame-loop
 
+Use frame-loop to automatically set up the request animation
+frame loop with the time difference `dt`:
+
 ```
+var loop = require('frame-loop');
+var engine = loop(function (dt) {
+    // ...
+});
+engine.run();
 ```
+---
+# frame-loop
+
+You can also set timers and intervals based on game time:
+
+``` js
+var loop = require('frame-loop');
+var engine = loop(function (dt) {
+    // ...
+});
+
+engine.setInterval(function () {
+    console.log('beep');
+}, 1000);
+
+engine.setTimeout(function () {
+    engine.pause();
+}, 5000);
+
+engine.run();
+```
+
+These timers can be paused with `engine.pause()`.
 
 ---
 # box-sprite-svg
