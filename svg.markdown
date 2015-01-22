@@ -82,7 +82,9 @@ Set the "transform" attribute to any of these:
 # translate
 
 ``` html
-<circle transform="translate(30,20)" cx="100" cy="200" r="20">
+<svg viewbox="0 0 500 500" width="100%" height="100%">
+  <circle transform="translate(30,20)" cx="100" cy="200" r="20">
+</svg>
 ```
 
 shifts the y down 30 units and the x right 20 units 
@@ -163,6 +165,11 @@ create an open shape from line segments
 ``` html
 <polyline points="60,20 100,40 100,80 60,100 20,80 20,40">
 ```
+
+---
+
+paths, polylines, and polygons are great for interactive
+graphs and visualizations
 
 ---
 
@@ -445,8 +452,3 @@ console.log(collide(a, b));
 
 Now that we've seen basic physics and collision detection,
 we can build a simple game!
-
-``` js
-```
-
-
