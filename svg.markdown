@@ -1,0 +1,295 @@
+# svg
+
+svg is an image format that browsers understand
+
+---
+# `<svg>`
+
+svg looks a lot like html:
+
+``` html
+<svg viewbox="0 0 100 100" width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="300" cy="200" r="5" fill="purple">
+</svg>
+```
+
+---
+# viewbox
+
+All coordinates are in terms of the viewbox:
+
+"0 0 100 100"
+
+"left top right bottom"
+
+---
+# viewbox
+
+If you wanted to use a coordinate system with x and y
+between -1 and 1, you could do:
+
+"-1 -1 1 1"
+
+---
+
+Most visible elements have these attributes:
+
+* `fill`
+* `stroke`
+* `stroke-width`
+
+---
+# `<circle>`
+
+``` html
+<circle cx="300" cy="200" r="5" fill="purple">
+```
+
+* `cx` - center x coordinate
+* `cy` - center y coordinate
+* `r` - radius
+
+---
+# `<rect>`
+
+``` html
+<rect x="1" y="1" width="998" height="298"
+  fill="none" stroke-width="2">
+```
+
+---
+# `<text>`
+
+``` html
+<text x="250" y="150" font-family="Verdana" font-size="55">
+  whatever
+</text>
+```
+
+---
+# transforms
+
+* transform
+* scale
+* matrix
+
+---
+# `<g>`
+
+Create a group of elements.
+
+You can transform all the child nodes of a g by setting a
+transform on a `<g>` element.
+
+---
+# `<path>`
+
+create a shape from a path string
+
+``` html
+```
+
+---
+# path string syntax
+
+* `M x,y` - move to (absolute)
+* `m dx,dy` - move to (relative)
+
+* `L x,y` - line to (absolute)
+* `l dx,dy` - line to (relative)
+
+* `C c1x,c1y c2x,c2y x,y` - curve to (absolute)
+* `c dc1x,dc1y dc2x,dc2y dx,dy` - curve to (relative)
+
+* `z` / `Z` - close path
+
+Some others:
+
+* A/a - elliptical arc
+* T/t - quadratic bezier curve
+* S/s - cubic bezier curve
+
+---
+# `<polygon>`
+
+create a closed shape from line segments
+
+``` html
+```
+
+---
+# `<polyline>`
+
+create an open shape from line segments
+
+``` html
+<polygon points="60,20 100,40 100,80 60,100 20,80 20,40">
+```
+
+---
+
+You can also dynamically construct elements with javascript!
+
+---
+# document.createElementNS()
+
+Constructing elements is a bit weird:
+
+``` js
+var svg = document.createElementNS('svg', 'http://www.w3.org/2000/svg');
+var circle = document.createElementNS('circle', 'http://www.w3.org/2000/svg');
+```
+
+---
+# svg dom methods
+
+All of the usual dom methods work on svg:
+
+``` js
+var circle = document.createElementNS('circle', 'http://www.w3.org/2000/svg');
+circle.setAttribute('fill', 'cyan');
+
+var circle2 = elem.cloneNode(true);
+circle2.style.backgroundColor = 'orange';
+```
+
+---
+# svg dom methods
+
+some useful methods:
+
+* `elem.cloneNode(true)` - copy a node and its children
+* `elem.setAttribute(name, value)` - set an attribute
+
+---
+# svg-create-element
+
+with the `svg-create-element` module, we can create svg
+attributes more tersely with less remembering w3 urls:
+
+``` js
+var createElement = require('svg-create-element');
+var svg = createElement('svg');
+var circle = createElement('circle');
+```
+
+---
+# svg-create-element
+
+You can also create attributes on created elements in one
+stroke with svg-create-element:
+
+``` js
+var createElement = require('svg-create-element');
+var svg = createElement('svg', {
+    viewbox: '0 0 100 100', width: 500, height: 300
+});
+var circle = createElement('circle', {
+    cx: 250, cy: 150, r: 80, fill: 'purple'
+});
+svg.appendChild(circle);
+document.body.appendChild(svg);
+```
+
+---
+# 
+
+---
+# inserting svgs into the page
+
+Inlining svg into your html is annoying if you create the
+svgs in an image program.
+
+This works to display an image:
+
+``` html
+<img src="cats.svg">
+```
+
+but you won't be able to manipulate the svg with javascript.
+
+---
+# loading an svg
+
+Instead, we can use xhr to load an svg image, putting the
+contents into a constructed `<div>` to pull out the `<svg>`
+element:
+
+``` js
+var xhr = require('xhr');
+
+xhr('cats.svg', function (err, res, body) {
+    if (err) return console.error(err);
+    if (/^2/.test(res.statusCode)) {
+        return console.error(res.statusCode + ': ' + body);
+    }
+    var div = document.createElement('div');
+    div.innerHTML = body;
+    var svg = div.querySelector('svg');
+    if (!svg) return console.error('no svg found');
+    document.body.appendChild(svg);
+});
+```
+
+---
+# load-svg
+
+or just use the `load-svg` package instead:
+
+``` js
+var loadsvg = require('load-svg');
+
+loadsvg('cool.svg', function (err, svg) {
+    document.body.appendChild(svg);
+});
+```
+
+---
+# window.requestAnimationFrame()
+
+We can make animations using
+`window.requestAnimationFrame()`:
+
+``` js
+window.requestAnimationFrame(loop);
+
+function loop () {
+    // update the scene here
+}
+```
+
+---
+# time delta
+
+Not all computers are capable of running a simulation at 60
+fps. By computing a time delta, you can make your simulation
+work even on systems that can't keep up at 60 fps.
+
+---
+# time delta
+
+``` js
+var last = Date.now();
+window.requestAnimationFrame(loop);
+
+function loop () {
+    var now = Date.now();
+    var dt = last - now;
+    last = now;
+    
+    // update the scene here based on dt
+}
+```
+
+---
+# frame-loop
+
+```
+```
+
+---
+# box-sprite-svg
+
+---
+# box-collide
+
