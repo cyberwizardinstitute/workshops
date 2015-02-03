@@ -16,6 +16,7 @@ the javascript language
 * [streams](streams.markdown) - learn how to using streaming I/O in node.js
 
 * [career advice from Tom](http://thomaslevine.com/!/career-advice)
+    ([mirror](career-advice-from-tom.markdown))
 
 ....and so much more! Check the list of files above for
 notes on other topics covered.
