@@ -143,8 +143,7 @@ directly to them.
 
 ---
 
-# collaborating on existing github projects (w/o push
-# access)
+# collaborating on existing github projects (no push access)
 
 for existing github projects that you'd like to work on but
 that you don't have push access to, or where you'd like your
