@@ -383,6 +383,48 @@ or deleting, press `p` to paste.
 * ctrl-`v` - select in a block
 
 ---
+# more insert modes
+
+There are more ways to insert mode than just `i`:
+
+* `o` - go into insert mode, inserting a new line
+below the current line
+* `O` - go into insert mode, inserting a new line
+* above the current line
+* `a` - go into insert mode at one character to
+the right
+* `A` - go into insert mode at the end of the
+current line
+
+---
+# fancy odds and ends
+
+* `J` - move the next line to the end of the
+current line
+
+---
+# insert a file
+
+You can insert a file at the cursor position with:
+
+```
+:r otherfile.txt
+```
+
+---
+# insert with a command in place
+
+You can insert the output of a command at the
+cursor position with `:r!`.
+
+For example, to insert the output of the `pwd`
+command:
+
+```
+:r!pwd
+```
+
+---
 # .vimrc
 
 * autoindento
