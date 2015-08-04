@@ -401,6 +401,7 @@ current line
 
 * `J` - move the next line to the end of the
 current line
+* (backtick)+`.` - jump to the last edit
 
 ---
 # insert a file
