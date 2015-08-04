@@ -437,7 +437,7 @@ run the command every time you log in.
 ---
 # built-in escape alternative
 
-You can also use ctrl-c to get out of insert mode.
+You can also use ctrl+`]` to get out of insert mode.
 
 ---
 # EOF
