@@ -1060,39 +1060,6 @@ When you declare functions in expressions you don't need to
 give them a name.
 
 ---
-# immediately executing function
-
-Because functions can appear in expressions, you can
-immediately execute a function by defining the function
-immediately followed by `(...)` to call the function with
-arguments. 
-
-``` js
-var sum = function (a, b, c) {
-    return a + b + c;
-}(3, 4, 5);
-console.log(sum); // 12
-```
-
-Variables declared inside functions are only visible in that
-function, so immediately executing functions are sometimes
-used to create an isolated scope.
-
----
-You could even do:
-
-``` js
-console.log(100 + function (a, b, c) {
-    return a + b + c;
-}(3, 4, 5) * 2);
-```
-
-which is the same as `100 + 12 * 2`, so the program prints:
-
-```
-124
-```
----
 # higher-order functions
 
 Because functions are ordinary values that can appear in
@@ -1215,6 +1182,46 @@ var n = Num(100);
 console.log(n.add(5)); // 105
 console.log(n.multiply(3)); // 315
 ```
+
+---
+# asynchrony
+
+Often, javascript APIs make use of callbacks:
+
+``` js
+var fs = require('fs');
+fs.readFile('foo.txt', function (err, src0) {
+  fs.readFile('bar.txt', function (err, src1) {
+    console.log(src0.length + src1.length);
+  });
+});
+```
+
+---
+# callback order of operations
+
+``` js
+console.log(1);
+var fs = require('fs');
+fs.readFile('foo.txt', function (err, src0) {
+  console.log(3);
+  fs.readFile('bar.txt', function (err, src1) {
+    console.log(5);
+    console.log(src0.length + src1.length);
+  });
+  console.log(4);
+});
+console.log(2);
+```
+
+prints: 1, 2, 3, 4, 5
+
+---
+# the event loop
+
+Only after the current block of code has
+"run to completion" do callbacks scheduled
+on the event loop execute.
 
 ---
 # constructors
