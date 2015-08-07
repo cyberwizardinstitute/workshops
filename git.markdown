@@ -88,10 +88,9 @@ to see what one file looked like at a particular commit, do:
 
 # going back to a previous commit
 
-`git revert` 
+`git checkout` 
 
-more on going back to previous commits:
-https://www.atlassian.com/git/tutorials/undoing-changes
+checkout previous commits and make new branches!
 
 ---
 
