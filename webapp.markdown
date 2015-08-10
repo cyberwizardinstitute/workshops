@@ -1,5 +1,16 @@
 # web application
 
+---
+# start a project
+
+```
+$ mkdir foo
+$ cd foo
+$ npm init
+```
+
+---
+
 building a web application from zero
 
 * http server
@@ -7,6 +18,8 @@ building a web application from zero
 * routing
 * client vs server
 * rendering html
+* sorting hash
+* tween
 * database
 
 ---
