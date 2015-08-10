@@ -7,11 +7,16 @@
     "body": "^5.1.0",
     "collect-stream": "^1.0.0",
     "ecstatic": "^0.8.0",
-    "routes": "^2.1.0"
+    "routes": "^2.1.0",
+    "split2": "^1.0.0",
+    "through2": "^2.0.0",
+    "websocket-stream": "^1.5.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bundle": "browserify browser/main.js > public/bundle.js",
+    "watch": "watchify browser/main.js -o public/bundle.js -dv",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC"

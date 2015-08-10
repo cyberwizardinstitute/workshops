@@ -10,6 +10,7 @@ var level = require('level')
 var db = level('students.db', { valueEncoding: 'json' })
 var collect = require('collect-stream')
 var sorthash = require('./lib/sorthash.js')
+var wsock = require('websocket-stream')
 
 var server = http.createServer(function (req, res) {
   var m = router.match(req.url)
@@ -67,3 +68,22 @@ var server = http.createServer(function (req, res) {
   }
 })
 server.listen(5000)
+
+var split = require('split2')
+var through = require('through2')
+var streams = []
+
+wsock.createServer({ server: server }, function (stream) {
+  streams.push(stream)
+  stream.on('end', function () {
+    var ix = streams.indexOf(stream)
+    streams.splice(ix, 1)
+  })
+  stream.pipe(split(JSON.parse)).pipe(through.obj(write))
+  function write (row, enc, next) {
+    streams.forEach(function (stream) {
+      stream.write(JSON.stringify(row) + '\n')
+    })
+    next()
+  }
+})

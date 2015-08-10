@@ -4,6 +4,10 @@ var sorthash = require('./lib/sorthash.js')
 var houses = require('./lib/houses.json')
 module.exports = router
 
+router.addRoute('/', function (m) {
+  return h('h1', 'WELCOME')
+})
+
 router.addRoute('/apply', function (m) {
   return h('form', { method: 'POST', action: '/apply' }, [
     h('div', [
@@ -39,11 +43,36 @@ router.addRoute('/houses', function (m) {
   }))
 })
 
+router.addRoute('/house/:name/chat', function (m) {
+  return h('div', [
+    h('h1', m.params.name + ' house chat'),
+    h('form', { onsubmit: onsubmit }, [
+      h('input', { type: 'text', name: 'msg' }),
+      h('input', { type: 'submit', value: 'chat' })
+    ]),
+    h('div', (m.state.messages || []).map(function (msg) {
+      return h('div', msg.txt)
+    }))
+  ])
+ 
+  function onsubmit (ev) {
+    ev.preventDefault()
+    var house = m.params.name
+    var txt = this.elements.msg.value
+    m.bus.emit('message', {
+      house: house,
+      txt: txt
+    })
+  }
+})
+
 router.addRoute('/house/:name', function (m) {
   return h('div', [
     h('h1', 'house ' + m.params.name),
-    h('img', { src: '/' + m.params.name + '.svg' }),
-    h('div', m.state.students.map(function (s) {
+    h('a', { href: '/house/' + m.params.name + '/chat' },
+      h('img', { src: '/' + m.params.name + '.svg' })
+    ),
+    h('div', (m.state.students || []).map(function (s) {
       var name = s.key.split('!')[2]
       return h('div', name)
     }))
