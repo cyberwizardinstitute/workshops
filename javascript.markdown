@@ -1169,11 +1169,11 @@ function Num (value) {
     return {
         add: function (x) {
             value += x;
-            return x;
+            return value;
         },
         multiply: function (x) {
             value *= x;
-            return x;
+            return value;
         };
     };
 }
