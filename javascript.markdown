@@ -1164,7 +1164,7 @@ console.log(c()); // 3
 Another common pattern is to return an object with functions
 as values:
 
-```
+```js
 function Num (value) {
     return {
         add: function (x) {
