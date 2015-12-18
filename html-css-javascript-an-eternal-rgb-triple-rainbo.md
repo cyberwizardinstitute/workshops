@@ -129,8 +129,6 @@ There are two basic ways to identify an element:
 * uniquely
 * classically 
 
-These are done by adding id and class attributes
-
 These are done by adding id and class properties
 
 This is done looking like this:
