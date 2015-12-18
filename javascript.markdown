@@ -926,6 +926,7 @@ But inside the loop we can use `break` to quit the loop:
 var x = 4;
 while (true) {
     console.log(x);
+    x --;
     if (x <= 0) break;
 }
 ```
