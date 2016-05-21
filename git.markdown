@@ -32,12 +32,6 @@ keep track of your work. do this with `git init`
 
 ---
 
-# key git commands  
-
-https://www.youtube.com/watch?v=u2rZLVWOWvs
-
----
-
 # sample workflow
 
 - `mkdir` for your new project
@@ -86,28 +80,72 @@ to see what one file looked like at a particular commit, do:
 
 ---
 
+# discard uncommitted changes
+
+`git stash`
+
+gets rid of whatever uncommitted changes you have and
+returns you to the state of your most recent commit.
+
+---
+
 # going back to a previous commit
 
-`git checkout` 
+`git checkout -b branchname hashnumber` 
 
-checkout previous commits and make new branches!
+checkout a previous commit to a new branch.
+
+---
+
+# working with branches
+
+## make a new branch & switch to it
+
+- `git branch dev` make a new branch named "dev"
+- `git checkout dev` switch to branch "dev"
+
+
+`git branch` see what branch you're on and what branches are
+available.
+
+`git branch -d dev` delete branch "dev"
+
+when making a new branch, default behavior copies from
+your current commit on your current branch. 
+
+a common use of branches: a "master" branch with a working version
+of the project and a "dev" branch with active development.
+when "dev" is ready for "production", it gets merged into
+"master."
+
+---
+
+# local vs remote
+
+we have been working on our "local" machine.
+
+but it's common to also have a copy on a "remote" machine or
+service (like github.com).
+
+the rest of this presentation will mostly use "github", but
+please note that this is just one example of a "remote".
 
 ---
 
 # github
 
-https://www.youtube.com/watch?v=3cMP4oBKO34
+website that hosts git repos.
 
-(addendum: i prefer `git push origin master`)
+github repos live on github.com. you can have a million
+projects in local git repos and zero activity on github. 
 
 ---
 
 # starting a new github repo
 
-github repos live on github.com. you can have a million
-projects in local git repos and zero activity on github. to
-put your local repo online, first go to github.com.
+we will now put our local repo on github.com.
 
+- go to github.com.
 - on github: click the "new repository" button NOTE: do not
   make a README.
 - on github: once your new repo is ready, the site will show
@@ -120,7 +158,13 @@ put your local repo online, first go to github.com.
 now, when you go to your repo on github, it should have the
 contents of your last commit.
 
-`git remote -v`
+---
+
+# some github tips
+
+- what remote repo is my local repo associated with? `git remote -v`
+
+- different branches can live on your remote: `git push origin dev`
 
 ---
 
@@ -135,8 +179,7 @@ directly to them.
 - check that everything has copied with `ls`
 - make whatever changes you want
 - `git status`
-- `git commit -am "adding xyz"` (make a commit on your local
-  machine)
+- `git commit -am "adding xyz"` (commit locally)
 - `git push origin master` (push your changes back up to
   github)
 
@@ -144,27 +187,31 @@ directly to them.
 
 # collaborating on existing github projects (no push access)
 
-for existing github projects that you'd like to work on but
-that you don't have push access to, or where you'd like your
-own github repo to play around in before pushing to the main
-branch.
+you may want to work with existing projects that you don't
+have push access for.
+
+to do this, we will "fork" the existing project.
 
 - on github, fork the repo you want to work with. (this will
-  give you your own copy of the repo on github, but not on
+  make a copy under your own github account, but not on
   your local machine).
 - on github, go to your own fork of the repo and find the
   git url to clone the repo.
-- in terminal: `git clone xyz.git` (this pulls your forked
-  copy to your local machine)
+- in terminal: `git clone xyz.git` pulls your forked
+  copy to your local machine
 - check that everything has copied with `ls`
-- make whatever changes you want
+
+---
+
+# collaborating on existing github projects (no push access) part 2
+
+- make changes
 - `git status`
-- `git commit -am "adding xyz"` (this makes a commit on your
-  local machine)
-- `git push origin master` (this pushes your changes back up
+- `git commit -am "adding xyz"` (commit locally)
+- `git push origin master` (push your changes back up
   to your fork on github)
 - to ask that your changes get merged back into the main
-  branch, go to the main repo (not your fork) on github and
+  branch, go to the shared repo (not your fork) on github and
   click "make a pull request"
 
 ---
@@ -173,12 +220,25 @@ branch.
 
 each time you return to working on your local copy of a
 shared github repo, do `git pull origin master` to make sure
-that you have the most up to date version of the repo.
+that you have the most up-to-date version of the shared repo.
 
-many existing open source projects have code review before
-your pull request can be merged. this is why it's a good
+your pull request may not get merged. this is why it's a good
 idea to fork and work on your own branch of an existing
 project.
+
+---
+
+# further learning
+
+excellent, short videos that take you through the basics of
+using git:
+
+https://www.youtube.com/watch?v=u2rZLVWOWvs
+https://www.youtube.com/watch?v=3cMP4oBKO34
+
+this workshop and many others are at:
+
+http://cyber.wizard.institute
 
 ---
 
@@ -188,5 +248,4 @@ Your homework is to do the git-it workshop on nodeschool:
 
 http://nodeschool.io/#gitit
 
-and to submit a pull request to a project with a useful fix
-or addition.
+and to start keeping track of at least one project with git.
