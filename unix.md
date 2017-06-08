@@ -1,11 +1,16 @@
 # unix
 
+introduction to the unix command-line
+
+---
+# unix
+
 UNIX was an operating system developed at AT&T
 Bell Labs in the 1960s through the 1980s.
 
 https://www.youtube.com/watch?v=tc4ROCJYbm0
 
-Linux, MacOSX, and Android are all based on ideas
+GNU/Linux, MacOSX, and Android are all based on ideas
 and specifications created by UNIX.
 
 https://en.wikipedia.org/wiki/File:Unix_history-simple.svg
@@ -18,41 +23,14 @@ computers that many people would use at the same
 time.
 
 ---
-# teleprinter
+# terminals and teleprinters
 
-The first interfaces for these mainframe computers
-were called teleprinters.
+* teleprinters printed program output on paper
+* terminals displayed output on a CRT monitor
 
-These machines had a keyboard to send commands and
-data to the computer and a feed of paper to print
-the output of programs.
+Neither device had processing power of their own.
 
----
-# terminals
-
-Later, monochrome monitors replaced teleprinters.
-These machines were called dumb terminals because
-they didn't have any processing power of their
-own.
-
-Terminals might be connected to a mainframe by
-dedicated cables or over the telephone network.
-
----
-# micro-computers
-
-Later, micro-computers replaced dumb terminals.
-On a micro-computer, programs run on the
-micro-computer's central processor instead of
-running on a remote shared mainframe.
-
----
-# teletype legacy
-
-Nowadays, we don't use teleprinters or mainframes.
-
-However, many of the ideas from this era are still
-relevant.
+Connected to the mainframe over cables or by telephone.
 
 ---
 # teletype legacy: standard input and output
@@ -67,7 +45,7 @@ stdout gets "printed" to the graphical display.
 ---
 # organization
 
-The UNIX operating system is just a collection of
+The UNIX operating system is a collection of
 programs, each with a special role:
 
 * kernel
@@ -77,52 +55,13 @@ programs, each with a special role:
 ---
 # kernel
 
-The kernel's job is to mediate access to the
-computer's resources among all the user programs
-that are running.
+mediate access between user programs and system resources
 
+* CPU scheduling
 * I/O to computer hardware
-* CPU
 * memory
 
-User programs can request resources from the
-kernel by making a system call (syscall). Many
-syscalls are standardized across different UNIX
-implementations. This makes UNIX programs
-relatively portable.
-
----
-# kernel: I/O access
-
-Computer hardware can be very different across
-manufacturers.
-
-The kernel can provide a simple, consistent
-interface to user programs for different hardware
-configurations.
-
----
-# kernel: CPU scheduling
-
-Many computers only have a single CPU, but users
-might want to run many programs at once.
-
-The kernel must schedule processes so that each
-running program gets enough CPU time.
-
----
-# kernel: memory management
-
-A computer only has so much RAM to go around. User
-programs can request blocks of memory from the
-kernel.
-
-The kernel maintains a table of which pages of
-memory map to which user programs.
-
-If there isn't enough RAM, the kernel might be
-configured to use the hard disk instead (swap
-space).
+Programs request resources by making a syscall.
 
 ---
 # shell
@@ -136,6 +75,21 @@ commands and text output.
 
 Most modern shells are strongly influenced by the
 first UNIX shells.
+
+---
+# shells through the ages
+
+* thompson shell - Ken Thompson 1971
+* pwb (mashey) shell - John Mashey 1975
+* bourne shell - Stephen Bourne 1977
+* c shell (csh) - Bill Joy 1978
+* tcsh - Ken Greer and Mike Ellis 1983
+* korn shell - David Korn 1983
+* bourne again shell (bash) - Brian Fox 1987
+* almquist shell (ash) - Kenneth Almquist 1989
+* debian almquist shell (dash) - Herbert Xu 1997
+
+incomplete list of popular or influential shells
 
 ---
 # utilities
@@ -159,42 +113,21 @@ directories and another to move files.
 * text!
 
 ---
-# why UNIX still matters: portable
+# places you can find a unix command-line
 
-UNIX can be found in all kinds of places:
-a web server, a DSL modem, a laptop running Linux
-or MacOSX, a raspberry pi.
+* wifi routers
+* dsl and cable modems
+* raspberry pi, beaglebone, nvidia jetson
+* android phones
+* linux laptop or desktop
+* Mac OSX computer
+* web server
 
-This is because UNIX is designed to be portable to
-many different kinds of hardware.
-
-That means you don't need to learn a whole new
-operating system and suite of tools for each new
-system.
-
----
-# why UNIX still matters: conventions
-
-The conventions of command-line UNIX tools apply
-consistently across many different tools.
-
-This means that once you learn some common
-conventions, you will be able to use those
-conventions across many different tools.
+You can take your command-line skills with
+you to all of these platforms and more!
 
 ---
-# why UNIX still matters: ecosystem
-
-There is a very vast ecosystem of free and open
-source software available for UNIX systems to
-perform all kinds of tasks.
-
-When these tools use simple text-based interfaces,
-they can be easily recombined with other tools in
-novel combinations. 
-
----
-# why UNIX still matters: text interface
+# text interface
 
 To remotely access a UNIX system, you can use the
 same command-line tools and interface that you use
@@ -209,42 +142,14 @@ around. UNIX excels at these kinds of tasks.
 ---
 # unix philosophy
 
-Part of what made unix so successful is the
-consistent design principles.
+The unix philosophy is a set of design principles for
+how programs relate to each other.
 
-http://www.faqs.org/docs/artu/ch01s06.html
+* each program should do one thing well
+* the output of a program can become the input of another
 
----
-# unix philosophy (i)
-
-Make each program do one thing well. To do a new
-job, build afresh rather than complicate old
-programs by adding new features.
-
----
-# unix philosophy (ii)
-
-Expect the output of every program to become the
-input to another, as yet unknown, program. Don't
-clutter output with extraneous information. Avoid
-stringently columnar or binary input formats.
-Don't insist on interactive input.
-
----
-# unix philosophy (iii)
-
-Design and build software, even operating systems,
-to be tried early, ideally within weeks. Don't
-hesitate to throw away the clumsy parts and
-rebuild them.
-
----
-# unix philosophy (iv)
-
-Use tools in preference to unskilled help to
-lighten a programming task, even if you have to
-detour to build the tools and expect to throw some
-of them out after you've finished using them.
+Unix Programming Environment 1984
+Brian Kernighan and Rob Pike
 
 ---
 # let's learn the command line!
@@ -1680,4 +1585,96 @@ Kill a process by its process or job id.
 
 ---
 # screen
+
+You can use screen to run command-line programs and keep
+them running, even when you go away.
+
+---
+# install screen
+
+    $ sudo apt-get install screen
+
+---
+# create a new named screen
+
+    $ screen -S website
+
+---
+# list screens
+
+    $ screen -list
+
+---
+# connect to a screen
+
+    $ screen -x website
+
+---
+# detach from a screen
+
+From inside of a screen, press CTRL+A then `d`.
+
+---
+# create a new window inside screen
+
+CTRL+A c
+
+---
+# go to the next window
+
+CTRL+A n
+
+---
+# go to the previous window
+
+CTRL+A p
+
+---
+# close a window
+
+Just type `exit` to close a window.
+
+---
+# irc from the command-line
+
+Install irssi:
+
+    $ sudo apt-get install irssi
+
+Then create a screen for irc:
+
+    $ screen -S irc
+
+---
+Then in a screen, you can run `irssi` to use irc from the
+command line.
+
+* `/nick robowizard` - set your nickname on the server
+* `/connect irc.freenode.net` - connect to irc.freenode.net
+* `/join #cyberwizard` - join the channel called cyberwizard
+* ESC+N or `/win N` - to jump to the window at number N
+
+Once you're in a channel, type text like usual.
+`CTRL+A d` to detach and `screen -x irc` to resume.
+
+---
+# run a web server
+
+Make a web server.js:
+
+``` js
+var http = require('http');
+var server = http.createServer(function (req, res) {
+    res.end("YOU'RE A WIZARD.\n");
+});
+server.listen(8000);
+```
+
+now run your server with node from inside a screen:
+
+```
+$ node server.js
+```
+
+then detach the screen with CTRL+A d.
 
