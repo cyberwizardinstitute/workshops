@@ -266,6 +266,7 @@ Forms in html are often delivered with a POST:
 POST /form HTTP/1.1
 Host: localhost
 Content-Length: 51
+Content-Type: application/x-www-form-urlencoded
 
 title=whatever&date=1421044443&body=beep%20boop%21
 ```
@@ -274,16 +275,17 @@ using this simple node http server,
 we can decode the POST body:
 
 ``` js
-var http = require('http');
-var parseform = require('body/any');
+var http = require('http')
+var parseform = require('body/any')
 
 var server = http.createServer(function (req, res) {
-    parseform(req, res, function (err, params) {
-        console.log(params);
-        res.end('ok\n');
-    });
-});
-server.listen(5000);
+  console.log(req.method, req.url, req.heders)
+  parseform(req, res, function (err, params) {
+    console.log(params)
+    res.end('ok\n')
+  })
+})
+server.listen(5000)
 ```
 ---
 When the POST payload arrives and is decoded, we get:
@@ -341,7 +343,7 @@ $ curl -X POST http://localhost:5000 -d title=whatever \
 
 smtp is the protocol used to deliver email messages.
 
-Here we can send an email from `barak@whitehouse.gov` to
+Here we can send an email from `trump@whitehouse.gov` to
 `substack@localhost`.
 
 The lines that start with a number are messages from the
@@ -350,22 +352,22 @@ server.
 ---
 ```
 $ nc localhost 25
-220 1x1px ESMTP Exim 4.80 Sun, 11 Jan 2015 22:46:30 -0800
+220 zzz ESMTP Exim 4.84_2 Tue, 02 May 2017 21:29:36 -0700
 helo localhost
-250 1x1px Hello localhost [127.0.0.1]
-mail from: barak@whitehouse.gov
+250 zzz Hello localhost [127.0.0.1]
+mail from: trump@whitehouse.gov
 250 OK
 rcpt to: substack@localhost
 250 Accepted
 data
 354 Enter message, ending with "." on a line by itself
-Subject: HELLO THIS IS THE PRESIDENT
+Subject: FAKE NEWS
 
-Greetings citizen. I am the president. For real. Keep on keeping on.
+You're fired.
 .
-250 OK id=1YAYmI-0008H2-LC
+250 OK id=1d5lvL-00026H-DW
 quit
-221 1x1px closing connection
+221 zzz closing connection
 ```
 ---
 Since this email was sent locally, I can read the message
@@ -373,26 +375,24 @@ with the `mail` command:
 
 ```
 $ mail
-Heirloom mailx version 12.5 6/20/10.  Type ? for help.
+Mail version 8.1.2 01/15/2001.  Type ? for help.
 "/var/mail/substack": 1 message 1 new
->N  1 barak@whitehouse.g Sun Jan 11 22:47   16/566   HELLO THIS IS THE PRESIDENT
+>N  1 trump@whitehouse.  Tue May 02 21:30   16/491   FAKE NEWS
 ```
 ---
 Seems legit:
 
 ```
-? n
-Message  1:
-From barak@whitehouse.gov Sun Jan 11 22:47:36 2015
-Return-path: <barak@whitehouse.gov>
+& n
+Message 1:
+From trump@whitehouse.gov Tue May 02 21:30:09 2017
 Envelope-to: substack@localhost
-Delivery-date: Sun, 11 Jan 2015 22:47:36 -0800
-Subject: HELLO THIS IS THE PRESIDENT
-From: barak@whitehouse.gov
-Date: Sun, 11 Jan 2015 22:47:22 -0800
-Status: R
+Delivery-date: Tue, 02 May 2017 21:30:09 -0700
+Subject: FAKE NEWS
+From: trump@whitehouse.gov
+Date: Tue, 02 May 2017 21:30:05 -0700
 
-Greetings citizen. I am the president. For real. Keep on keeping on.
+You're fired.
 
 ```
 ---
