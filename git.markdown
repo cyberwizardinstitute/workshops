@@ -108,7 +108,7 @@ checkout a previous commit to a new branch.
 `git branch` see what branch you're on and what branches are
 available.
 
-`git branch -d dev` delete branch "dev"
+`git branch -D dev` delete branch "dev"
 
 when making a new branch, default behavior copies from
 your current commit on your current branch. 
