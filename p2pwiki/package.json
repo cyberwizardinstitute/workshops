@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "choo": "^5.6.2",
+    "hyperkv": "^2.0.3",
+    "hyperlog": "^4.12.1",
+    "level": "^1.7.0",
+    "signalhub": "^4.8.0",
+    "subleveldown": "^2.1.0",
+    "to2": "^1.0.0",
+    "webrtc-swarm": "^2.8.0",
+    "websocket-stream": "^5.0.0"
+  }
+}
