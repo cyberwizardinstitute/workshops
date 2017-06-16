@@ -9,6 +9,7 @@ var kv = hyperkv({
 
 var wswarm = require('webrtc-swarm')
 var signalhub = require('signalhub')
+var wsock = require('websocket-stream')
 
 var app = require('choo')()
 var html = require('choo/html')
@@ -23,11 +24,17 @@ app.use(function (state, emitter) {
 })
 app.use(function (state, emitter) {
   state.page = {}
+  state.title = ''
   emitter.on('open', function (title) {
+    state.title = title
     kv.get(title, function (err, values) {
       state.page = values
       emitter.emit('render')
     })
+  })
+  emitter.on('wsync', function (href) {
+    var stream = wsock(href)
+    stream.pipe(log.replicate()).pipe(stream)
   })
   emitter.on('save', function (edit) {
     kv.put(edit.title, edit.body, function (err, node) {
@@ -46,8 +53,12 @@ app.route('/', function (state, emit) {
     </form>
     <hr>
     <form onsubmit=${read}>
-      <input type="text" name="title">
+      <input type="text" name="title" value=${state.title}>
       <button type="submit">open</button>
+    </form>
+    <form onsubmit=${wsync}>
+      <input type="text" name="wsock" placeholder="ws://">
+      <button type="submit">sync</button>
     </form>
     ${Object.keys(state.page).map(function (key) {
       return html`<div>
@@ -57,6 +68,10 @@ app.route('/', function (state, emit) {
       </div>`
     })}
   </body>`
+  function wsync (ev) {
+    ev.preventDefault()
+    emit('wsync', ev.target.wsock.value)
+  }
   function read (ev) {
     ev.preventDefault()
     emit('open', ev.target.title.value)
