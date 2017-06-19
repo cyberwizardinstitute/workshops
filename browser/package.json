@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "brfs": "^1.4.3",
+    "gamma": "^1.0.0",
+    "glsl-noise": "0.0.0",
+    "glslify": "^6.1.0",
+    "level-browserify": "^1.1.1",
+    "regl": "^1.3.0",
+    "regl-camera": "^2.1.1",
+    "webaudio": "^2.0.0",
+    "xhr": "^2.4.0",
+    "yo-yo": "^1.4.1",
+    "yo-yoify": "^3.7.3"
+  },
+  "scripts": {
+    "build": "browserify main.js > public/bundle.js",
+    "watch": "watchify main.js -o public/bundle.js -dv"
+  },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  }
+}
