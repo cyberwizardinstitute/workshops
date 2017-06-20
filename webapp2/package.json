@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "browserify": "^14.4.0",
+    "choo": "^5.6.2",
+    "content-addressable-blob-store": "^4.5.1",
+    "ecstatic": "^2.2.1",
+    "hypercore": "^6.6.3",
+    "hyperdrive": "^9.4.5",
+    "hyperlog": "^4.12.1",
+    "level": "^1.7.0",
+    "level-browserify": "^1.1.1",
+    "routes": "^2.1.0",
+    "watchify": "^3.9.0"
+  }
+}

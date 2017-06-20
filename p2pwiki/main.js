@@ -19,6 +19,7 @@ app.use(function (state, emitter) {
   var swarm = wswarm(signalhub('kvswarm',
     ['https://signalhub.mafintosh.com']))
   swarm.on('peer', function (peer) {
+    console.log('CONNECT')
     peer.pipe(log.replicate({ live: true })).pipe(peer)
   })
 })
