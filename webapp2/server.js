@@ -1,6 +1,11 @@
 var http = require('http')
 var level = require('level')
-var db = level('counter.db')
+var db = level('counter.db', { valueEncoding: 'json' })
+var ecstatic = require('ecstatic')(__dirname + '/public')
+var body = require('body/any')
+var collect = require('collect-stream')
+var mainpage = require('./mainpage.js')
+
 var count = 0
 db.get('count', function (err, value) {
   count = Number(value || 0) + count
@@ -8,16 +13,35 @@ db.get('count', function (err, value) {
 var router = require('routes')()
 router.addRoute('GET /', function (req, res, m) {
   res.setHeader('content-type', 'text/html')
-  res.end('<h1>hello</h1>\n'
-    + 'you are the ' + (count++) + 'th visitor')
+  var opts = { gt: 'guestbook!', lt: 'guestbook!~' }
+  collect(db.createReadStream(opts), function (err, docs) {
+    if (err) {
+      res.end(err + '\n')
+      return console.error(err)
+    }
+    var state = { 
+      count: count,
+      messages: docs.map(function (doc) { return doc.value })
+    }
+    res.end(mainpage(state).toString())
+  })
   db.put('count', count, function (err) {
     if (err) console.error(err)
   })
 })
+router.addRoute('POST /guestbook', function (req, res, m) {
+  body(req, res, function (err, params) {
+    if (err) return console.error(err)
+    var key = 'guestbook!' + new Date().toISOString()
+    db.put(key, params, function (err) {
+      if (err) res.end('not ok')
+      else res.end('ok')
+    })
+  })
+})
+
 router.addRoute('*', function (req, res, m) {
-  res.statusCode = 404
-  res.setHeader('content-type', 'text/plain')
-  res.end('not found\n')
+  ecstatic(req, res)
 })
 
 var server = http.createServer(function (req, res) {
