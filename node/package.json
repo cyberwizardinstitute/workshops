@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "bel": "^5.0.0",
+    "choo": "^5.6.2",
+    "concat-stream": "^1.6.0",
+    "content-addressable-blob-store": "^4.5.1",
+    "ecstatic": "^2.2.1",
+    "filereader-stream": "^1.0.0",
+    "hypercore": "^6.6.0",
+    "hyperdrive": "^9.4.1",
+    "hyperlog": "^4.12.1",
+    "level": "^1.7.0",
+    "routes": "^2.1.0",
+    "xhr": "^2.4.0"
+  }
+}

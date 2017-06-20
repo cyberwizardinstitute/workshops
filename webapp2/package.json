@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "bel": "^5.0.0",
+    "body": "^5.1.0",
+    "browserify": "^14.4.0",
+    "choo": "^5.6.2",
+    "collect-stream": "^1.2.1",
+    "content-addressable-blob-store": "^4.5.1",
+    "ecstatic": "^2.2.1",
+    "hypercore": "^6.6.3",
+    "hyperdrive": "^9.4.5",
+    "hyperlog": "^4.12.1",
+    "level": "^1.7.0",
+    "level-browserify": "^1.1.1",
+    "pump": "^1.0.2",
+    "routes": "^2.1.0",
+    "through2": "^2.0.3",
+    "watchify": "^3.9.0",
+    "xhr": "^2.4.0"
+  },
+  "scripts": {
+    "build": "browserify main.js > public/bundle.js",
+    "watch": "watchify main.js -o public/bundle.js -dv"
+  }
+}
