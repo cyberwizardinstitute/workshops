@@ -89,6 +89,7 @@ Set the "transform" attribute to any of these:
 
 shifts the y down 30 units and the x right 20 units 
 
+---
 # scale
 
 ``` html

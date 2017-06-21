@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "bunny": "^1.0.1",
+    "frame-loop": "^1.2.1",
+    "glsl-hsl2rgb": "^1.1.0",
+    "glsl-noise": "0.0.0",
+    "glslify": "^6.1.0",
+    "icosphere": "^1.0.0",
+    "load-svg": "^1.0.0",
+    "regl": "^1.3.0",
+    "regl-camera": "^2.1.1",
+    "resl": "^1.0.3",
+    "svg-create-element": "^1.0.0",
+    "teapot": "^1.0.0",
+    "xhr": "^2.4.0"
+  }
+}
