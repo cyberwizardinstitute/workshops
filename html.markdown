@@ -85,6 +85,7 @@ div
     </tr> 
 </table>
 ```
+
 ---
 
 # wow bullet points
@@ -199,6 +200,7 @@ use an id when there will only be a single element
 </body>
 </html>
 ```
+
 ---
 # styles for class
 
@@ -220,6 +222,7 @@ use a class when there could be many elements
 <div class="cool">super!</div>
 </body></html>
 ```
+
 ---
 # external style sheets
 
@@ -227,6 +230,7 @@ use a class when there could be many elements
 
 view the source on http://cyber.wizard.institute & explore
 the stylesheet.
+
 ---
 # css selectors
 
@@ -252,22 +256,28 @@ will match `<div class="title"></div>` in:
   </div>
 </div>
 ```
+
 ---
+
 # css selectors
 
 We just used spaces between elements in `#page .row .title`,
 but we can do lots of other things with css:
 
-* `E` - match an element E by its tag name (example: `h1`)
-* `E F` - matches F, a descendant of E
-* `E > F` - matches F, a direct child of E
-* `E#abc` - matches an element E with an id of abc
-* `E.xyz` - matches an element E with a class of xyz
-* `E[foo="bar"]` - match an element E with an attribute
-  `foo` equal to "bar"
+* `p` - matches all elements with a `p` tag
+* `div h2` - matches any `h2` tags that are below a `div`
+* `div > h2` - matches any `h2` tags that are directly below a `div`
+* `#pic1` - matches an element with the id `pic1`
+* `.header` - matches an element with the class `header`
+* `h1 h2 h3` - matches all `h1` `h2` `h3`'s
+* `div[foo="bar"]` - matches a `div` with an attribute `foo` set to `bar`
+* `div.cool#bar[baz="yay"]` - matches a div with the class `cool`,
+     the id `bar` that has an attribute `baz` set to `yay`
 
 and more! http://www.w3.org/TR/CSS2/selector.html#pattern-matching
+
 ---
+
 # css selectors
 
 You can use css selectors directly from javascript:
@@ -282,7 +292,9 @@ You can use css selectors directly from javascript:
   </script>
 </body>
 ```
+
 ---
+
 # neocities
 
 You can host your html on neocities for free!

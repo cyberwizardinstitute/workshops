@@ -182,8 +182,8 @@ You can also dynamically construct elements with javascript!
 Constructing elements is a bit weird:
 
 ``` js
-var svg = document.createElementNS('svg', 'http://www.w3.org/2000/svg');
-var circle = document.createElementNS('circle', 'http://www.w3.org/2000/svg');
+var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 ```
 
 ---
@@ -192,7 +192,7 @@ var circle = document.createElementNS('circle', 'http://www.w3.org/2000/svg');
 All of the usual dom methods work on svg:
 
 ``` js
-var circle = document.createElementNS('circle', 'http://www.w3.org/2000/svg');
+var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 circle.setAttribute('fill', 'cyan');
 
 var circle2 = elem.cloneNode(true);
