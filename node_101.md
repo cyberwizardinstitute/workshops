@@ -34,7 +34,7 @@ Perhaps best of all, Node.js allows the intrepid hacker to create full stack, we
 
 # Events
 
-EVENTS are an important concept for the javascript and Node.js programmer, as well as designers of interfaces, or systems with sesnors.
+EVENTS are an important concept for the javascript and Node.js programmer, as well as designers of interfaces, or systems with sensors.
 
 What is an event?  Unlike some programming concepts, an event here is exactly what you should expect.
 
@@ -82,7 +82,7 @@ The second is a CALLBACK.
 
 A CALLBACK is simply a function--no different than any other function--which is called upon an event.
 
-Most confusion about javascript callbacks stems from confusion and lazioness about javascipt functional syntax.
+Most confusion about javascript callbacks stems from confusion and laziness about javascipt functional syntax.
 
 Consider the following:
 
@@ -91,7 +91,7 @@ event.on('update', function(data){
   console.log(data)
 })
 ```
-To the uninitiated, this may look like a pinata of inscruotable syntax.
+To the uninitiated, this may look like a pinata of inscrutable syntax.
 
 One reason is because that code has nested syntax, which is totally legal.
 
@@ -109,7 +109,7 @@ var callback_Function = function(data){
 event.on('update', callback_Function)
 ```
 
-Here, you can see that the callback is a basic function, and event.on is a function being called with two arguments, one of them the function referenced aboove.
+Here, you can see that the callback is a basic function, and event.on is a function being called with two arguments, one of them the function referenced above.
 
 When an 'update' event happens, call the supplied function.
 
