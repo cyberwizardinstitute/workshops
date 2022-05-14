@@ -6,7 +6,9 @@ introduction to the unix command-line
 # unix
 
 UNIX was an operating system developed at AT&T
-Bell Labs in the 1960s through the 1980s.
+Bell Labs in the 1960s through the 1980s (originally
+named UNICS from Uniplexed Information and Computing
+Service which later became UNIX).
 
 https://www.youtube.com/watch?v=tc4ROCJYbm0
 
